@@ -44,9 +44,17 @@ html(lang='ru').page
   body.page__body
     .page__inner
       +page-header({})
-      main.page__content(class= mainClass )
-        block content
-          p содержимое страницы
+      if (sidebar)
+        .main-ident.page__content
+          .container
+            .main-ident__row
+              block sidebar
+              main(class= mainClass)
+                block content
+      else
+        main.main-ident.page__content(class= mainClass)
+          block content
+            p содержимое страницы
       +page-footer().d-none.d-xl-block
     +mobile-menu(pageCurrent)
       block page-bottom

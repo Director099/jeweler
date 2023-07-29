@@ -41,7 +41,6 @@
 @import "../blocks/project/category-card/category-card";
 @import "../blocks/project/mobile-menu/mobile-menu";
 
-
 @import "../blocks/project/order-page/order-page";
 
 
@@ -51,6 +50,11 @@
   @media (min-width: $screen-xl) {
     padding-bottom: 100px;
   }
+}
+
+.main-ident__row {
+  display: flex;
+  gap: 40px;
 }
 
 //TODO: Вынести
