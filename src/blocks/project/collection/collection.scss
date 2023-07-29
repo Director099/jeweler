@@ -1,0 +1,31 @@
+.collection__grid-gap {
+  grid-gap: 15px;
+
+  border-radius: 8px;
+  overflow: hidden;
+
+  @media (min-width: $screen-md) {
+    grid-gap: 40px;
+    border-radius: 20px;
+  }
+}
+
+.collection__title {
+  text-align: center;
+  margin: 0;
+}
+
+.collection__link-wrap {
+  text-align: center;
+  margin-top: 10px;
+
+  @media (min-width: $screen-md) {
+    margin-top: 40px;
+  }
+}
+
+.collection__content {
+  @media (max-width: $screen-md - 1) {
+    height: 200px;
+  }
+}

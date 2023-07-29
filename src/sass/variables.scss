@@ -1,0 +1,91 @@
+// Базовые цвета https://colorscheme.ru/color-converter.html
+
+$black:                       #070707;
+$gray-darkest:                hsl(0, 0%, 10%);
+$gray-darker:                 hsl(0, 0%, 20%);
+$gray-darken:                 hsl(0, 0%, 30%);
+$gray-dark:                   hsl(0, 0%, 40%);
+$gray:                        hsl(0, 0%, 50%);
+$gray-light:                  hsl(0, 0%, 60%);
+$gray-lighten:                hsl(0, 0%, 70%);
+$gray-lighter:                hsl(0, 0%, 80%);
+$gray-lightest:               hsl(0, 0%, 90%);
+$white:                       hsl(0, 0%, 100%);
+
+// Семантические цвета
+
+$color-main:                  hsl(208, 98%, 43%);
+$color-success:               hsl(120, 39%, 54%);
+$color-danger:                hsl(2, 64%, 58%);
+$color-warning:               hsl(35, 84%, 62%);
+
+$text-color:                  $gray-darkest;
+
+// Базовая типографика
+
+$fz:                          20px;
+$fz--h1:                      2.25em;
+$fz--h2:                      1.875em;
+$fz--h3:                      1.5em;
+$fz--h4:                      1.25em;
+$fz--h5:                      1em;
+$fz--h6:                      1em;
+$fz--small:                   0.75em;
+
+$font-family:                'Proxima Nova', 'Arial', sans-serif;
+$font-family-2:              'Montserrat', 'Arial', sans-serif;
+$font-family--monospace:     SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+
+// Ширины
+
+$screen-sm:                   480px;
+$screen-md:                   768px; // 768
+$screen-lg:                   1080px;
+$screen-xl:                   1720px;
+$screen-xxl:                  none;
+
+$grid-columns:                12;
+$grid-gutter-width:           30px;
+
+// Border
+$border-gray:                 #858585;
+$border-gold:                 #DDBB08;
+$border-black:                #181616;
+
+// Primary
+$primary-pink-1:              #F75394;
+$primary-pink-2:              #FB639E;
+$primary-graphite:            #34322C;
+$primary-black:               $black;
+$primary-white:               #FCFCFC;
+
+//Typography
+$tp-black:                    $black;
+$tp-grey:                     #CACACA;
+$tp-white:                    #FCFCFC;
+
+//Backround
+$bg-gray-1:                   #F1F1F1;
+$bg-pink:                     #FFE2E2;
+$bg-gray-2:                   #D9D9D9;
+$bg-white:                    $white;
+$bg-black:                    $black;
+$bg-pink-active:              #FFEFEF;
+
+//Other
+$other-burgundy:              #AC0F0A;
+$other-red:                   #EF3124;
+$other-grey:                  #ECECEC;
+$other-green:                 #68B24D;
+$other-blue:                  #3E87AF;
+$other-gradient-card:         linear-gradient(173deg, rgba($white, 0.19) 33.03%, rgba($white, 0.13) 52.44%, $white 93.69%);
+
+//Hover
+$hover-pink:                  #FF88B6;
+$icons-grey:                  #CACACA;
+
+// Разное
+
+$time:                        0.3s;
+$shadow:                      0 4px 2px -2px rgba(0, 0, 0, 0.3);
+$opacity:                     0.7;

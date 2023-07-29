@@ -1,0 +1,19 @@
+.gap-xl-100 {
+  @media (min-width: $screen-xl) {
+    gap: 100px;
+  }
+}
+
+.gap-md-50 {
+  @media (min-width: $screen-md) {
+    gap: 50px;
+  }
+}
+
+.gap-40 {
+  gap: 40px;
+}
+
+.gap-30 {
+  gap: 30px;
+}

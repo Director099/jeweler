@@ -1,0 +1,24 @@
+.link-icon {
+  @include ProximaNovaTextRegular13();
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+
+
+  &--top {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  @media (min-width: $screen-md) {
+    @include ProximaNovaTextRegular20();
+  }
+}
+
+.link-icon__svg {
+  fill: transparent;
+  width: auto;
+  height: auto;
+}

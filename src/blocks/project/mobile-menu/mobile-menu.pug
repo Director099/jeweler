@@ -1,0 +1,43 @@
+-
+  const linksMobileMenu = [
+    {
+      active: true,
+      icon: 'icon-logo',
+      text: pages.index.text,
+      href: pages.index.href,
+    },
+    {
+      active: false,
+      icon: 'icon-catalog',
+      text: pages.catalog.text,
+      href: pages.catalog.href
+    },
+    {
+      active: false,
+      icon: 'icon-menu-heart',
+      text: pages.favorites.text,
+      href: pages.favorites.href
+    },
+    {
+      active: false,
+      icon: 'icon-menu-basket',
+      text: pages.basket.text,
+      href: pages.basket.href
+    },
+    {
+      active: false,
+      icon: 'icon-menu-profile',
+      text: pages.profile.text,
+      href: pages.profile.href
+    },
+  ]
+
+mixin mobile-menu(pageCurrent)
+  .mobile-menu.d-lg-none
+    ul.mobile-menu__nav-list
+      each item in linksMobileMenu
+        li.mobile-menu__nav-item
+          +link-icon({
+            icon: item.icon,
+            text: item.text,
+          })(href=item.href, class=`${item.href === pageCurrent ? "active" : ""}`).link-icon--top.mobile-menu__link

@@ -1,0 +1,31 @@
+.grid-tpl {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-tpl__col--xl-3 {
+  @media (min-width: $screen-xl) {
+    grid-column: auto/span 3;
+  }
+}
+
+.grid-tpl__col--xl-12 {
+  @media (min-width: $screen-xl) {
+    grid-column: auto/span 12;
+  }
+}
+
+.grid-tpl__col--md-6 {
+  @media (min-width: $screen-md) {
+    grid-column: auto/span 6;
+  }
+}
+
+.grid-tpl__col--6 {
+  grid-column: auto/span 6;
+}
+
+.grid-col-12 {
+  grid-column: auto/span 12;
+}

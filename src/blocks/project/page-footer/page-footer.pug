@@ -1,0 +1,87 @@
+-
+  const footerNavMenu = [
+    [
+      {
+        text: 'О компании',
+        href: 'about.html'
+      },
+      {
+        text: pages.actions.text,
+        href: pages.actions.href
+      },
+      {
+        text: 'Работа у нас',
+        href: 'jobs.html'
+      },
+      {
+        text: 'Магазины',
+        href: 'shops.html'
+      },
+      {
+        text: 'Программа лояльности',
+        href: 'bonus.html'
+      }
+    ],
+    [
+      {
+        text: 'Скупка золота и серебра',
+        href: '#'
+      },
+      {
+        text: 'Обмен украшений',
+        href: 'exchange.html'
+      },
+      {
+        text: 'Возврат',
+        href: 'return.html'
+      },
+      {
+        text: 'Доставка',
+        href: 'delivery.html'
+      },
+      {
+        text: 'О бриллиантах',
+        href: '#'
+      }
+    ],
+    [
+      {
+        text: 'Уход и ремонт',
+        href: '#'
+      },
+      {
+        text: 'Карта сайта',
+        href: '#'
+      },
+      {
+        text: 'Кредит/рассрочка',
+        href: 'credit.html'
+      },
+      {
+        text: 'Бонусная карта',
+        href: '#'
+      },
+      {
+        text: 'Политика конфиденциальности',
+        href: '#'
+      }
+    ]
+  ]
+
+mixin page-footer()
+  footer.page-footer&attributes(attributes)
+    .container
+      .page-footer__row
+        .page-footer__col-mini
+          +logo(pages.index.href).page-footer__logo
+            img(src='img/content/logo.svg', alt='Logo')
+          a.page-footer__phone(href=numberPhone.href)= numberPhone.text
+          +socials.page-footer__socials
+        .page-footer__col-grow
+          each list in footerNavMenu
+            ul.page-footer__nav
+              each item in list
+                li.page-footer__nav-item
+                  a.page-footer__nav-link(href=item.href)= item.text
+
+

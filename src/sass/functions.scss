@@ -1,0 +1,128 @@
+@mixin field-focus {
+  outline: 0;
+  // box-shadow: 0 0 0 2px rgba($color-main, $opacity);
+}
+
+@mixin ul-reset() {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin text-gradient($gradient-color, $color) {
+  display: inline-block;
+  color: $color;
+  background-image: $gradient-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+//Montserrat
+@mixin MontserratRegular40 {
+  font-family: $font-family-2;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 14px;
+
+  @media (min-width: $screen-xl) {
+    letter-spacing: 18.5px;
+  }
+}
+
+@mixin MontserratRegular26 {
+  font-family: $font-family-2;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+//ProximaNova Regular
+@mixin ProximaNovaTextRegular28 {
+  font-family: $font-family;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin ProximaNovaTextRegular26 {
+  font-family: $font-family;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin ProximaNovaTextRegular24 {
+  font-family: $font-family;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin ProximaNovaTextRegular22 {
+  font-family: $font-family;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin ProximaNovaTextRegular20 {
+  font-family: $font-family;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin ProximaNovaTextRegulart18 {
+  font-family: $font-family;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin ProximaNovaTextRegular16 {
+  font-family: $font-family;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin ProximaNovaTextRegular13 {
+  font-family: $font-family;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin ProximaNovaTextRegular10 {
+  font-family: $font-family;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+//ProximaNova LIGHT
+
+@mixin ProximaNovaTextLight18 {
+  font-family: $font-family;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+@mixin ProximaNovaTextLight20 {
+  font-family: $font-family;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+//@mixin ProximaNovaTextLight22 {
+//  font-family: $font-family;
+//  font-size: 22px;
+//  font-style: normal;
+//  font-weight: 300;
+//}
+
+

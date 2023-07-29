@@ -1,0 +1,15 @@
+mixin section-content({title, link, textLink="смотреть"})
+  .section-content
+    section.container
+      h2.main-title-montserrat.section-content__title= title
+      .swiper.section-content__slider(data-product-slider="")
+        .swiper-wrapper
+          - for(let i = 1; i < 9; i++)
+            .swiper-slide.section-content__item
+              +preview({
+                img: `prev-${i}`
+              })
+        .swiper-button-next.swiper-button-arrow
+        .swiper-button-prev.swiper-button-arrow
+      .section-content__link-wrap.d-none.d-md-block.d-xl-none
+        a.line-link.section-content__link(href=link)= textLink

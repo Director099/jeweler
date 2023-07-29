@@ -1,0 +1,14 @@
+.socials {
+  @include ul-reset;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.socials__link {
+  display: block;
+}
+
+.socials__icon {
+  display: block;
+}

@@ -1,0 +1,9 @@
+.main-title-montserrat {
+  @include ProximaNovaTextRegular16();
+  letter-spacing: 9.52px;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-md) {
+    @include MontserratRegular40();
+  }
+}

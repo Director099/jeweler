@@ -1,0 +1,14 @@
+mixin main-slider
+  .swiper.main-slider(data-main-slider="")
+    .swiper-wrapper
+      - for(let i = 1; i < 3; i++)
+        .swiper-slide.main-slider__item
+          a.main-slider__link(href=pages.actions.href)
+            picture
+              source(srcset=`img/content/main-slide-1.jpg` media=`(min-width: ${media.xl}px)`)
+              source(srcset=`img/content/main-slide-tab-1.jpg` media=`(min-width: ${media.md}px)`)
+              img(src=`img/content/main-slide-mob-1.jpg`)
+    .swiper-button-next.swiper-button-arrow.d-none.d-xl-block
+    .swiper-button-prev.swiper-button-arrow.d-none.d-xl-block
+    .swiper-pagination
+

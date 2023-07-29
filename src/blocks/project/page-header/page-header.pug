@@ -1,0 +1,71 @@
+-
+  const buttonsList = [
+    {
+      icon: 'icon-heart',
+      text: pages.favorites.text,
+      href: pages.favorites.href
+    },
+    {
+      icon: 'icon-basket',
+      text: pages.basket.text,
+      href: pages.basket.href
+    },
+    {
+      icon: 'icon-profile',
+      text: pages.profile.text,
+      href: pages.profile.href
+    }
+  ]
+
+  const links = [
+    {
+      icon: 'icon-geo',
+      text: 'Уфа',
+    },
+    {
+      icon: 'icon-phone',
+      text: numberPhone.text,
+      href: numberPhone.href
+    }
+  ]
+
+mixin page-header({elemBottom=true, elemMenu=true})
+  header.page-header
+    .container
+      .page-header__top-inner
+        +burger('Меню').page-header__burger.d-lg-none
+        if(elemMenu)
+          .page-header__col-left.d-none.d-lg-flex
+            each item in links
+              +link-icon({
+                icon: item.icon,
+                text: item.text,
+              })(href=item.href)
+        +logo(pages.index.href).page-header__col-center
+          img(src='img/content/logo.svg', alt='Logo')
+        if(elemMenu)
+          +navigation.page-header__col-right.d-none.d-lg-flex
+        +link-icon({
+          icon: "icon-search",
+        })(href="#").page-header__btn-icon-search.d-lg-none
+      if(elemBottom)
+        .page-header__bottom-inner.d-none.d-lg-flex
+          a.btn.btn--dark.page-header__btn-catalog(href=pages.catalog.href)
+            svg.btn__icon.btn__icon--right(width="24" height="14")
+              use(href="img/symbols.svg#icon-burger")
+            | Каталог
+          +form.form--search.page-header__search(action="#")
+            +field-text({
+              mods: '',
+              val: '',
+            })
+            button.btn.btn--pink.form__search-btn Поиск
+
+          ul.page-header__buttons-list
+            each item in buttonsList
+              li.page-header__buttons-item
+                +link-icon({
+                  icon: item.icon,
+                  text: item.text,
+                  iconTop: true,
+                })(href=item.href).page-header__link-icon

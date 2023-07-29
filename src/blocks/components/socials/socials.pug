@@ -1,0 +1,27 @@
+-
+  const socials = [
+    {
+      href: '#',
+      icon: "icon-whats-app",
+    },
+    {
+      href: 'https://t.me/uvelircenterofficial',
+      icon: "icon-telegram",
+    },
+    {
+      href: 'https://vk.com/uvelircenter',
+      icon: "icon-vk",
+    },
+    {
+      href: 'https://ok.ru/uvelircenter',
+      icon: "icon-ok"
+    }
+  ]
+
+mixin socials()
+  ul.socials&attributes(attributes)
+    each item in socials
+      li.socials__item
+        a.socials__link(href=item.href, target="_blank")
+          svg.socials__icon(width="24", height="24")
+            use(href=`img/symbols.svg#${item.icon}`)

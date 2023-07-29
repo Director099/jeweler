@@ -1,0 +1,24 @@
+
+mixin preview(item)
+  -
+    const {
+      title = "Кольцо золотое 585°",
+      link = "#",
+      priceCurrent = "15 400",
+      priceOld = "30 800",
+      img
+    } = item
+  article.preview&attributes(attributes)
+    a.preview__link(href="#")
+      header.preview__img
+        img(src=`img/content/${img}.jpg` alt=title)
+      footer.preview__footer
+        h3.preview__title= title
+        .preview__price
+          span.preview__price-text.preview__price-text--current= priceCurrent
+            svg(width="16" height="17")
+              use(href=`img/symbols.svg#icon-rouble-1`)
+          if (priceOld)
+            span.preview__price-text.preview__price-text--old= priceOld
+              svg(width="13" height="13")
+                use(href=`img/symbols.svg#icon-rouble-1`)

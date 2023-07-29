@@ -1,0 +1,45 @@
+extends pug/layout.pug
+
+block meta
+  title Список страниц
+
+block content
+  style.
+    fieldset {
+      border: 1px solid #000;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    legend {
+      display: inline-block;
+      width: auto;
+      font-size: 20px;
+      margin-left: 19px;
+      margin-right: 5px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    main {
+      padding-bottom: 40px;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+  main.container
+    fieldset
+      legend Внутр. стр.
+      ol
+        each item in pages
+          li
+            a(href=item.href)= item.text
+

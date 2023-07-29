@@ -1,0 +1,7 @@
+mixin link-icon({icon, text, iconTop = false})
+  - const classNameIconTop = iconTop && 'link-icon--top';
+  a.link-icon(class=classNameIconTop)&attributes(attributes)
+    svg.link-icon__svg(width="24" height="24")
+      use(href=`img/symbols.svg#${icon}`)
+    if(text)
+      span.link-icon__city= text

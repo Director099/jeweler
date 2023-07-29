@@ -1,0 +1,18 @@
+mixin promo(item)
+  -
+    const {
+      title,
+      src,
+      hasContent = true
+    } = item
+
+  a.promo&attributes(attributes)
+    img.promo__img(src=src, alt=title)
+    if(hasContent)
+      .promo__content
+        h3.promo__title= title
+        span.promo__link
+          | Смотреть
+          span.promo__icon-arrow
+            svg(width="93" height="16")
+              use(href="img/symbols.svg#icon-long-arrow")

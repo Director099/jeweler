@@ -1,0 +1,80 @@
+// Style plagin
+@import "variables";
+
+// My style
+
+@import "grid-mixins";
+
+@import "functions";
+
+@import "fonts";
+@import "global";
+
+@import "../blocks/components/grid-tpl/grid-tpl";
+@import "../blocks/components/order/order";
+@import "../blocks/components/stack/stack";
+@import "../blocks/components/gap/gap";
+@import "../blocks/components/line-link/line-link";
+@import "../blocks/components/btn/btn";
+@import "../blocks/components/burger/burger";
+@import "../blocks/components/main-title-montserrat/main-title-montserrat";
+@import "../blocks/components/display/display";
+@import "../blocks/components/page/page";
+@import "../blocks/components/form/form";
+@import "../blocks/components/logo/logo";
+@import "../blocks/components/socials/socials";
+@import "../blocks/components/field-text/field-text";
+@import "../blocks/components/container/container";
+@import "../blocks/components/link-icon/link-icon";
+
+@import "../blocks/components/navigation/navigation";
+@import "../blocks/components/section-content/section-content";
+
+@import "../blocks/project/page-header/page-header";
+@import "../blocks/project/page-footer/page-footer";
+@import "../blocks/project/main-slider/main-slider";
+@import "../blocks/project/blog-place/blog-place";
+@import "../blocks/project/preview/preview";
+@import "../blocks/project/collection/collection";
+@import "../blocks/project/wedding-offer/wedding-offer";
+@import "../blocks/project/promo/promo";
+@import "../blocks/project/category-card/category-card";
+@import "../blocks/project/mobile-menu/mobile-menu";
+
+
+@import "../blocks/project/order-page/order-page";
+
+
+.main-ident {
+  padding-bottom: 60px;
+
+  @media (min-width: $screen-xl) {
+    padding-bottom: 100px;
+  }
+}
+
+//TODO: Вынести
+.swiper-button-arrow {
+  width: 15px;
+  height: 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:after {
+    display: none;
+  }
+}
+
+.swiper-button-arrow {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='26' viewBox='0 0 14 26' fill='none'%3E%3Cpath d='M1 1L13 13L1 25' stroke='%23F75394' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  right: 0px;
+}
+
+.swiper-button-prev {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='26' viewBox='0 0 14 26' fill='none'%3E%3Cpath d='M13 25L1 13L13 1' stroke='%23F75394' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  left: 0px;
+}

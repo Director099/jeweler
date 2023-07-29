@@ -1,0 +1,8 @@
+- const nav = ["Магазины", "Доставка", "Акции"]
+
+mixin navigation
+  nav.navigation&attributes(attributes)
+    ul.navigation__list
+      each item in nav
+        li.navigation__item
+          a.navigation__link= item

@@ -1,0 +1,20 @@
+.navigation__list {
+  @include ul-reset();
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 21px;
+
+  @media (min-width: $screen-xl) {
+    gap: 15px 43px;
+  }
+}
+
+.navigation__link {
+  @include ProximaNovaTextRegular20();
+  display: block;
+  color: $tp-black;
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegulart18();
+  }
+}
