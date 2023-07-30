@@ -1,0 +1,17 @@
+.category-filter {
+  //padding: 0 10px;
+
+  &--material {
+    padding-right: 33px;
+  }
+}
+
+.category-filter__title {
+  @include ProximaNovaTextRegular32();
+  margin-bottom: 57px;
+}
+
+.category-filter__grid {
+  @include ul-reset;
+  gap: 57px 0;
+}

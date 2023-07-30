@@ -1,0 +1,11 @@
+
+mixin category-filter({list, title, classGridItem, src})
+  section.category-filter
+    h2.category-filter__title= title
+    ul.category-filter__grid.grid-tpl
+      each item, i in list
+        li.category-filter__item(class=classGridItem)
+          +filter-link({
+            title: item,
+            src: `${src}-${i + 1}.jpg`
+          })

@@ -1,0 +1,11 @@
+mixin catalog-menu(pageSubCatalogCurrent)
+  aside.catalog-menu&attributes(attributes)
+    ul.catalog-menu__list
+      each item, i in catalogMenulist
+        - const currentActive = item.href === pageSubCatalogCurrent ? "active" : "";
+        li.catalog-menu__item
+          a.catalog-menu__link(href=item.href class=`${i < 1 ? "active" : ''}`)
+            svg.catalog-menu__icon(width="26" height="24")
+              use(href=`img/symbols.svg#icon-subcatalog-${item.icon}`)
+            span= item.text
+

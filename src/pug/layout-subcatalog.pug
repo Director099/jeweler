@@ -1,0 +1,31 @@
+extends layout.pug
+
+block var
+  - const mainClass = 'stack gap-40 gap-md-50 gap-xl-100';
+  - const pageCurrent = pages.catalog.href;
+  - const sidebar = true;
+  - const pageSubCatalogCurrent = pages.catalog.href;
+
+block meta
+  title Каталог
+
+block sidebar
+  +catalog-menu(pageSubCatalogCurrent)
+
+block content
+  block contentSubCatalog
+
+  +category-filter({
+    list: listMaterials,
+    title: 'Материал',
+    classGridItem: 'grid-tpl__col grid-tpl__col--xl-4',
+    src: `img/content/cat-mat`
+  }).category-filter--material
+  +category-filter({
+    list: listJeweler,
+    title: 'Вставка',
+    classGridItem: 'grid-tpl__col grid-tpl__col--xl-3',
+    src: `img/content/cat-stone`
+  }).category-filter--jeweler
+
+

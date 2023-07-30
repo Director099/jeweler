@@ -38,6 +38,13 @@
 }
 
 //ProximaNova Regular
+@mixin ProximaNovaTextRegular32 {
+  font-family: $font-family;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 46px;
+}
+
 @mixin ProximaNovaTextRegular28 {
   font-family: $font-family;
   font-size: 28px;

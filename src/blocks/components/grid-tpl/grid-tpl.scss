@@ -10,6 +10,12 @@
   }
 }
 
+.grid-tpl__col--xl-4 {
+  @media (min-width: $screen-xl) {
+    grid-column: auto/span 4;
+  }
+}
+
 .grid-tpl__col--xl-12 {
   @media (min-width: $screen-xl) {
     grid-column: auto/span 12;
