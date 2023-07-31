@@ -8,10 +8,31 @@
 
 .category-filter__title {
   @include ProximaNovaTextRegular32();
-  margin-bottom: 57px;
+  margin-bottom: 42px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 57px;
+  }
 }
 
 .category-filter__grid {
   @include ul-reset;
-  gap: 57px 0;
+  //display: flex;
+  //flex-wrap: wrap;
+  gap: 30px 26px;
+
+  @media (min-width: $screen-md) {
+    gap: 50px 45px;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 57px 0;
+  }
+}
+
+.category-filter__item {
+
+  //@media (min-width: $screen-xl) {
+  //  width: 33.3333%;
+  //}
 }

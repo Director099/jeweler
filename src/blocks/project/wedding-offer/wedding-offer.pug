@@ -4,10 +4,10 @@ mixin wedding-offer()
   .wedding-offer
     .container
       .grid-tpl.wedding-offer__gap
-        h2.main-title-montserrat.wedding-offer__title.grid-col-12.order-2.order-xl-1 Свадьба
+        h2.main-title-montserrat.wedding-offer__title.grid-tpl-col-12.order-2.order-xl-1 Свадьба
         each item, i in titles
           - const countOrder = i > 1 ? "order-3" : "order-1";
-          .grid-tpl__col.grid-tpl__col--xl-3.grid-tpl__col--6(class=countOrder)
+          .grid-tpl-col-xl-3.grid-tpl-col-6(class=countOrder)
             +category-card({
               title: item,
               img: `img/content/category-card-${i + 1}.jpg`

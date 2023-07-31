@@ -11,7 +11,7 @@
 }
 
 .catalog-menu__link {
-  @include ProximaNovaTextRegular26();
+  @include ProximaNovaTextRegular13();
   display: flex;
   padding: 10px 20px 10px 10px;
   gap: 26px;
@@ -21,5 +21,14 @@
 
   &.active {
     background-color: $bg-gray-1;
+  }
+
+  @media (min-width: $screen-md) {
+    @include ProximaNovaTextRegular26();
+    gap: 19px;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 26px;
   }
 }

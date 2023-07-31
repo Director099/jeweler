@@ -58,7 +58,15 @@
 .main-ident__row {
   display: grid;
   gap: 40px;
-  grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
+  grid-template-columns: 100%;
+
+  @media (min-width: $screen-md) {
+    grid-template-columns: minmax(auto, 100%) minmax(auto, 734px);
+  }
+
+  @media (min-width: $screen-xl) {
+    grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
+  }
 }
 
 //TODO: Вынести
