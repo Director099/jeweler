@@ -23,7 +23,7 @@
     background-color: $bg-gray-1;
   }
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular26();
     gap: 19px;
   }

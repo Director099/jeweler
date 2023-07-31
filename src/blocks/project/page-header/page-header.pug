@@ -35,7 +35,7 @@ mixin page-header({elemBottom=true, elemMenu=true})
       .page-header__top-inner
         +burger('Меню').page-header__burger.d-lg-none
         if(elemMenu)
-          .page-header__col-left.d-none.d-md-flex
+          .page-header__col-left.d-none.d-lg-flex
             each item in links
               +link-icon({
                 icon: item.icon,
@@ -44,12 +44,12 @@ mixin page-header({elemBottom=true, elemMenu=true})
         +logo(pages.index.href).page-header__col-center
           img(src='img/content/logo.svg', alt='Logo')
         if(elemMenu)
-          +navigation.page-header__col-right.d-none.d-md-flex
+          +navigation.page-header__col-right.d-none.d-lg-flex
         +link-icon({
           icon: "icon-search",
-        })(href="#").page-header__btn-icon-search.d-md-none
+        })(href="#").page-header__btn-icon-search.d-lg-none
       if(elemBottom)
-        .page-header__bottom-inner.d-none.d-md-flex
+        .page-header__bottom-inner.d-none.d-lg-flex
           a.btn.btn--dark.page-header__btn-catalog(href=pages.catalog.href)
             svg.btn__icon.btn__icon--right(width="24" height="14")
               use(href="img/symbols.svg#icon-burger")

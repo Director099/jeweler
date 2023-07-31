@@ -60,7 +60,7 @@
   gap: 40px;
   grid-template-columns: 100%;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     grid-template-columns: minmax(auto, 100%) minmax(auto, 734px);
   }
 

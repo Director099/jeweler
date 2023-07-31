@@ -13,12 +13,12 @@
     height: 1px;
     background-color: currentColor;
 
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-lg) {
       bottom: 3px;
     }
   }
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular22();
   }
 }

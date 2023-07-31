@@ -3,7 +3,7 @@
   letter-spacing: 9.52px;
   text-transform: uppercase;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     @include MontserratRegular40();
   }
 }

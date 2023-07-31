@@ -22,7 +22,7 @@
   text-align: center;
   background: $other-gradient-card;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     padding: 42px 30px;
   }
 }
@@ -33,7 +33,7 @@
   margin: 0;
   color: $tp-black;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     @include MontserratRegular26();
     min-height: 64px;
   }

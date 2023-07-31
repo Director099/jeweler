@@ -20,7 +20,7 @@
 .preview__footer {
   padding: 10px 0px 0;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     padding: 20px 10px 0;
   }
 
@@ -33,7 +33,7 @@
   @include ProximaNovaTextRegular13();
   margin-bottom: 5px;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular28();
     margin-bottom: 10px;
   }
@@ -65,7 +65,7 @@
 
 .preview__price-text--current {
   @include ProximaNovaTextRegular13();
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular26();
   }
 }
@@ -75,7 +75,7 @@
   font-style: normal;
   font-weight: 400;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     @include ProximaNovaTextLight20();
   }
   color: $border-gray;

@@ -4,7 +4,7 @@
   border-radius: 8px;
   overflow: hidden;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     grid-gap: 40px;
     border-radius: 20px;
   }
@@ -19,7 +19,7 @@
   text-align: center;
   margin-top: 10px;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     margin-top: 40px;
   }
 }

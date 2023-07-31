@@ -12,7 +12,7 @@
     gap: 12px;
   }
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular20();
   }
 }

@@ -12,7 +12,7 @@
   box-shadow: 0px 4px 5px 0px rgba($black, 0.14);
 
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     padding-top: 12px;
     padding-bottom: 36px;
     box-shadow: none;
@@ -31,7 +31,7 @@
   gap: 25px;
 
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 27px;
@@ -56,7 +56,7 @@
   text-align: center;
   max-width: 168px;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     max-width: 100%;
   }
 }

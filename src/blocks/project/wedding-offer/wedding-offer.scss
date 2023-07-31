@@ -12,7 +12,7 @@
   border-radius: 10px;
   overflow: hidden;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     gap: 45px;
     border-radius: 0;
     overflow: visible;
