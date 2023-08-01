@@ -6,4 +6,14 @@ block contentSubCatalog
     slidesCount: 2,
     srcNumber: 2
   }).main-slider--catalog
+  .d-none.d-xl-block
+    ul.sub-category.grid-tpl-xl-5
+      each item in catalogMenulist
+        if (item.text == 'Акции' || item.text == 'Новинки' || item.text == 'Свадьба')
+        else
+          li.sub-category__item
+            +sub-category-link({
+              text: item.text,
+              href: item.href,
+            })(class=`sub-category-link--${item.icon}`)
 

@@ -1,0 +1,15 @@
+.sub-category {
+  @include ul-reset;
+  display: grid;
+  grid-gap: 20px 15px;
+
+  @media (min-width: $screen-md) {
+    grid-gap: 24px 40px;
+    //padding-right: 54px; Верни
+  }
+
+  @media (min-width: $screen-xl) {
+    grid-gap: 30px;
+    //padding-right: 260px; Верни
+  }
+}

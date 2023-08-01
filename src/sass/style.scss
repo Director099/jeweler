@@ -27,6 +27,8 @@
 @import "../blocks/components/container/container";
 @import "../blocks/components/link-icon/link-icon";
 @import "../blocks/components/filter-link/filter-link";
+@import "../blocks/components/sub-category/sub-category";
+@import "../blocks/components/sub-category-link/sub-category-link";
 
 @import "../blocks/components/navigation/navigation";
 @import "../blocks/components/section-content/section-content";
@@ -57,14 +59,18 @@
 
 .main-ident__row {
   display: grid;
-  gap: 40px;
-  grid-template-columns: 100%;
+  grid-template-columns: minmax(auto, 100%) minmax(auto, calc(100% - 90px));
+  align-items: flex-start;
+  padding-top: 40px;
 
   @media (min-width: $screen-lg) {
+    padding-top: 0;
+    gap: 20px;
     grid-template-columns: minmax(auto, 100%) minmax(auto, 734px);
   }
 
   @media (min-width: $screen-xl) {
+    gap: 40px;
     grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
   }
 }

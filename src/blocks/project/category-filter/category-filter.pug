@@ -1,10 +1,10 @@
 
 mixin category-filter({list, title, classGridItem, src})
-  section.category-filter
+  section.category-filter&attributes(attributes)
     h2.category-filter__title= title
-    ul.category-filter__grid.grid-tpl
+    ul.category-filter__grid(class=classGridItem)
       each item, i in list
-        li.category-filter__item(class=classGridItem)
+        li.category-filter__item
           +filter-link({
             title: item,
             src: `${src}-${i + 1}.jpg`

@@ -1,0 +1,64 @@
+.sub-category-link {
+  @include ProximaNovaTextRegular10();
+  display: block;
+  padding: 14px 10px;
+  border-radius: 10px;
+  border: 0.5px solid $border-gray;
+  text-decoration: none;
+  color: inherit;
+  background-repeat: no-repeat;
+  background-position: center right;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular20();
+    padding: 14px 10px 12px;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular28();
+    padding: 20px 23px;
+  }
+
+  &--main {
+    @media (max-width: $screen-md - 1) {
+      @include ProximaNovaTextRegular13();
+      text-align: center;
+    }
+  }
+
+  &--rings {
+    background-image: url('../img/decor/subcatalog-rings.png');
+  }
+
+  &--earrings {
+    background-image: url('../img/decor/subcatalog-earrings.png');
+  }
+
+  &--chain {
+    background-image: url('../img/decor/subcatalog-chain.png');
+  }
+
+  &--bracelets {
+    background-image: url('../img/decor/subcatalog-bracelets.png');
+  }
+
+  &--pendants {
+    background-image: url('../img/decor/subcatalog-pendants.png');
+  }
+
+  &--necklace {
+    background-image: url('../img/decor/subcatalog-necklace.png');
+  }
+
+  &--piercing {
+    background-image: url('../img/decor/subcatalog-piercing.png');
+  }
+
+  &--pin {
+    background-image: url('../img/decor/subcatalog-pin.png');
+  }
+
+  &--brooch {
+    background-image: url('../img/decor/subcatalog-brooch.png');
+  }
+}

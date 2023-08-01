@@ -1,16 +1,14 @@
 mixin collection
   .collection
     .container
-      section.grid-tpl.collection__grid-gap
+      section.grid-tpl-2.collection__grid-gap
         - for (let i = 1; i < 5; i++)
           if(i === 3)
-            .grid-tpl-col-12
-              h2.main-title-montserrat.collection__title Top gold
-          .grid-tpl-col-6
-            +promo({
-              src: `img/content/collection-${i}.jpg`,
-              title: 'topGold',
-              hasContent: false,
-            }).collection__content
+            h2.main-title-montserrat.collection__title.grid-tpl-col-2 Top gold
+          +promo({
+            src: `img/content/collection-${i}.jpg`,
+            title: 'topGold',
+            hasContent: false,
+          }).collection__content
       .collection__link-wrap
         a.line-link.collection__link(hrf="#") смотреть коллекцию
