@@ -9,6 +9,7 @@ block var
     - const catalogFilter = true;
     - const pageSubCatalogCurrentHref = pages.catalog.href;
     - const pageSubCatalogCurrentTitle = "Все украшения";
+    - const categoryFilterMdHidden = false;
 
 block meta
   title Каталог
@@ -17,7 +18,7 @@ block sidebar
   +catalog-menu(pageSubCatalogCurrentHref)
 
 block content
-  h2.catalog-title.d-lg-none= pageSubCatalogCurrentTitle
+  h1.catalog-title.d-lg-none= pageSubCatalogCurrentTitle
   block contentSubCatalog
 
   if(catalogFilter)
@@ -26,10 +27,10 @@ block content
       title: 'Материал',
       classGridItem: 'grid-tpl-2 grid-tpl-lg-6 grid-tpl-xl-3',
       src: `img/content/cat-mat`
-    }).category-filter--material
+    })(class= categoryFilterMdHidden && "d-lg-none d-xl-block").category-filter--material
     +category-filter({
       list: listJeweler,
       title: 'Вставка',
       classGridItem: 'grid-tpl-3 grid-tpl-lg-5 grid-tpl-xl-4',
       src: `img/content/cat-stone`
-    }).category-filter--jeweler
+    })(class= categoryFilterMdHidden && "d-lg-none d-xl-block").category-filter--jeweler

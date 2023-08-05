@@ -83,7 +83,7 @@
 .page-header__buttons-list {
   @include ul-reset();
   display: flex;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   gap: 15px 21px;
 
   @media (min-width: $screen-xl) {

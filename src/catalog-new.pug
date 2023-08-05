@@ -1,0 +1,28 @@
+extends pug/layout-subcatalog.pug
+
+block subCatalogVar
+  - const catalogFilter = true;
+  - const pageSubCatalogCurrentHref = pages.catalogNew.href;
+  - const pageSubCatalogCurrentTitle = pages.catalogNew.text;
+  - const categoryFilterMdHidden = true;
+
+block contentSubCatalog
+  //TODO:Подумать над неймингом, возможно стойт оставить как есть
+  +main-slider({
+    slidesCount: 2,
+    srcNumber: 3
+  }).main-slider--catalog.d-lg-none.d-xl-block
+  .list-actions.d-none.d-lg-block.d-xl-none
+    .list-actions__grid.grid-tpl-1
+      - for (let i = 1; i < 6; i++)
+        +promo({
+          src: `img/content/catalog-new/catalog-new-${i}.jpg `,
+          title: pages.catalogNew.text,
+          hasContent: false,
+        })(href=pages.catalogActions.href)
+  +category-list({
+    classNameGrid: 'grid-tpl-xl-5',
+    list: catalogMenulist,
+    tplContent: 'category-link',
+    isTextHidden: ['Акции', 'Новинки', 'Свадьба']
+  }).d-none.d-xl-block
