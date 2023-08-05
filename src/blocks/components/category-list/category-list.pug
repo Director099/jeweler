@@ -1,0 +1,17 @@
+mixin category-list({classNameGrid, list, tplContent})
+  .category-list&attributes(attributes)
+    ul.category-list__grid(class= classNameGrid)
+      each item in list
+        if (item.text !== 'Акции' && item.text !== 'Новинки' && item.text !== 'Свадьба')
+          li.category-list__item
+            if(tplContent === 'category-link')
+              +category-link({
+                text: item.text,
+                href: item.href,
+              })(class=`category-link--${item.icon}`)
+            if(tplContent === 'category-tile')
+              +category-tile({
+                href: item.href,
+                text: item.text,
+                src: `img/content/category-${item.icon}.jpg`
+              })

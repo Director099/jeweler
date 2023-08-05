@@ -1,5 +1,5 @@
-mixin category-tile({href, title, src})
+mixin category-tile({href, text, src})
   a.category-tile(href=href)
     .category-tile__img
-      img(src=src alt=title)
-    h3.category-tile__title= title
+      img(src=src alt=text)
+    h3.category-tile__title= text
