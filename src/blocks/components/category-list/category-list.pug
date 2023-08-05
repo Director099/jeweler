@@ -4,8 +4,9 @@ mixin category-list({classNameGrid, list, tplContent, isTextHidden=[]})
       each item in list
         - const elemHiddenXl = !!item.sizeMd && 'd-xl-none';
         - const elemHiddenLg = !!item.sizeXs && 'd-lg-none';
+        - const elemShowXl = !!item.sizeXl && 'd-none d-xl-block'
         if (!isTextHidden.includes(item.text))
-          li.category-list__item(class=[elemHiddenXl, elemHiddenLg])
+          li.category-list__item(class=[elemHiddenXl, elemHiddenLg, elemShowXl])
             if(tplContent === 'category-link')
               +category-link({
                 text: item.text,
