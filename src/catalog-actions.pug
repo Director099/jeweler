@@ -6,8 +6,8 @@ block subCatalogVar
   - const pageSubCatalogCurrentTitle = pages.catalogActions.text;
 
 block contentSubCatalog
-  .list-actions
-    .list-actions__grid.grid-tpl-1.grid-tpl-xl-2
+  .promo-list
+    .promo-list__grid.grid-tpl-1.grid-tpl-xl-2
       - for (let i = 1; i < 6; i++)
         +promo({
           src: `img/content/catalog-actions/action-${i}`,

@@ -1,0 +1,30 @@
+.wedding-list__grid {
+  gap: 20px 5px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  @media (min-width: $screen-lg) {
+    gap: 30px;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 60px 46px;
+  }
+}
+
+.wedding-list__link {
+  height: 160px;
+  @media (min-width: $screen-lg) {
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+}
+
+.wedding-list__link {
+  .category-card__title {
+    min-height: auto;
+  }
+}

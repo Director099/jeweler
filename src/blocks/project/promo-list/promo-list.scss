@@ -1,0 +1,21 @@
+.promo-list__grid {
+  gap: 30px;
+  @media (min-width: $screen-xl) {
+    gap: 60px 46px;
+  }
+}
+
+.promo-list__link-promo {
+  .promo__content {
+    position: absolute;
+    padding: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .promo__title {
+    @include MontserratRegular40();
+    margin: 0;
+    letter-spacing: normal;
+  }
+}

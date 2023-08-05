@@ -5,6 +5,15 @@ block subCatalogVar
   - const pageSubCatalogCurrentHref = pages.catalogNew.href;
   - const pageSubCatalogCurrentTitle = pages.catalogNew.text;
   - const categoryFilterMdHidden = true;
+  -
+    const listPromo = [
+      "Кольца",
+      "Серьги",
+      "Браслеты",
+      "Колье",
+      "Цепи",
+      "Подвески"
+    ]
 
 block contentSubCatalog
   //TODO:Подумать над неймингом, возможно стойт оставить как есть
@@ -12,14 +21,16 @@ block contentSubCatalog
     slidesCount: 2,
     srcNumber: 3
   }).main-slider--catalog.d-lg-none.d-xl-block
-  .list-actions.d-none.d-lg-block.d-xl-none
-    .list-actions__grid.grid-tpl-1
-      - for (let i = 1; i < 6; i++)
+  .promo-list.d-none.d-lg-block.d-xl-none
+    .promo-list__grid.grid-tpl-1
+      each item, i in listPromo
         +promo({
-          src: `img/content/catalog-new/catalog-new-${i}.jpg `,
-          title: pages.catalogNew.text,
-          hasContent: false,
-        })(href=pages.catalogActions.href)
+          src: `img/content/catalog-new/catalog-new-${i + 1}.jpg `,
+          title: item,
+          hasContent: true,
+          hasBtnLink: false
+        })(href=pages.catalog.href).promo-list__link-promo
+        // TODO: Проставь ссылку на фильт товара
   +category-list({
     classNameGrid: 'grid-tpl-xl-5',
     list: catalogMenulist,

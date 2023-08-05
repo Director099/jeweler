@@ -4,7 +4,8 @@ mixin promo(item)
       title,
       src,
       srcset=false,
-      hasContent = true
+      hasContent = true,
+      hasBtnLink= true
     } = item
 
   a.promo&attributes(attributes)
@@ -18,8 +19,9 @@ mixin promo(item)
     if(hasContent)
       .promo__content
         h3.promo__title= title
-        span.promo__link
-          | Смотреть
-          span.promo__icon-arrow
-            svg(width="93" height="16")
-              use(href="img/symbols.svg#icon-long-arrow")
+        if(hasBtnLink)
+          span.promo__link
+            | Смотреть
+            span.promo__icon-arrow
+              svg(width="93" height="16")
+                use(href="img/symbols.svg#icon-long-arrow")
