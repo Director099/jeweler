@@ -6,14 +6,24 @@ block contentSubCatalog
     slidesCount: 2,
     srcNumber: 2
   }).main-slider--catalog
-  .d-none.d-xl-block
-    ul.sub-category.grid-tpl-xl-5
+  .category-list.d-none.d-xl-block
+    ul.category-list__grid.grid-tpl-xl-5
       each item in catalogMenulist
         if (item.text == 'Акции' || item.text == 'Новинки' || item.text == 'Свадьба')
         else
-          li.sub-category__item
-            +sub-category-link({
+          li.category-list__item
+            +category-link({
               text: item.text,
               href: item.href,
-            })(class=`sub-category-link--${item.icon}`)
-
+            })(class=`category-link--${item.icon}`)
+  .category-list.category-list--md-ident.d-xl-none
+    ul.category-list__grid.grid-tpl-2.grid-tpl-lg-4
+      each item in catalogMenulist
+        if (item.text == 'Акции' || item.text == 'Новинки' || item.text == 'Свадьба')
+        else
+          li.category-list__item
+            +category-tile({
+              href: item.href,
+              title: item.text,
+              src: `img/content/category-${item.icon}.jpg`
+            })

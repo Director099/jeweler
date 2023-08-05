@@ -31,7 +31,7 @@
   &.active {
     color: $black;
 
-    .link-icon__city {
+    .link-icon__text {
       position: relative;
       &::after {
         content: "";

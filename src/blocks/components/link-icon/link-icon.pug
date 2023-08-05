@@ -4,4 +4,4 @@ mixin link-icon({icon, text, iconTop = false})
     svg.link-icon__svg(width="24" height="24")
       use(href=`img/symbols.svg#${icon}`)
     if(text)
-      span.link-icon__city= text
+      span.link-icon__text= text

@@ -1,4 +1,4 @@
-.sub-category-link {
+.category-link {
   @include ProximaNovaTextRegular10();
   display: block;
   padding: 14px 10px;
@@ -16,11 +16,11 @@
 
   @media (min-width: $screen-xl) {
     @include ProximaNovaTextRegular28();
-    padding: 20px 23px;
+    padding: 22px 19px;
   }
 
   &--main {
-    @media (max-width: $screen-md - 1) {
+    @media (max-width: $screen-lg - 1) {
       @include ProximaNovaTextRegular13();
       text-align: center;
     }

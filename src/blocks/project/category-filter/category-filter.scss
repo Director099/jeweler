@@ -6,6 +6,16 @@
       padding-right: 33px;
     }
   }
+
+  &--jeweler {
+    @media (min-width: $screen-lg) {
+      padding-right: 60px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-right: 0px;
+    }
+  }
 }
 
 .category-filter__title {

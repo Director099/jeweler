@@ -3,8 +3,9 @@
 mixin wedding-offer()
   .wedding-offer
     .container
-      section.grid-tpl-2.grid-tpl-xl-4.wedding-offer__gap
-        h2.main-title-montserrat.wedding-offer__title.grid-tpl-col-2.grid-tpl-col-xl-4.order-2.order-xl-1 Свадьба
+      .grid-tpl-2.grid-tpl-xl-4.wedding-offer__gap
+        header.grid-tpl-col-2.grid-tpl-col-xl-4.order-2.order-xl-1
+          h2.main-title-montserrat.wedding-offer__title Свадьба
         each item, i in titles
           - const countOrder = i > 1 ? "order-3" : "order-1";
           +category-card({

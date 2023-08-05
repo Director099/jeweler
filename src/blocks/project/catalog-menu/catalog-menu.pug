@@ -1,5 +1,10 @@
 mixin catalog-menu(pageSubCatalogCurrent)
   aside.catalog-menu&attributes(attributes)
+    //TODO: Подумать над реализацией
+    //+link-icon({
+    //  icon: 'icon-arrow',
+    //  text: "Назад",
+    //}).catalog-menu__back
     ul.catalog-menu__list
       each item, i in catalogMenulist
         - const currentActive = item.href === pageSubCatalogCurrent ? "active" : "";

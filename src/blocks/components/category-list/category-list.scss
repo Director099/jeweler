@@ -1,0 +1,25 @@
+.category-list--md-ident {
+  @media (min-width: $screen-lg) {
+    padding-right: 85px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-right: 0;
+  }
+}
+
+.category-list__grid {
+  @include ul-reset;
+  display: grid;
+  grid-gap: 20px 15px;
+
+  @media (min-width: $screen-lg) {
+    grid-gap: 24px 40px;
+    //padding-right: 54px; Верни
+  }
+
+  @media (min-width: $screen-xl) {
+    grid-gap: 40px 24px;
+    //padding-right: 260px; Верни
+  }
+}

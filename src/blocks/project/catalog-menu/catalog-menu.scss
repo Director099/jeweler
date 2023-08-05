@@ -37,7 +37,7 @@
   padding: 2px 19.4px;
   color: inherit;
   text-decoration: none;
-  min-height: 68px;
+  min-height: 52px;
 
 
   &.active {
@@ -60,4 +60,10 @@
   @media (min-width: $screen-xl) {
     gap: 26px;
   }
+}
+
+.catalog-menu__back {
+  @include ProximaNovaTextRegular22();
+  text-transform: uppercase;
+  margin-bottom: 30px;
 }
