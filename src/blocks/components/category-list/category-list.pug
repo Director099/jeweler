@@ -1,9 +1,11 @@
-mixin category-list({classNameGrid, list, tplContent})
+mixin category-list({classNameGrid, list, tplContent, isTextHidden=[]})
   .category-list&attributes(attributes)
     ul.category-list__grid(class= classNameGrid)
       each item in list
-        if (item.text !== 'Акции' && item.text !== 'Новинки' && item.text !== 'Свадьба')
-          li.category-list__item
+        - const elemHiddenXl = !!item.sizeMd && 'd-xl-none';
+        - const elemHiddenLg = !!item.sizeXs && 'd-lg-none';
+        if (!isTextHidden.includes(item.text))
+          li.category-list__item(class=[elemHiddenXl, elemHiddenLg])
             if(tplContent === 'category-link')
               +category-link({
                 text: item.text,

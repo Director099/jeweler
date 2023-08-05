@@ -9,10 +9,12 @@ block contentSubCatalog
   +category-list({
     classNameGrid: 'grid-tpl-xl-5',
     list: catalogMenulist,
-    tplContent: 'category-link'
+    tplContent: 'category-link',
+    isTextHidden: ['Акции', 'Новинки', 'Свадьба']
   }).d-none.d-xl-block
   +category-list({
     classNameGrid: 'grid-tpl-2 grid-tpl-lg-4',
     list: catalogMenulist,
-    tplContent: 'category-tile'
+    tplContent: 'category-tile',
+    isTextHidden: ['Акции', 'Новинки', 'Свадьба']
   }).category-list--md-ident.d-xl-none
