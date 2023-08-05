@@ -1,0 +1,6 @@
+.list-actions {
+  gap: 30px;
+  @media (min-width: $screen-xl) {
+    gap: 60px 46px;
+  }
+}

@@ -1,8 +1,22 @@
-- const nav = ["Магазины", "Доставка", "Акции"]
+-
+  const nav = [
+    {
+      href: pages.actions.href,
+      text: "Магазины",
+    },
+    {
+      href: pages.actions.href,
+      text: "Доставка",
+    },
+    {
+      href: pages.actions.href,
+      text: pages.actions.text
+    }
+  ]
 
 mixin navigation
   nav.navigation&attributes(attributes)
     ul.navigation__list
       each item in nav
         li.navigation__item
-          a.navigation__link= item
+          a.navigation__link(href=item.href)= item.text

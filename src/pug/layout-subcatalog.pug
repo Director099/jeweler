@@ -4,26 +4,32 @@ block var
   - const mainClass = 'stack gap-40 gap-md-50 gap-xl-100';
   - const pageCurrent = pages.catalog.href;
   - const sidebar = true;
-  - const pageSubCatalogCurrent = pages.catalog.href;
+
+  block subCatalogVar
+    - const catalogFilter = true;
+    - const pageSubCatalogCurrentHref = pages.catalog.href;
+    - const pageSubCatalogCurrentTitle = "Все украшения";
 
 block meta
   title Каталог
 
 block sidebar
-  +catalog-menu(pageSubCatalogCurrent)
+  +catalog-menu(pageSubCatalogCurrentHref)
 
 block content
+  h2.catalog-title.d-lg-none= pageSubCatalogCurrentTitle
   block contentSubCatalog
 
-  +category-filter({
-    list: listMaterials,
-    title: 'Материал',
-    classGridItem: 'grid-tpl-2 grid-tpl-lg-6 grid-tpl-xl-3',
-    src: `img/content/cat-mat`
-  }).category-filter--material
-  +category-filter({
-    list: listJeweler,
-    title: 'Вставка',
-    classGridItem: 'grid-tpl-3 grid-tpl-lg-5 grid-tpl-xl-4',
-    src: `img/content/cat-stone`
-  }).category-filter--jeweler
+  if(catalogFilter)
+    +category-filter({
+      list: listMaterials,
+      title: 'Материал',
+      classGridItem: 'grid-tpl-2 grid-tpl-lg-6 grid-tpl-xl-3',
+      src: `img/content/cat-mat`
+    }).category-filter--material
+    +category-filter({
+      list: listJeweler,
+      title: 'Вставка',
+      classGridItem: 'grid-tpl-3 grid-tpl-lg-5 grid-tpl-xl-4',
+      src: `img/content/cat-stone`
+    }).category-filter--jeweler

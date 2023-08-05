@@ -30,6 +30,7 @@
 @import "../blocks/components/category-list/category-list";
 @import "../blocks/components/category-link/category-link";
 @import "../blocks/components/category-tile/category-tile";
+@import "../blocks/components/catalog-title/catalog-title";
 
 @import "../blocks/components/navigation/navigation";
 @import "../blocks/components/section-content/section-content";
@@ -46,6 +47,7 @@
 @import "../blocks/project/mobile-menu/mobile-menu";
 @import "../blocks/project/catalog-menu/catalog-menu";
 @import "../blocks/project/category-filter/category-filter";
+@import "../blocks/project/list-actions/list-actions";
 
 @import "../blocks/project/order-page/order-page";
 
@@ -60,19 +62,25 @@
 
 .main-ident__row {
   display: grid;
-  grid-template-columns: minmax(auto, 100%) minmax(auto, calc(100% - 90px));
+  // TODO не подошло на других страницах
+  //grid-template-columns: minmax(auto, 100%) minmax(auto, calc(100% - 90px));
+  grid-template-columns: 90px minmax(auto, calc(100% - 90px));
   align-items: flex-start;
   padding-top: 40px;
 
   @media (min-width: $screen-lg) {
     padding-top: 0;
     gap: 20px;
-    grid-template-columns: minmax(auto, 100%) minmax(auto, 734px);
+    // TODO не подошло на других страницах
+    //grid-template-columns: minmax(auto, 100%) minmax(auto, 734px);
+    grid-template-columns: auto minmax(auto, 734px);
   }
 
   @media (min-width: $screen-xl) {
     gap: 40px;
-    grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
+    // TODO не подошло на других страницах
+    //grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
+    grid-template-columns: auto minmax(auto, 1354px);
   }
 }
 

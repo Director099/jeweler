@@ -1,0 +1,16 @@
+extends pug/layout-subcatalog.pug
+
+block subCatalogVar
+  - const catalogFilter = false;
+  - const pageSubCatalogCurrentHref = pages.actions.href;
+  - const pageSubCatalogCurrentTitle = pages.actions.text;
+
+block contentSubCatalog
+  .list-actions.grid-tpl-1.grid-tpl-xl-2
+    - for (let i = 1; i < 6; i++)
+      +promo({
+        src: `img/content/catalog-actions/action-${i}`,
+        title: 'Акция',
+        hasContent: false,
+        srcset: true
+      })(href=pages.actions.href)
