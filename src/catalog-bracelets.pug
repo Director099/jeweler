@@ -2,16 +2,16 @@ extends pug/layout-subcatalog.pug
 
 block subCatalogVar
   - const catalogFilter = true;
-  - const pageSubCatalogCurrentHref = pages.catalogRings.href;
-  - const pageSubCatalogCurrentTitle = pages.catalogRings.text;
-  - const reingsText = `<span class="d-none d-xl-inline-block">кольца</span>`;
-  - const listRings = ["Все кольца", `Помолвочные ${reingsText}`, `Обручальные ${reingsText}`]
+  - const pageSubCatalogCurrentHref = pages.catalogBracelets.href;
+  - const pageSubCatalogCurrentTitle = pages.catalogBracelets.text;
+  - const reingsText = `<span class="d-none d-xl-inline-block">браслет</span>`;
+  - const listRings = ["Все браслеты", `Цепной  ${reingsText}`, `Сегментарный ${reingsText}`]
 
 block contentSubCatalog
   .category-list-prev.grid-tpl-1.grid-tpl-xl-3
     each item, i in listRings
       +promo({
-        src: `img/content/catalog-jeweler/catalog-rings-${i + 1}`,
+        src: `img/content/catalog-jeweler/catalog-bracelet-${i + 1}`,
         title: item,
         hasContent: true,
         srcset: true,
