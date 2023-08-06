@@ -2,7 +2,7 @@ mixin accordion({title, count=false, list=[], tplContent})
   .accordion(data-accordion="parent")&attributes(attributes)
     each item, i in list
       - const countList = count ? `${i + 1}. ` : '';
-      .accordion__element.is-active(data-accordion="element")
+      .accordion__element.is-active(data-accordion="element", id=`scroll-${i + 1}`)
         h3.accordion__title(data-accordion="button")!= countList + item.title
         .accordion__content(data-accordion="content")
           .accordion__wrapper!= item.tplContent

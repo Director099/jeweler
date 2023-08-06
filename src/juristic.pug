@@ -1,7 +1,6 @@
 extends pug/layout.pug
 
 block var
-  //TODO: Цифры ничего не решают, создай отдельный класс на отступ
   - const pageCurrent = pages.juristic.href;
   -
     const listJuristic = [
@@ -41,7 +40,8 @@ block meta
 block content
   .container
     h1 Политика конфиденциальности
-    div(style="width: 1070px; margin-left: auto")
+    div.main-ident__row
+      +navigation-changer(listJuristic)
       +accordion({
         list: listJuristic,
         count: true

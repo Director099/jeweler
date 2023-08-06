@@ -1,0 +1,6 @@
+mixin navigation-changer(list=[])
+  nav.navigation-changer&attributes(attributes)
+    ul.navigation-changer__list
+      each item, i in list
+        li.navigation-changer__item
+          a.navigation-changer__link(href=`#scroll-${i + 1}`, data-navigation-link)= item.title
