@@ -18,7 +18,7 @@ mixin promo(item)
       img.promo__img(src=src, alt=title)
     if(hasContent)
       .promo__content
-        h3.promo__title= title
+        h3.promo__title!= title
         if(hasBtnLink)
           span.promo__link
             | Смотреть

@@ -4,7 +4,8 @@ block subCatalogVar
   - const catalogFilter = true;
   - const pageSubCatalogCurrentHref = pages.catalogRings.href;
   - const pageSubCatalogCurrentTitle = pages.catalogRings.text;
-  - const listRings = ["Все кольца", "Помолвочные кольца", "Обручальные кольца"]
+  - const reingsText = `<span class="d-none d-xl-inline-block">кольца</span>`;
+  - const listRings = ["Все кольца", `Помолвочные ${reingsText}`, `Обручальные ${reingsText}`]
 
 block contentSubCatalog
   .category-list-prev.grid-tpl-1.grid-tpl-xl-3
