@@ -30,6 +30,13 @@
   }
 }
 
+@mixin MontserratRegular34 {
+  font-family: $font-family-2;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: normal;
+}
+
 @mixin MontserratRegular26 {
   font-family: $font-family-2;
   font-size: 26px;

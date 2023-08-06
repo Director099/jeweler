@@ -4,6 +4,14 @@ block subCatalogVar
   - const catalogFilter = true;
   - const pageSubCatalogCurrentHref = pages.catalogRings.href;
   - const pageSubCatalogCurrentTitle = pages.catalogRings.text;
+  - const listRings = ["Все кольца", "Помолвочные кольца", "Обручальные кольца"]
 
 block contentSubCatalog
-
+  .category-list-prev.grid-tpl-1.grid-tpl-xl-3
+    each item, i in listRings
+      +promo({
+        src: `img/content/catalog-rings/catalog-rings-${i + 1}`,
+        title: item,
+        hasContent: true,
+        srcset: true,
+      })(href="#").category-list-prev__link
