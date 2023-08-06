@@ -17,6 +17,7 @@
 @import "../blocks/components/line-link/line-link";
 @import "../blocks/components/btn/btn";
 @import "../blocks/components/burger/burger";
+@import "../blocks/components/accordion/accordion";
 @import "../blocks/components/main-title-montserrat/main-title-montserrat";
 @import "../blocks/components/display/display";
 @import "../blocks/components/page/page";
@@ -83,6 +84,33 @@
     // TODO не подошло на других страницах
     //grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
     grid-template-columns: auto minmax(auto, 1354px);
+  }
+}
+
+.text-content {
+  @include ProximaNovaTextRegular32();
+
+  p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 47px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    + p {
+      margin-top: 47px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $other-blue;
   }
 }
 

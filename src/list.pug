@@ -36,10 +36,22 @@ block content
     }
 
   main.container
+    - const pageCatalogs = (elem) => !elem.href.indexOf('catalog');
     fieldset
       legend Внутр. стр.
       ol
         each item in pages
-          li
-            a(href=item.href)= item.text
-
+          if(!item.hidden && !pageCatalogs(item))
+            li
+              a(href=item.href)= item.text
+    fieldset
+      legend Каталог
+      ol
+        each item in pages
+          if(pageCatalogs(item))
+            li
+              a(href=item.href)= item.text
+    fieldset
+      legend Корзина
+    fieldset
+      legend ЛК

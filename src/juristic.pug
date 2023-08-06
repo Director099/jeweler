@@ -1,0 +1,48 @@
+extends pug/layout.pug
+
+block var
+  //TODO: Цифры ничего не решают, создай отдельный класс на отступ
+  - const pageCurrent = pages.juristic.href;
+  -
+    const listJuristic = [
+      {
+        title: "Общие положения",
+        tplContent: generalProvisions()
+      },
+      {
+        title: "Персональные данные, которые мы обрабатываем",
+        tplContent: personalInformation()
+      },
+      {
+        title: "Цели и сроки обработки данных. Действия, совершаемые с персональными данными",
+        tplContent: dataProcessing()
+      },
+      {
+        title: "Cookie-файлы. Аналитические системы",
+        tplContent: security(),
+      },
+      {
+        title: "Взаимодействие с нами по вопросам обработки персональных данных",
+        tplContent: interaction(),
+      },
+      {
+        title: "Безопасность и конфиденциальность  персональных данных",
+        tplContent: security()
+      },
+      {
+        title: "Изменения политики",
+        tplContent: policyChanges()
+      }
+    ]
+
+block meta
+  title Политика конфиденциальности
+
+block content
+  .container
+    h1 Политика конфиденциальности
+    div(style="width: 1070px; margin-left: auto")
+      +accordion({
+        list: listJuristic,
+        count: true
+      }).text-content.stack.gap-40(data-close-inner="")
