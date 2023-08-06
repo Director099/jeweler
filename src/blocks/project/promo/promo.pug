@@ -8,14 +8,16 @@ mixin promo(item)
       hasBtnLink= true
     } = item
 
+    const replaceTitle = title.replace(/( |<([^>]+)>)/ig, " ");
+
   a.promo&attributes(attributes)
     if(srcset)
       picture
         source(srcset=`${src}-xl.jpg` media=`(min-width: ${media.xl}px)`)
         source(srcset=`${src}-lg.jpg` media=`(min-width: ${media.lg}px)`)
-        img.promo__img(src=`${src}.jpg`, alt=title)
+        img.promo__img(src=`${src}.jpg`, alt=replaceTitle)
     else
-      img.promo__img(src=src, alt=title)
+      img.promo__img(src=src, alt=replaceTitle)
     if(hasContent)
       .promo__content
         h3.promo__title!= title
