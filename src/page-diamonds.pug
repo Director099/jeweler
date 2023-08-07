@@ -1,0 +1,43 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.pageDiamond.href;
+  - const sidebar = true;
+  - const gridClass = "main-ident__page-info";
+  - const pageMainTitle = pages.pageDiamond.text;
+  - const classPageMain = "main-ident__title";
+  -
+    const listPageDiamonds = [
+      {
+        title: "Общие сведения",
+        tplContent: generalInformation()
+      },
+      {
+        title: "Вес бриллиантов",
+        tplContent: diamondWeight()
+      },
+      {
+        title: "Чистота бриллиантов",
+        tplContent: clarityOfDiamonds()
+      },
+      {
+        title: "Цвет и оттенок",
+        tplContent: colorAndShade(),
+      },
+      {
+        title: "Проверка качества",
+        tplContent: qualityCheck(),
+      },
+    ]
+
+block meta
+  title Мир бриллиантов
+
+block sidebar
+  +navigation-changer(listPageDiamonds).d-none.d-xl-block
+
+block content
+  +accordion({
+    list: listPageDiamonds,
+    count: true
+  }).text-content.stack.gap-40(data-close-inner="")

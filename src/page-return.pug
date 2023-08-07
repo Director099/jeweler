@@ -1,0 +1,39 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.pageReturn.href;
+  - const sidebar = true;
+  - const gridClass = "main-ident__page-info";
+  - const pageMainTitle = pages.pageReturn.text;
+  - const classPageMain = "main-ident__title";
+  -
+    const listPageDiamonds = [
+      {
+        title: "Товары надлежащего качества",
+        tplContent: goodsOfProper()
+      },
+      {
+        title: "Товары ненадлежащего качества",
+        tplContent: goodsOfInadequate()
+      },
+      {
+        title: "Гарантия",
+        tplContent: guarantee()
+      },
+      {
+        title: "Правила возврата в розничном магазине",
+        tplContent: retailStoreReturn()
+      },
+    ]
+
+block meta
+  title Мир бриллиантов
+
+block sidebar
+  +navigation-changer(listPageDiamonds).d-none.d-xl-block
+
+block content
+  +accordion({
+    list: listPageDiamonds,
+    count: true
+  }).text-content.stack.gap-40(data-close-inner="")
