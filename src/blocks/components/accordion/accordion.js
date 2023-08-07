@@ -116,8 +116,6 @@ export class Accordions {
     if (parentElement.hasAttribute('data-single')) {
       this.closeAllAccordion(parentElement);
     }
-
-    console.dir(contentElement, "contentElement")
     element.classList.add('is-active');
     if (transition) {
       contentElement.style.maxHeight = `${this._openHeight}px`;

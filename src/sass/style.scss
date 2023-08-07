@@ -64,7 +64,7 @@
   }
 }
 
-.main-ident__row {
+.main-ident__catalog {
   display: grid;
   // TODO не подошло на других страницах
   //grid-template-columns: minmax(auto, 100%) minmax(auto, calc(100% - 90px));
@@ -88,8 +88,20 @@
   }
 }
 
+.main-ident__page-info {
+  display: grid;
+
+  @media (min-width: $screen-xl) {
+    gap: 40px;
+    // TODO не подошло на других страницах
+    //grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
+    grid-template-columns: auto minmax(auto, 1354px);
+  }
+}
+
 .main-ident__title {
   @include ProximaNovaTextBuild25();
+  grid-column: auto/span 2; //TODO: подумать
   margin-bottom: 30px;
 
   @media (min-width: $screen-lg) {
@@ -98,10 +110,18 @@
   }
 }
 
+.main-ident__page-info {
+  padding-top: 40px;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 0;
+  }
+}
+
 .text-content {
   @include ProximaNovaTextRegular16();
 
-  @media(min-width: $screen-xl) {
+  @media(min-width: $screen-lg) {
     @include ProximaNovaTextRegular32();
   }
 
@@ -110,7 +130,7 @@
 
     &:not(:last-child) {
       margin-bottom: 20px;
-      @media(min-width: $screen-xl) {
+      @media(min-width: $screen-lg) {
         margin-bottom: 47px;
       }
     }
@@ -121,7 +141,7 @@
 
     + p {
       margin-bottom: 20px;
-      @media(min-width: $screen-xl) {
+      @media(min-width: $screen-lg) {
         margin-bottom: 47px;
       }
     }

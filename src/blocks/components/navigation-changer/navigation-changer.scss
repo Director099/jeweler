@@ -1,7 +1,10 @@
 .navigation-changer {
   position: sticky;
-  top: 0;
+  top: 20px;
   left: 0;
+
+  max-width: 490px;
+  width: 100%;
 }
 
 .navigation-changer__list {

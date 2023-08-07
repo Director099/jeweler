@@ -47,7 +47,9 @@ html(lang='ru').page
       if (sidebar)
         .main-ident.page__content
           .container
-            .main-ident__row
+            section(class=gridClass)
+              if(pageMainTitle)
+                h1(class=classPageMain)= pageMainTitle
               block sidebar
               main(class= mainClass)
                 block content

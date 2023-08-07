@@ -2,6 +2,10 @@ extends pug/layout.pug
 
 block var
   - const pageCurrent = pages.juristic.href;
+  - const sidebar = true;
+  - const gridClass = "main-ident__page-info";
+  - const pageMainTitle = "Политика конфиденциальности";
+  - const classPageMain = "main-ident__title";
   -
     const listJuristic = [
       {
@@ -37,11 +41,11 @@ block var
 block meta
   title Политика конфиденциальности
 
+block sidebar
+  +navigation-changer(listJuristic).d-none.d-xl-block
+
 block content
-  .container
-    h1.main-ident__title Политика конфиденциальности
-    +navigation-changer(listJuristic).d-none.d-xl-block
-    +accordion({
-      list: listJuristic,
-      count: true
-    }).text-content.stack.gap-40(data-close-inner="")
+  +accordion({
+    list: listJuristic,
+    count: true
+  }).text-content.stack.gap-40(data-close-inner="")
