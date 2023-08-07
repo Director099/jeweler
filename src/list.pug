@@ -48,7 +48,7 @@ block content
       legend Каталог
       ol
         each item in pages
-          if(pageCatalogs(item))
+          if(!item.hidden && pageCatalogs(item))
             li
               a(href=item.href)= item.text
     fieldset

@@ -88,14 +88,31 @@
   }
 }
 
+.main-ident__title {
+  @include ProximaNovaTextBuild25();
+  margin-bottom: 30px;
+
+  @media (min-width: $screen-lg) {
+    @include MontserratBuild54();
+    margin-bottom: 80px;
+  }
+}
+
 .text-content {
-  @include ProximaNovaTextRegular32();
+  @include ProximaNovaTextRegular16();
+
+  @media(min-width: $screen-xl) {
+    @include ProximaNovaTextRegular32();
+  }
 
   p {
     margin: 0;
 
     &:not(:last-child) {
-      margin-bottom: 47px;
+      margin-bottom: 20px;
+      @media(min-width: $screen-xl) {
+        margin-bottom: 47px;
+      }
     }
   }
 
@@ -103,7 +120,10 @@
     @include ul-reset();
 
     + p {
-      margin-top: 47px;
+      margin-bottom: 20px;
+      @media(min-width: $screen-xl) {
+        margin-bottom: 47px;
+      }
     }
   }
 

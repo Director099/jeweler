@@ -18,6 +18,13 @@
 }
 
 //Montserrat
+@mixin MontserratBuild54 {
+  font-family: $font-family-2;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: normal;
+}
+
 @mixin MontserratRegular40 {
   font-family: $font-family-2;
   font-size: 40px;
@@ -77,6 +84,13 @@
   font-family: $font-family;
   font-size: 26px;
   font-weight: 400;
+  line-height: normal;
+}
+
+@mixin ProximaNovaTextBuild25 {
+  font-family: $font-family;
+  font-size: 25px;
+  font-weight: 700;
   line-height: normal;
 }
 

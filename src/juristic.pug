@@ -39,10 +39,9 @@ block meta
 
 block content
   .container
-    h1 Политика конфиденциальности
-    div.main-ident__row
-      +navigation-changer(listJuristic)
-      +accordion({
-        list: listJuristic,
-        count: true
-      }).text-content.stack.gap-40(data-close-inner="")
+    h1.main-ident__title Политика конфиденциальности
+    +navigation-changer(listJuristic).d-none.d-xl-block
+    +accordion({
+      list: listJuristic,
+      count: true
+    }).text-content.stack.gap-40(data-close-inner="")
