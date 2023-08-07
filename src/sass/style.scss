@@ -96,6 +96,8 @@
     // TODO не подошло на других страницах
     //grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
     grid-template-columns: auto minmax(auto, 1354px);
+    align-items: start;
+
   }
 }
 
@@ -111,6 +113,7 @@
 }
 
 .main-ident__page-info {
+  position: relative;
   padding-top: 40px;
 
   @media (min-width: $screen-xl) {

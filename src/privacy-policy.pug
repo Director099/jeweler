@@ -1,13 +1,13 @@
 extends pug/layout.pug
 
 block var
-  - const pageCurrent = pages.juristic.href;
+  - const pageCurrent = pages.privacyPolicy.href;
   - const sidebar = true;
   - const gridClass = "main-ident__page-info";
   - const pageMainTitle = "Политика конфиденциальности";
   - const classPageMain = "main-ident__title";
   -
-    const listJuristic = [
+    const listPrivacyPolicy = [
       {
         title: "Общие положения",
         tplContent: generalProvisions()
@@ -42,10 +42,10 @@ block meta
   title Политика конфиденциальности
 
 block sidebar
-  +navigation-changer(listJuristic).d-none.d-xl-block
+  +navigation-changer(listPrivacyPolicy).d-none.d-xl-block
 
 block content
   +accordion({
-    list: listJuristic,
+    list: listPrivacyPolicy,
     count: true
   }).text-content.stack.gap-40(data-close-inner="")
