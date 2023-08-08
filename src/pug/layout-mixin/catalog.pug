@@ -1,20 +1,27 @@
 mixin catalog({catalogFilter=true, pageSubCatalogCurrentTitle, pageSubCatalogCurrentHref, categoryFilterMdHidden=false})
   .main-ident.page__content&attributes(attributes)
-    .container.main-ident__catalog
-      +catalog-menu(pageSubCatalogCurrentHref)
-      main.main-ident__content-catalog.stack.stack--main-gap
-        h1.catalog-title.d-lg-none= pageSubCatalogCurrentTitle
-        block
-        if(catalogFilter)
-          +category-filter({
-            list: listMaterials,
-            title: 'Материал',
-            classGridItem: 'grid-tpl-2 grid-tpl-lg-6 grid-tpl-xl-3',
-            src: `img/content/cat-mat`
-          })(class= categoryFilterMdHidden && "d-lg-none d-xl-block").category-filter--material
-          +category-filter({
-            list: listJeweler,
-            title: 'Вставка',
-            classGridItem: 'grid-tpl-3 grid-tpl-lg-5 grid-tpl-xl-4',
-            src: `img/content/cat-stone`
-          })(class= categoryFilterMdHidden && "d-lg-none d-xl-block").category-filter--jeweler
+    .container
+      +link-icon({
+        icon: 'icon-arrow',
+        text: "Назад",
+        widthIcon: 14,
+        heightIcon: 14,
+      })(href=pages.index.href).main-ident__link-back
+      .main-ident__catalog
+        +catalog-menu(pageSubCatalogCurrentHref)
+        main.main-ident__content-catalog.stack.stack--main-gap
+          h1.catalog-title.d-lg-none= pageSubCatalogCurrentTitle
+          block
+          if(catalogFilter)
+            +category-filter({
+              list: listMaterials,
+              title: 'Материал',
+              classGridItem: 'grid-tpl-2 grid-tpl-lg-6 grid-tpl-xl-3',
+              src: `img/content/cat-mat`
+            })(class= categoryFilterMdHidden && "d-lg-none d-xl-block").category-filter--material
+            +category-filter({
+              list: listJeweler,
+              title: 'Вставка',
+              classGridItem: 'grid-tpl-3 grid-tpl-lg-5 grid-tpl-xl-4',
+              src: `img/content/cat-stone`
+            })(class= categoryFilterMdHidden && "d-lg-none d-xl-block").category-filter--jeweler
