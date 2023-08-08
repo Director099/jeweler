@@ -1,18 +1,18 @@
-extends pug/layout-subcatalog.pug
+extends pug/layout.pug
 
-block subCatalogVar
-  - const catalogFilter = true;
-  - const pageSubCatalogCurrentHref = pages.catalogBracelets.href;
-  - const pageSubCatalogCurrentTitle = pages.catalogBracelets.text;
+block content
   - const reingsText = `<span class="d-none d-xl-inline-block">браслет</span>`;
   - const listRings = ["Все браслеты", `Цепной  ${reingsText}`, `Сегментарный ${reingsText}`]
-
-block contentSubCatalog
-  .category-list-prev.grid-tpl-1.grid-tpl-xl-3
-    each item, i in listRings
-      +promo({
-        src: `img/content/catalog-jeweler/catalog-bracelet-${i + 1}`,
-        title: item,
-        hasContent: true,
-        srcset: true,
-      })(href="#").category-list-prev__link
+  
+  +catalog({
+    pageSubCatalogCurrentTitle: pages.catalogBracelets.text,
+    pageSubCatalogCurrentHref: pages.catalogBracelets.href,
+  })
+    .category-list-prev.grid-tpl-1.grid-tpl-xl-3
+      each item, i in listRings
+        +promo({
+          src: `img/content/catalog-jeweler/catalog-bracelet-${i + 1}`,
+          title: item,
+          hasContent: true,
+          srcset: true,
+        })(href="#").category-list-prev__link

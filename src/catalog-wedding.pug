@@ -1,15 +1,15 @@
-extends pug/layout-subcatalog.pug
+extends pug/layout.pug
 
-block subCatalogVar
-  - const catalogFilter = false;
-  - const pageSubCatalogCurrentHref = pages.catalogWedding.href;
-  - const pageSubCatalogCurrentTitle = pages.catalogWedding.text;
-
-block contentSubCatalog
-  .wedding-list
-    .wedding-list__grid.grid-tpl-2.grid-tpl-lg-1.grid-tpl-xl-2
-      each item, i in titles
-        +category-card({
-          title: item,
-          img: `img/content/category-card-${i + 1}.jpg`
-        })(href="#").wedding-list__link
+block content
+  +catalog({
+    catalogFilter: false,
+    pageSubCatalogCurrentTitle: pages.catalogWedding.text,
+    pageSubCatalogCurrentHref: pages.catalogWedding.href,
+  })
+    .wedding-list
+      .wedding-list__grid.grid-tpl-2.grid-tpl-lg-1.grid-tpl-xl-2
+        each item, i in titles
+          +category-card({
+            title: item,
+            img: `img/content/category-card-${i + 1}.jpg`
+          })(href="#").wedding-list__link

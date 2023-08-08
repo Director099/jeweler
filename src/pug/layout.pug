@@ -44,25 +44,7 @@ html(lang='ru').page
   body.page__body
     .page__inner
       +page-header({})
-      if (sidebar)
-        .page__content
-          .container(class=gridClass)
-            if(linkBack)
-              +link-icon({
-                icon: 'icon-arrow',
-                text: "Назад",
-                widthIcon: 18,
-                heightIcon: 18,
-              })
-            if(pageMainTitle)
-              h1(class=classPageMain)= pageMainTitle
-            block sidebar
-            main(class= mainClass)
-              block content
-      else
-        main.page__content(class= mainClass)
-          block content
-            p содержимое страницы
+      block content
       +page-footer().d-none.d-xl-block
       +mobile-menu(pageCurrent)
       block page-bottom

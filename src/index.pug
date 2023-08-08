@@ -9,10 +9,11 @@ block meta
   title Главная
 
 block content
-  +main-slider({})
-  +section-content({title: pages.catalogActions.text})
-  +blog-place
-  +section-content({title: "Новинки"})
-  +wedding-offer
-  +section-content({title: "Успей купить"})
-  +collection
+  +main().stack.stack--main-gap
+    +main-slider({})
+    +section-content({title: pages.catalogActions.text})
+    +blog-place
+    +section-content({title: "Новинки"})
+    +wedding-offer
+    +section-content({title: "Успей купить"})
+    +collection

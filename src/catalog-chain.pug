@@ -1,9 +1,6 @@
-extends pug/layout-subcatalog.pug
+extends pug/layout.pug
 
-block subCatalogVar
-  - const catalogFilter = true;
-  - const pageSubCatalogCurrentHref = pages.catalogChain.href;
-  - const pageSubCatalogCurrentTitle = pages.catalogChain.text;
+block content
   -
     const categoryChainlist = [
       {
@@ -40,19 +37,22 @@ block subCatalogVar
       },
     ]
 
-block contentSubCatalog
-  .promo-list
-    .promo-list__grid.grid-tpl-1.grid-tpl-xl-2
-      - for(let i = 0; i < 2; i++)
-        +promo({
-          src: `img/content/catalog-actions/action-chain-${i + 1}`,
-          title: "sad",
-          srcset: true,
-          hasContent: false,
-        })(href="#")
-  +category-list({
-    classNameGrid: 'grid-tpl-2 grid-tpl-lg-4',
-    list: categoryChainlist,
-    tplContent: 'category-link',
-    isTextHidden: ['Акции', 'Новинки', 'Свадьба']
+  +catalog({
+    pageSubCatalogCurrentTitle: pages.catalogChain.text,
+    pageSubCatalogCurrentHref: pages.catalogChain.href,
   })
+    .promo-list
+      .promo-list__grid.grid-tpl-1.grid-tpl-xl-2
+        - for(let i = 0; i < 2; i++)
+          +promo({
+            src: `img/content/catalog-actions/action-chain-${i + 1}`,
+            title: "sad",
+            srcset: true,
+            hasContent: false,
+          })(href="#")
+    +category-list({
+      classNameGrid: 'grid-tpl-2 grid-tpl-lg-4',
+      list: categoryChainlist,
+      tplContent: 'category-link',
+      isTextHidden: ['Акции', 'Новинки', 'Свадьба']
+    })

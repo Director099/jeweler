@@ -1,10 +1,6 @@
-extends pug/layout-subcatalog.pug
+extends pug/layout.pug
 
-block subCatalogVar
-  - const catalogFilter = true;
-  - const pageSubCatalogCurrentHref = pages.catalogNew.href;
-  - const pageSubCatalogCurrentTitle = pages.catalogNew.text;
-  - const categoryFilterMdHidden = true;
+block content
   -
     const listPromo = [
       "Кольца",
@@ -15,25 +11,28 @@ block subCatalogVar
       "Подвески"
     ]
 
-block contentSubCatalog
-  //TODO:Подумать над неймингом, возможно стойт оставить как есть
-  +main-slider({
-    slidesCount: 2,
-    srcNumber: 3
-  }).main-slider--catalog.d-lg-none.d-xl-block
-  .promo-list.d-none.d-lg-block.d-xl-none
-    .promo-list__grid.grid-tpl-1
-      each item, i in listPromo
-        +promo({
-          src: `img/content/catalog-new/catalog-new-${i + 1}.jpg `,
-          title: item,
-          hasContent: true,
-          hasBtnLink: false
-        })(href=pages.catalog.href).promo-list__link-promo
-        // TODO: Проставь ссылку на фильт товара
-  +category-list({
-    classNameGrid: 'grid-tpl-xl-5',
-    list: catalogMenulist,
-    tplContent: 'category-link',
-    isTextHidden: ['Акции', 'Новинки', 'Свадьба']
-  }).d-none.d-xl-block
+  +catalog({
+    pageSubCatalogCurrentTitle: pages.catalogNew.text,
+    pageSubCatalogCurrentHref: pages.catalogNew.href,
+    categoryFilterMdHidden: true,
+  })
+    +main-slider({
+      slidesCount: 2,
+      srcNumber: 3
+    }).main-slider--catalog.d-lg-none.d-xl-block
+    .promo-list.d-none.d-lg-block.d-xl-none
+      .promo-list__grid.grid-tpl-1
+        each item, i in listPromo
+          +promo({
+            src: `img/content/catalog-new/catalog-new-${i + 1}.jpg `,
+            title: item,
+            hasContent: true,
+            hasBtnLink: false
+          })(href=pages.catalog.href).promo-list__link-promo
+          // TODO: Проставь ссылку на фильт товара
+    +category-list({
+      classNameGrid: 'grid-tpl-xl-5',
+      list: catalogMenulist,
+      tplContent: 'category-link',
+      isTextHidden: ['Акции', 'Новинки', 'Свадьба']
+    }).d-none.d-xl-block

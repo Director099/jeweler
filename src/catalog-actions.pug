@@ -1,17 +1,17 @@
-extends pug/layout-subcatalog.pug
+extends pug/layout.pug
 
-block subCatalogVar
-  - const catalogFilter = false;
-  - const pageSubCatalogCurrentHref = pages.catalogActions.href;
-  - const pageSubCatalogCurrentTitle = pages.catalogActions.text;
-
-block contentSubCatalog
-  .promo-list
-    .promo-list__grid.grid-tpl-1.grid-tpl-xl-2
-      - for (let i = 1; i < 6; i++)
-        +promo({
-          src: `img/content/catalog-actions/action-${i}`,
-          title: pages.catalogActions.text,
-          hasContent: false,
-          srcset: true
-        })(href=pages.catalogActions.href)
+block content
+  +catalog({
+    catalogFilter: false,
+    pageSubCatalogCurrentTitle: pages.catalogActions.text,
+    pageSubCatalogCurrentHref: pages.catalogActions.href,
+  })
+    .promo-list
+      .promo-list__grid.grid-tpl-1.grid-tpl-xl-2
+        - for (let i = 1; i < 6; i++)
+          +promo({
+            src: `img/content/catalog-actions/action-${i}`,
+            title: pages.catalogActions.text,
+            hasContent: false,
+            srcset: true
+          })(href=pages.catalogActions.href)

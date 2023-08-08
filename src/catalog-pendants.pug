@@ -1,18 +1,18 @@
-extends pug/layout-subcatalog.pug
+extends pug/layout.pug
 
-block subCatalogVar
-  - const catalogFilter = true;
-  - const pageSubCatalogCurrentHref = pages.catalogPendants.href;
-  - const pageSubCatalogCurrentTitle = pages.catalogPendants.text;
+block content
   - const reingsText = `<span class="d-none d-xl-inline-block">кольца</span>`;
   - const listRings = ["Все подвески", `Мусульманские`, `Православные`]
 
-block contentSubCatalog
-  .category-list-prev.grid-tpl-1.grid-tpl-xl-3
-    each item, i in listRings
-      +promo({
-        src: `img/content/catalog-jeweler/catalog-pendants-${i + 1}`,
-        title: item,
-        hasContent: true,
-        srcset: true,
-      })(href="#").category-list-prev__link
+  +catalog({
+    pageSubCatalogCurrentTitle: pages.catalogPendants.text,
+    pageSubCatalogCurrentHref: pages.catalogPendants.href,
+  })
+    .category-list-prev.grid-tpl-1.grid-tpl-xl-3
+      each item, i in listRings
+        +promo({
+          src: `img/content/catalog-jeweler/catalog-pendants-${i + 1}`,
+          title: item,
+          hasContent: true,
+          srcset: true,
+        })(href="#").category-list-prev__link

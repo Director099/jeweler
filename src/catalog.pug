@@ -1,20 +1,23 @@
-extends pug/layout-subcatalog.pug
+extends pug/layout.pug
 
-block contentSubCatalog
-  //TODO:Подумать над неймингом, возможно стойт оставить как есть
-  +main-slider({
-    slidesCount: 2,
-    srcNumber: 2
-  }).main-slider--catalog
-  +category-list({
-    classNameGrid: 'grid-tpl-xl-5',
-    list: catalogMenulist,
-    tplContent: 'category-link',
-    isTextHidden: ['Акции', 'Новинки', 'Свадьба']
-  }).d-none.d-xl-block
-  +category-list({
-    classNameGrid: 'grid-tpl-2 grid-tpl-lg-4',
-    list: catalogMenulist,
-    tplContent: 'category-tile',
-    isTextHidden: ['Акции', 'Новинки', 'Свадьба']
-  }).category-list--md-ident.d-xl-none
+block content
+  +catalog({
+    pageSubCatalogCurrentTitle: "Все украшения",
+    pageSubCatalogCurrentHref: pages.catalog.href,
+  })
+    +main-slider({
+      slidesCount: 2,
+      srcNumber: 2
+    }).main-slider--catalog
+    +category-list({
+      classNameGrid: 'grid-tpl-xl-5',
+      list: catalogMenulist,
+      tplContent: 'category-link',
+      isTextHidden: ['Акции', 'Новинки', 'Свадьба']
+    }).d-none.d-xl-block
+    +category-list({
+      classNameGrid: 'grid-tpl-2 grid-tpl-lg-4',
+      list: catalogMenulist,
+      tplContent: 'category-tile',
+      isTextHidden: ['Акции', 'Новинки', 'Свадьба']
+    }).category-list--md-ident.d-xl-none
