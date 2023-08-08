@@ -3,12 +3,10 @@ extends pug/layout.pug
 block meta
   title Сраница не найдена
 
-block var
-  - const mainClass = 'order-page';
-
 block content
-  section.order-page__block
-    img.order-page__img(src='img/content/404-error.png', alt='Страница не найдена')
-    h1.order-page__title К сожалению, страница не найдена
-    a.btn.btn--dark.order-page__btn(href=pages.index.href) Перейти на главную
+  +main.order-page
+    .order-page__block
+      img.order-page__img(src='img/content/404-error.png', alt='Страница не найдена')
+      h1.order-page__title К сожалению, страница не найдена
+      a.btn.btn--dark.order-page__btn(href=pages.index.href) Перейти на главную
 

@@ -1,5 +1,6 @@
 mixin catalog({catalogFilter=true, pageSubCatalogCurrentTitle, pageSubCatalogCurrentHref, categoryFilterMdHidden=false})
-  - const pageCurrent = pages.catalog.href;
+  block var
+    - const pageCurrent = pages.catalog.href;
 
   .page__content&attributes(attributes)
     .container.main-ident__catalog

@@ -16,8 +16,6 @@
 
 .main-ident__catalog {
   display: grid;
-  // TODO не подошло на других страницах
-  //grid-template-columns: minmax(auto, 100%) minmax(auto, calc(100% - 90px));
   grid-template-columns: 90px minmax(auto, calc(100% - 90px));
   align-items: flex-start;
   height: calc(100vh - 113px);
@@ -28,16 +26,14 @@
     overflow: visible;
     padding-top: 0;
     gap: 20px;
-    // TODO не подошло на других страницах
-    //grid-template-columns: minmax(auto, 100%) minmax(auto, 734px);
     grid-template-columns: auto minmax(auto, 734px);
+    padding-bottom: 100px;
   }
 
   @media (min-width: $screen-xl) {
     gap: 40px;
-    // TODO не подошло на других страницах
-    //grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
     grid-template-columns: auto minmax(auto, 1354px);
+    padding-bottom: 200px;
   }
 }
 
@@ -62,8 +58,6 @@
   @media (min-width: $screen-xl) {
     padding-top: 0;
     gap: 0 100px;
-    // TODO не подошло на других страницах
-    //grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
     grid-template-columns: auto minmax(auto, 1354px);
     align-items: start;
 

@@ -1,5 +1,6 @@
 mixin category-list({classNameGrid, list, tplContent, isTextHidden=[]})
   .category-list&attributes(attributes)
+    //-TODO: category-main картинки нет и не должно быть, убрать
     ul.category-list__grid(class= classNameGrid)
       each item in list
         - const elemHiddenXl = !!item.sizeMd && 'd-xl-none';
