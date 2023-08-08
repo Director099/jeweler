@@ -1,5 +1,8 @@
 extends pug/layout.pug
 
+block meta
+  title= pages.catalogPendants.text
+
 block content
   - const reingsText = `<span class="d-none d-xl-inline-block">кольца</span>`;
   - const listRings = ["Все подвески", `Мусульманские`, `Православные`]

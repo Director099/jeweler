@@ -1,8 +1,5 @@
 mixin catalog({catalogFilter=true, pageSubCatalogCurrentTitle, pageSubCatalogCurrentHref, categoryFilterMdHidden=false})
-  block var
-    - const pageCurrent = pages.catalog.href;
-
-  .page__content&attributes(attributes)
+  .main-ident.page__content&attributes(attributes)
     .container.main-ident__catalog
       +catalog-menu(pageSubCatalogCurrentHref)
       main.main-ident__content-catalog.stack.stack--main-gap
