@@ -2,10 +2,7 @@ extends pug/layout.pug
 
 block var
   - const pageCurrent = pages.pageReturn.href;
-  - const sidebar = true;
-  - const gridClass = "main-ident__page-info";
   - const pageMainTitle = pages.pageReturn.text;
-  - const classPageMain = "main-ident__title";
   -
     const listPageDiamonds = [
       {
@@ -27,10 +24,15 @@ block var
     ]
 
 block meta
-  title= pages.pageReturn.text
+  title= pageMainTitle
 
 block content
-  +accordion({
-    list: listPageDiamonds,
-    count: true
-  }).text-content.stack.gap-40(data-close-inner="")
+  +main.main-ident
+    .container
+      .main-ident__page-info
+        h1.main-ident__title= pageMainTitle
+        +navigation-changer(listPageDiamonds).d-none.d-xl-block
+        +accordion({
+          list: listPageDiamonds,
+          count: true
+        }).text-content.stack.gap-40(data-close-inner="")

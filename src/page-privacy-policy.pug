@@ -2,10 +2,7 @@ extends pug/layout.pug
 
 block var
   - const pageCurrent = pages.pagePrivacyPolicy.href;
-  - const sidebar = true;
-  - const gridClass = "main-ident__page-info";
   - const pageMainTitle = pages.pagePrivacyPolicy.text;
-  - const classPageMain = "main-ident__title";
   -
     const listPagePrivacyPolicy = [
       {
@@ -39,10 +36,15 @@ block var
     ]
 
 block meta
-  title= pages.pagePrivacyPolicy.text
+  title= pageMainTitle
 
 block content
-  +accordion({
-    list: listPagePrivacyPolicy,
-    count: true
-  }).text-content.stack.gap-40(data-close-inner="")
+  +main.main-ident
+    .container
+      .main-ident__page-info
+        h1.main-ident__title= pageMainTitle
+        +navigation-changer(listPagePrivacyPolicy).d-none.d-xl-block
+        +accordion({
+          list: listPagePrivacyPolicy,
+          count: true
+        }).text-content.stack.gap-40(data-close-inner="")
