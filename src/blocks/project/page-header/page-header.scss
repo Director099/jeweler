@@ -1,18 +1,19 @@
 .page-header {
-  // TODO: Не знаю надо ли нет
-  //position: sticky;
-  //top: 0;
-  //left: 0;
-  //right: 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
 
-  position: relative;
+  //position: relative;
   z-index: 2;
+  background-color: $primary-white;
 
   padding: 16px 0;
   box-shadow: 0px 4px 5px 0px rgba($black, 0.14);
 
 
   @media (min-width: $screen-lg) {
+    position: relative;
     padding-top: 12px;
     padding-bottom: 36px;
     box-shadow: none;

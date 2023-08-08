@@ -4,3 +4,15 @@
   flex-direction: column;
   align-self: stretch;
 }
+
+.stack--main-gap {
+  gap: 40px;
+
+  @media (min-width: $screen-lg) {
+    gap: 50px;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 100px;
+  }
+}

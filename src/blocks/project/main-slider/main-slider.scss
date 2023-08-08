@@ -22,6 +22,14 @@
   .swiper-pagination-bullet-active {
     background-color: #F75394;
   }
+
+  .swiper-button-arrow:not(.swiper-button-lock) {
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+    }
+  }
 }
 
 .main-slider__link {

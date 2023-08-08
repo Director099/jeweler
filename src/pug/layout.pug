@@ -45,20 +45,26 @@ html(lang='ru').page
     .page__inner
       +page-header({})
       if (sidebar)
-        .main-ident.page__content
-          .container
-            section(class=gridClass)
-              if(pageMainTitle)
-                h1(class=classPageMain)= pageMainTitle
-              block sidebar
-              main(class= mainClass)
-                block content
+        .page__content
+          .container(class=gridClass)
+            if(linkBack)
+              +link-icon({
+                icon: 'icon-arrow',
+                text: "Назад",
+                widthIcon: 18,
+                heightIcon: 18,
+              })
+            if(pageMainTitle)
+              h1(class=classPageMain)= pageMainTitle
+            block sidebar
+            main(class= mainClass)
+              block content
       else
         main.page__content(class= mainClass)
           block content
             p содержимое страницы
       +page-footer().d-none.d-xl-block
-    +mobile-menu(pageCurrent)
+      +mobile-menu(pageCurrent)
       block page-bottom
     script(src="libs/swiper/swiper-bundle.min.js")
     script(src='js/custom.js')

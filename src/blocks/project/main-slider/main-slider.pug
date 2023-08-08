@@ -1,14 +1,15 @@
 mixin main-slider({slidesCount=3, srcNumber=1, href=pages.catalogActions.href})
-  .swiper.main-slider&attributes(attributes)(data-main-slider="")
-    .swiper-wrapper
-      - for(let i = 1; i < slidesCount; i++)
-        .swiper-slide.main-slider__item
-          a.main-slider__link(href=href)
-            picture
-              source(srcset=`img/content/main-slide-${srcNumber}.jpg` media=`(min-width: ${media.xl}px)`)
-              source(srcset=`img/content/main-slide-tab-${srcNumber}.jpg` media=`(min-width: ${media.md}px)`)
-              img(src=`img/content/main-slide-mob-${srcNumber}.jpg` alt=pages.catalogActions.text)
-    .swiper-button-next.swiper-button-arrow.d-none.d-xl-block
-    .swiper-button-prev.swiper-button-arrow.d-none.d-xl-block
-    .swiper-pagination
+  .main-slider
+    .swiper.main-slider__swiper&attributes(attributes)(data-main-slider="")
+      .swiper-wrapper
+        - for(let i = 1; i < slidesCount; i++)
+          .swiper-slide.main-slider__item
+            a.main-slider__link(href=href)
+              picture
+                source(srcset=`img/content/main-slide-${srcNumber}.jpg` media=`(min-width: ${media.xl}px)`)
+                source(srcset=`img/content/main-slide-tab-${srcNumber}.jpg` media=`(min-width: ${media.md}px)`)
+                img(src=`img/content/main-slide-mob-${srcNumber}.jpg` alt=pages.catalogActions.text)
+      .swiper-button-next.swiper-button-arrow
+      .swiper-button-prev.swiper-button-arrow
+      .swiper-pagination
 

@@ -1,21 +1,23 @@
 .catalog-menu {
-  position: sticky;
-  left: 0;
-  top: 0px;
   max-width: 266px;
   width: 100%;
+  height: 100%;
   margin-left: -20px;
 
   z-index: 1;
   background-color: $bg-gray-1;
-  padding-top: 40px;
-  margin-top: -40px;
+  padding: 40px 0;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (min-width: $screen-lg) {
-    padding-top: 0;
+    padding: 0;
     margin: 0;
-    position: static;
     background-color: transparent;
+    overflow: visible;
   }
 }
 
@@ -24,6 +26,11 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  @media (min-width: $screen-lg) {
+    position: sticky;
+    top: 20px;
+  }
 }
 
 .catalog-menu__link {
@@ -37,8 +44,7 @@
   padding: 2px 19.4px;
   color: inherit;
   text-decoration: none;
-  min-height: 52px;
-
+  min-height: 68px;
 
   &.active {
     background-color: $white;
@@ -49,6 +55,7 @@
 
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular26();
+    min-height: 52px;
     flex-direction: row;
     justify-content: flex-start;
     text-align: left;
@@ -66,4 +73,8 @@
   @include ProximaNovaTextRegular22();
   text-transform: uppercase;
   margin-bottom: 30px;
+}
+
+.catalog-menu__icon {
+  fill: none;
 }

@@ -33,12 +33,14 @@
 @import "../blocks/components/category-link/category-link";
 @import "../blocks/components/category-tile/category-tile";
 @import "../blocks/components/catalog-title/catalog-title";
+@import "../blocks/components/table-char/table-char";
 
 @import "../blocks/components/navigation/navigation";
 @import "../blocks/components/section-content/section-content";
 
 @import "../blocks/project/page-header/page-header";
 @import "../blocks/project/page-footer/page-footer";
+@import "../blocks/project/main-ident/main-ident";
 @import "../blocks/project/promo/promo";
 @import "../blocks/project/main-slider/main-slider";
 @import "../blocks/project/promo-list/promo-list";
@@ -54,72 +56,6 @@
 @import "../blocks/project/category-filter/category-filter";
 
 @import "../blocks/project/order-page/order-page";
-
-
-.main-ident {
-  padding-bottom: 60px;
-
-  @media (min-width: $screen-xl) {
-    padding-bottom: 100px;
-  }
-}
-
-.main-ident__catalog {
-  display: grid;
-  // TODO не подошло на других страницах
-  //grid-template-columns: minmax(auto, 100%) minmax(auto, calc(100% - 90px));
-  grid-template-columns: 90px minmax(auto, calc(100% - 90px));
-  align-items: flex-start;
-  padding-top: 40px;
-
-  @media (min-width: $screen-lg) {
-    padding-top: 0;
-    gap: 20px;
-    // TODO не подошло на других страницах
-    //grid-template-columns: minmax(auto, 100%) minmax(auto, 734px);
-    grid-template-columns: auto minmax(auto, 734px);
-  }
-
-  @media (min-width: $screen-xl) {
-    gap: 40px;
-    // TODO не подошло на других страницах
-    //grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
-    grid-template-columns: auto minmax(auto, 1354px);
-  }
-}
-
-.main-ident__page-info {
-  display: grid;
-
-  @media (min-width: $screen-xl) {
-    gap: 0 100px;
-    // TODO не подошло на других страницах
-    //grid-template-columns: minmax(auto, 100%) minmax(auto, 1354px);
-    grid-template-columns: auto minmax(auto, 1354px);
-    align-items: start;
-
-  }
-}
-
-.main-ident__title {
-  @include ProximaNovaTextBuild25();
-  grid-column: auto/span 2; //TODO: подумать
-  margin-bottom: 30px;
-
-  @media (min-width: $screen-lg) {
-    @include MontserratBuild54();
-    margin-bottom: 80px;
-  }
-}
-
-.main-ident__page-info {
-  position: relative;
-  padding-top: 40px;
-
-  @media (min-width: $screen-xl) {
-    padding-top: 0;
-  }
-}
 
 .text-content {
   @include ProximaNovaTextRegular16();

@@ -1,0 +1,13 @@
+mixin table-char({list, title, warnigText})
+  .table-char
+    if(title)
+      h2.table-char__title= title
+    .table-char__wrap-table
+      table.table-char__table
+        each item, i in list
+          tr.table-char__tr
+            td.table-char__label= item.label
+            if(item.value)
+              td.table-char__value= item.value
+      if(warnigText)
+        span.table-char__warning= warnigText
