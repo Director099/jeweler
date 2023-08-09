@@ -1,4 +1,4 @@
-mixin   accordion({title, count=false, list=[], tplContent, classElement, firstActive, scrollId})
+mixin accordion({title, count=false, list=[], tplContent, classElement, firstActive, scrollId})
   .accordion(data-accordion="parent")&attributes(attributes)
     each item, i in list
       - const countList = count ? `${i + 1}. ` : '';

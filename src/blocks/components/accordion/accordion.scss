@@ -32,10 +32,21 @@
 }
 
 .accordion__wrapper {
+  @include ProximaNovaTextRegular13();
   padding-bottom: 25px;
 
   @media(min-width: $screen-lg) {
+    @include ProximaNovaTextRegular22();
     padding-bottom: 30px;
+  }
+}
+
+.accordion__wrapper li:not(:last-child) {
+  //TODO: Подумать в какой момент прописывать
+  margin-bottom: 10px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 20px;
   }
 }
 
