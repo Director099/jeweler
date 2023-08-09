@@ -1,69 +1,28 @@
-//.main-ident {
-//  padding-bottom: 60px;
-//
-//  @media (min-width: $screen-xl) {
-//    padding-bottom: 100px;
-//  }
-//}
-
-.main-ident--order-page {
-  padding-top: 40px;
-
-  @media (min-width: $screen-xl) {
-    padding-top: 0;
-  }
-}
-
-.main-ident__catalog {
-  display: grid;
-  grid-template-columns: 90px minmax(auto, calc(100% - 90px));
-  align-items: flex-start;
-  height: calc(100vh - 113px);
+.main-ident {
+  padding-bottom: 60px;
 
   @media (min-width: $screen-lg) {
-    height: auto;
-    padding-top: 0;
-    gap: 20px;
-    grid-template-columns: auto minmax(auto, 734px);
     padding-bottom: 100px;
   }
 
   @media (min-width: $screen-xl) {
-    gap: 40px;
-    grid-template-columns: auto minmax(auto, 1354px);
     padding-bottom: 200px;
-  }
-}
-
-.main-ident__content-catalog {
-  @media (max-width: $screen-lg - 1) {
-    padding-top: 40px;
-    padding-bottom: 60px;
-    height: 100%;
-    overflow: auto;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
 }
 
 .main-ident__page-info {
   position: relative;
-  padding-top: 40px;
   display: grid;
 
   @media (min-width: $screen-xl) {
-    padding-top: 0;
     gap: 0 100px;
-    grid-template-columns: auto minmax(auto, 1354px);
+    grid-template-columns: 491px minmax(auto, 1354px);
     align-items: start;
   }
 }
 
 .main-ident__title {
   @include ProximaNovaTextBuild25();
-  grid-column: auto/span 2; //TODO: подумать
   margin-bottom: 30px;
 
   @media (min-width: $screen-lg) {
@@ -79,17 +38,17 @@
   }
 }
 
-.main-ident__link-back {
-  @include ProximaNovaTextRegular22();
-  display: none;
-  margin-bottom: 30px;
-  text-transform: uppercase;
+.main-ident__group-title {
+  @include ProximaNovaTextBold19();
+  padding: 0 10px;
+  margin-bottom: 20px;
 
   @media (min-width: $screen-lg) {
-    display: inline-flex;
-  }
+    @include ProximaNovaTextRegular36();
+    padding: 0;
+    font-weight: 700;
+    margin-bottom: 40px;
 
-  @media (min-width: $screen-xl) {
-    display: none;
+    max-width: 1230px; // TODO: Подумать
   }
 }

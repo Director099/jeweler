@@ -16,27 +16,47 @@
 }
 
 .table-char__label {
-  @include ProximaNovaTextRegular22();
-  padding: 20px 30px;
+  width: 100%;
+  padding: 10px 16px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular22();
+    padding: 20px 35px;
+  }
 }
 
 .table-char__value {
-  @include ProximaNovaTextRegular26();
+  @include ProximaNovaTextRegular16();
   font-weight: 700;
-  padding: 20px 35px;
+  padding: 10px 16px;
   white-space: nowrap;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular26();
+    padding: 20px 35px;
+    font-weight: 700;
+  }
 }
 
 .table-char__warning {
-  @include ProximaNovaTextRegular20();
   display: block;
-  padding: 20px 30px;
+  padding: 10px 16px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular20();
+    padding: 20px 30px;
+  }
 }
 
 .table-char__title {
-  @include ProximaNovaTextRegular36();
-  font-weight: 700;
-  margin-bottom: 40px;
-  padding: 0 30px;
+  @include ProximaNovaTextBold19();
+  margin-bottom: 20px;
 
+  padding: 0 16px;
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular36();
+    margin-bottom: 40px;
+    padding: 0 30px;
+    font-weight: 700;
+  }
 }

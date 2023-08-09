@@ -3,24 +3,26 @@
   top: 0;
   left: 0;
   right: 0;
-
-  //position: relative;
   z-index: 2;
   background-color: $primary-white;
 
   padding: 16px 0;
   box-shadow: 0px 4px 5px 0px rgba($black, 0.14);
+  margin-bottom: 40px;
 
 
   @media (min-width: $screen-lg) {
+    //TODO отступы продумать, везде он един, кроме [главной, бонусы, категории]
     position: relative;
     padding-top: 12px;
-    padding-bottom: 36px;
+    padding-bottom: 15px;
+    margin-bottom: 50px;
     box-shadow: none;
   }
 
   @media (min-width: $screen-xl) {
-    padding-bottom: 57px;
+    padding-bottom: 20px;
+    margin-bottom: 100px;
   }
 }
 

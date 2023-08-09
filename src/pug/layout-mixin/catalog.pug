@@ -1,15 +1,15 @@
 mixin catalog({catalogFilter=true, pageSubCatalogCurrentTitle, pageSubCatalogCurrentHref, categoryFilterMdHidden=false})
-  .main-ident.page__content&attributes(attributes)
+  .page-catalog.page__content&attributes(attributes)
     .container
       +link-icon({
         icon: 'icon-arrow',
         text: "Назад",
         widthIcon: 14,
         heightIcon: 14,
-      })(href=pages.index.href).main-ident__link-back
-      .main-ident__catalog
+      })(href=pages.index.href).page-catalog__link-back
+      .page-catalog__grid
         +catalog-menu(pageSubCatalogCurrentHref)
-        main.main-ident__content-catalog.stack.stack--main-gap
+        main.page-catalog__content.stack.stack--main-gap
           h1.catalog-title.d-lg-none= pageSubCatalogCurrentTitle
           block
           if(catalogFilter)

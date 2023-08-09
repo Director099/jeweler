@@ -29,8 +29,8 @@ block meta
 block content
   +main.main-ident
     .container
+      h1.main-ident__title= pageMainTitle
       .main-ident__page-info
-        h1.main-ident__title= pageMainTitle
         +navigation-changer(listPageDiamonds).d-none.d-xl-block
         +accordion({
           list: listPageDiamonds,
