@@ -46,5 +46,7 @@ block content
         +navigation-changer(listPagePrivacyPolicy).d-none.d-xl-block
         +accordion({
           list: listPagePrivacyPolicy,
-          count: true
-        }).text-content.stack.gap-40(data-close-inner="")
+          count: true,
+          classElement: 'is-active',
+          scrollId: true,
+        }).accordion--text-content.text-content(data-close-inner="")
