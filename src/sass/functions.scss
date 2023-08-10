@@ -25,6 +25,20 @@
   line-height: normal;
 }
 
+@mixin MontserratBold48 {
+  font-family: $font-family-2;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@mixin MontserratBold30 {
+  font-family: $font-family-2;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: normal;
+}
+
 @mixin MontserratRegular40 {
   font-family: $font-family-2;
   font-size: 40px;

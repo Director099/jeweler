@@ -55,6 +55,7 @@
 @import "../blocks/project/wedding-offer/wedding-offer";
 @import "../blocks/project/category-card/category-card";
 @import "../blocks/project/faq/faq";
+@import "../blocks/project/banner/banner";
 @import "../blocks/project/status-table/status-table";
 @import "../blocks/project/add-benefits/add-benefits";
 @import "../blocks/project/mobile-menu/mobile-menu";
@@ -130,4 +131,18 @@
 .swiper-button-prev {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='26' viewBox='0 0 14 26' fill='none'%3E%3Cpath d='M13 25L1 13L13 1' stroke='%23F75394' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   left: 0px;
+}
+
+.link-back {
+  @include ProximaNovaTextRegular22();
+  display: none;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-lg) {
+    display: inline-flex;
+  }
+
+  @media (min-width: $screen-xl) {
+    display: none;
+  }
 }

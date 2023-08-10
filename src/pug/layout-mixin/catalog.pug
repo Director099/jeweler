@@ -6,7 +6,7 @@ mixin catalog({catalogFilter=true, pageSubCatalogCurrentTitle, pageSubCatalogCur
         text: "Назад",
         widthIcon: 14,
         heightIcon: 14,
-      })(href=pages.index.href).page-catalog__link-back
+      })(href=pages.index.href).link-back.page-catalog__link-back
       .page-catalog__grid
         +catalog-menu(pageSubCatalogCurrentHref)
         main.page-catalog__content.stack.stack--main-gap

@@ -59,3 +59,33 @@
     }
   }
 }
+
+.faq__link-wrap {
+  text-align: center;
+
+  @media (min-width: $screen-lg) {
+    text-align: left;
+  }
+}
+
+.faq__link {
+  @include ProximaNovaTextRegular16();
+  margin-top: 5px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular32();
+    display: inline-flex;
+    gap: 30px;
+    color: $tp-black;
+    margin-top: 20px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    margin-top: 70px;
+    @include ProximaNovaTextRegular36();
+  }
+}

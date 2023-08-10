@@ -7,3 +7,15 @@
     @include MontserratRegular40();
   }
 }
+
+.title-content-montserrat {
+  @include MontserratBold30();
+
+  @media (min-width: $screen-lg) {
+    @include MontserratBold48();
+  }
+
+  @media (min-width: $screen-xl) {
+    @include MontserratBuild54()
+  }
+}

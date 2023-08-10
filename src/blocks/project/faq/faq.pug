@@ -52,3 +52,9 @@ mixin faq
       list: accordionList,
       firstActive: true
     }).faq__accordions
+    .faq__link-wrap
+      a.faq__link.line-link(href=pages.bonusRules.href)
+        | Полные правила бонусной программы
+        span.faq__link-arrow.d-none.d-lg-block
+          svg(width="93" height="16")
+            use(href="img/symbols.svg#icon-long-arrow")

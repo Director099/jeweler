@@ -28,18 +28,7 @@
 }
 
 .page-catalog__link-back {
-  @include ProximaNovaTextRegular22();
-  display: none;
   margin-bottom: 30px;
-  text-transform: uppercase;
-
-  @media (min-width: $screen-lg) {
-    display: inline-flex;
-  }
-
-  @media (min-width: $screen-xl) {
-    display: none;
-  }
 }
 
 .page-catalog__content {

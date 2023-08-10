@@ -1,8 +1,8 @@
 extends pug/layout.pug
 
 block var
-  - const pageCurrent = pages.pagePrivacyPolicy.href;
-  - const pageMainTitle = pages.pagePrivacyPolicy.text;
+  - const pageCurrent = pages.bonusRules.href;
+  - const pageMainTitle = pages.bonusRules.text;
   -
     const listPagePrivacyPolicy = [
       {
@@ -10,30 +10,35 @@ block var
         tplContent: generalProvisions()
       },
       {
-        title: "Персональные данные, которые мы обрабатываем",
+        title: "Термины и определения",
         tplContent: personalInformation()
       },
       {
-        title: "Цели и сроки обработки данных. Действия, совершаемые с персональными данными",
+        title: "Условия участия в программе",
         tplContent: dataProcessing()
       },
       {
-        title: "Cookie-файлы. Аналитические системы",
+        title: "Начисление бонусов",
         tplContent: security(),
       },
       {
-        title: "Взаимодействие с нами по вопросам обработки персональных данных",
+        title: "Списание бонусов в обмен на привилегии",
         tplContent: interaction(),
       },
       {
-        title: "Безопасность и конфиденциальность  персональных данных",
+        title: "Статус участника",
         tplContent: security()
       },
       {
-        title: "Изменения политики",
+        title: "Иные условия",
+        tplContent: policyChanges()
+      },
+      {
+        title: "Разрешение споров по программе",
         tplContent: policyChanges()
       }
     ]
+
 
 block meta
   title= pageMainTitle

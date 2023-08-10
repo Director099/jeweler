@@ -1,0 +1,13 @@
+mixin banner
+  .banner
+    .banner__img
+      //picture
+      //  source(srcset=`img/content/vip-card/vip-card-xl.jpg` media=`(min-width: ${media.xl}px)`)
+      //  source(srcset=`img/content/vip-card/vip-card-lg.jpg` media=`(min-width: ${media.lg}px)`)
+      img(src=`img/content/vip-card/vip-card-xl-2.jpg` alt="VIP CLUB")
+    .container
+      section.banner__content
+        h1.banner__title.title-content-montserrat VIP CLUB
+        img.banner__logo(src='img/content/logo.svg', alt='Logo')
+        a.btn.btn--dark.banner__btn.d-none.d-lg-block(href=pages.catalog.href) Перейти в каталог
+
