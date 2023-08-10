@@ -1,5 +1,28 @@
+@mixin identTable {
+  padding: 10px 16px;
+
+  @media (min-width: $screen-lg) {
+    padding: 16px 20px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 20px 35px;
+  }
+}
+
+@mixin identTitle {
+  padding: 0 16px;
+
+  @media (min-width: $screen-lg) {
+    padding: 0 20px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 0 35px;
+  }
+}
+
 .table-char__wrap-table {
-  //border: 1px solid $border-color;
   width: 100%;
   background-color: $bg-white;
   border-radius: 15px;
@@ -16,47 +39,48 @@
 }
 
 .table-char__label {
+  @include ProximaNovaTextRegular13();
+  @include identTable();
   width: 100%;
-  padding: 10px 16px;
 
   @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular16();
+  }
+
+  @media (min-width: $screen-xl) {
     @include ProximaNovaTextRegular22();
-    padding: 20px 35px;
   }
 }
 
 .table-char__value {
   @include ProximaNovaTextRegular16();
+  @include identTable();
   font-weight: 700;
-  padding: 10px 16px;
   white-space: nowrap;
 
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular26();
-    padding: 20px 35px;
     font-weight: 700;
   }
 }
 
 .table-char__warning {
+  @include identTable();
   display: block;
-  padding: 10px 16px;
 
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular20();
-    padding: 20px 30px;
   }
 }
 
 .table-char__title {
+  @include identTitle();
   @include ProximaNovaTextBold19();
   margin-bottom: 20px;
 
-  padding: 0 16px;
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular36();
     margin-bottom: 40px;
-    padding: 0 30px;
     font-weight: 700;
   }
 }

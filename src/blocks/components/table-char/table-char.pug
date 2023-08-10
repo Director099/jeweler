@@ -6,7 +6,8 @@ mixin table-char({list, title, warnigText})
       table.table-char__table
         each item, i in list
           tr.table-char__tr
-            td.table-char__label= item.label
+            if(item.label)
+              td.table-char__label= item.label
             if(item.value)
               td.table-char__value= item.value
       if(warnigText)

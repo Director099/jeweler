@@ -22,7 +22,7 @@
 }
 
 .main-ident__title {
-  @include ProximaNovaTextBuild25();
+  @include ProximaNovaTextBold25();
   margin-bottom: 30px;
 
   @media (min-width: $screen-lg) {
