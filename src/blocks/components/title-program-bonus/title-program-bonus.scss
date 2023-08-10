@@ -1,0 +1,12 @@
+.title-program-bonus {
+  @include ProximaNovaTextBold19();
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular32();
+    font-weight: 700;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular40();
+  }
+}

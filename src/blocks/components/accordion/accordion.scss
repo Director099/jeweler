@@ -1,10 +1,7 @@
 .accordion__title {
-  @include ProximaNovaTextRegular16();
   position: relative;
-  font-weight: 700;
   margin-bottom: 0px;
-
-  padding: 20px 30px 20px 0;
+  padding-right: 30px;
 
   &::after {
     content: '';
@@ -26,35 +23,20 @@
   }
 
   @media(min-width: $screen-lg) {
-    @include ProximaNovaTextRegular28();
-    padding: 30px 40px 30px 0;
+    padding-right: 40px;
   }
 }
 
 .accordion__wrapper {
-  @include ProximaNovaTextRegular13();
   padding-bottom: 25px;
 
   @media(min-width: $screen-lg) {
-    @include ProximaNovaTextRegular22();
     padding-bottom: 30px;
   }
 }
 
-.accordion__wrapper li:not(:last-child) {
-  //TODO: Подумать в какой момент прописывать
-  margin-bottom: 10px;
-
-  @media (min-width: $screen-lg) {
-    margin-bottom: 20px;
-  }
-}
-
-.accordion__element:not(:last-child) {
-  border-bottom: 1px solid $border-gray;
-}
-
 .accordion--text-content {
+  //TODO: Создать другой блок text-content
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
