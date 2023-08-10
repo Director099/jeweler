@@ -1,11 +1,14 @@
-mixin table-char({list, title, warnigText, subtitle})
+mixin table-char({list, title, warnigText, subtitle, isAccordion=false})
+  - const dataAttrAccordionContent = isAccordion && `content`;
+  - const dataAttrAccordionButton = isAccordion && `button`;
+
   .table-char&attributes(attributes)
     if(title)
       header.table-char__header
-        h2.table-char__title= title
+        h2.table-char__title(data-accordion=dataAttrAccordionButton)= title
         if(subtitle)
           p.table-char__subtitle!= subtitle
-    .table-char__wrap-table
+    .table-char__wrap-table(data-accordion=dataAttrAccordionContent)
       table.table-char__table
         each item, i in list
           tr.table-char__tr

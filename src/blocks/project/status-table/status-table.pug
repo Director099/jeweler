@@ -21,7 +21,7 @@
     {
       title: 'Циркон',
       subtitle: '1 уровень',
-      active: true,
+      current: true,
       list: [
         {
           label: 'Кэшбэк бонусами',
@@ -110,13 +110,14 @@
   ]
 
 mixin status-table
-  .status-table
+  .status-table(data-accordion="parent", data-destroy=`(max-width: ${media.lg - 1}px)`)
     each item, i in listStatus
       - const firstElem = i === 0 ? `status-table__char-first` : 'status-table__char';
-      - const classActive = item.active && 'active';
+      - const classActive = item.current && 'current';
       +table-char({
         list: item.list,
         title: item.title,
-        subtitle: item.subtitle
-      })(class=[firstElem, classActive])
+        subtitle: item.subtitle,
+        isAccordion: true,
+      })(data-accordion="element" class=[firstElem, classActive])
 
