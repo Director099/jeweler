@@ -1,4 +1,5 @@
 .faq__title {
+  text-align: center;
   margin-bottom: 40px;
 
   @media (min-width: $screen-xl) {
@@ -7,17 +8,25 @@
 }
 
 .faq__accordions {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 20px;
+
+  @media(min-width: $screen-lg) {
+    gap: 30px;
+  }
+
   .accordion__title {
     @include ProximaNovaTextRegular16();
     position: relative;
     font-weight: 700;
-    margin-bottom: 0px;
-
-    padding: 20px 30px 20px 0;
+    margin-bottom: 20px;
 
     @media(min-width: $screen-lg) {
       @include ProximaNovaTextRegular28();
-      padding: 30px 40px 30px 0;
+      margin-bottom: 30px;
     }
   }
 

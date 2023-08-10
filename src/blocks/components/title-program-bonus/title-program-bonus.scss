@@ -8,5 +8,6 @@
 
   @media (min-width: $screen-xl) {
     @include ProximaNovaTextRegular40();
+    text-transform: uppercase;
   }
 }

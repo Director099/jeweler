@@ -1,0 +1,17 @@
+.benefits {
+  @include ProximaNovaTextRegular16();
+  text-align: center;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular28();
+  }
+}
+
+.benefits__img {
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.benefits__text {
+  margin-bottom: 0;
+}

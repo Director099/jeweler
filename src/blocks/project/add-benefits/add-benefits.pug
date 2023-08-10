@@ -1,0 +1,16 @@
+-
+  const listBenefits = [
+    '1 бонус = 1 рубль',
+    '5 000 бонусных баллов на день рождения',
+    '10 000 бонусных баллов при регистрации',
+  ]
+
+mixin add-benefits
+  section.add-benefits
+    h2.add-benefits__title.title-program-bonus Дополнительные преимущества
+    .add-benefits__list
+      each item, i in listBenefits
+        +benefits({
+          src: `img/content/benefits/benefits-${i + 1}.svg`,
+          text: item
+        })
