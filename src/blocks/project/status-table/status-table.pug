@@ -1,38 +1,122 @@
 -
   const listStatus = [
     {
-      label: 'Аша, Ленина, 14',
+      title: 'Статус',
+      subtitle: 'Ваш статус: Циркон',
+      list: [
+        {
+          label: 'Кэшбэк бонусами'
+        },
+        {
+          label: 'Сумма покупок, руб.'
+        },
+        {
+          label: 'Бонусы на день рождения'
+        },
+        {
+          label: 'Персональные предложения'
+        }
+      ]
     },
     {
-      label: 'Аша, Ленина, 14',
+      title: 'Циркон',
+      subtitle: '1 уровень',
+      active: true,
+      list: [
+        {
+          label: 'Кэшбэк бонусами',
+          value: '5% от суммы чека'
+        },
+        {
+          label: 'Сумма покупок, руб.',
+          value: '0 - 3 000'
+        },
+        {
+          label: 'Бонусы на день рождения',
+          value: '3 000'
+        },
+        {
+          label: 'Персональные предложения',
+          value: '-'
+        }
+      ]
     },
     {
-      label: 'Аша, Ленина, 14',
+      title: 'Рубин',
+      subtitle: '2 уровень',
+      list: [
+        {
+          label: 'Кэшбэк бонусами',
+          value: '10% от суммы чека'
+        },
+        {
+          label: 'Сумма покупок, руб.',
+          value: '3 000 - 10 000'
+        },
+        {
+          label: 'Бонусы на день рождения',
+          value: '5 000'
+        },
+        {
+          label: 'Персональные предложения',
+          value: '-'
+        }
+      ]
     },
     {
-      label: 'Аша, Ленина, 14',
+      title: 'Сапфир',
+      subtitle: '3 уровень',
+      list: [
+        {
+          label: 'Кэшбэк бонусами',
+          value: '12% от суммы чека'
+        },
+        {
+          label: 'Сумма покупок, руб.',
+          value: '10 000 - 30 000'
+        },
+        {
+          label: 'Бонусы на день рождения',
+          value: '5 000'
+        },
+        {
+          label: 'Персональные предложения',
+          value: 'Да'
+        }
+      ]
+    },
+    {
+      title: 'Алмаз',
+      subtitle: '4 уровень',
+      list: [
+        {
+          label: 'Кэшбэк бонусами',
+          value: '15% от суммы чека'
+        },
+        {
+          label: 'Сумма покупок, руб.',
+          value: 'более 30 000'
+        },
+        {
+          label: 'Бонусы на день рождения',
+          value: '7 000'
+        },
+        {
+          label: 'Персональные предложения',
+          value: 'Да'
+        }
+      ]
     },
   ]
 
 mixin status-table
   .status-table
-    +table-char({
-      list: listStatus,
-      title: 'Циркон'
-    }).d-none.d-lg-block
-    +table-char({
-      list: listStatus,
-      title: 'Циркон'
-    })
-    +table-char({
-      list: listStatus,
-      title: 'Циркон'
-    })
-    +table-char({
-      list: listStatus,
-      title: 'Циркон'
-    })
-    +table-char({
-      list: listStatus,
-      title: 'Циркон'
-    })
+    each item, i in listStatus
+      - const firstElem = i === 0 ? `status-table__char-first` : 'status-table__char';
+      - const classActive = item.active && 'active';
+      +table-char({
+        list: item.list,
+        title: item.title,
+        subtitle: item.subtitle
+      })(class=[firstElem, classActive])
+

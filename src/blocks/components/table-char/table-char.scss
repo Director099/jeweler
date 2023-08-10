@@ -73,14 +73,21 @@
   }
 }
 
-.table-char__title {
+.table-char__header {
   @include identTitle();
-  @include ProximaNovaTextBold19();
   margin-bottom: 20px;
 
   @media (min-width: $screen-lg) {
-    @include ProximaNovaTextRegular36();
     margin-bottom: 40px;
+  }
+}
+
+.table-char__title {
+  @include ProximaNovaTextBold19();
+  margin-bottom: 0;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular36();
     font-weight: 700;
   }
 }
