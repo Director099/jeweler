@@ -1,0 +1,25 @@
+.excellence {
+  text-align: center;
+
+  @media (min-width: $screen-xl) {
+    text-align: left;
+  }
+}
+
+.excellence__title {
+  margin-bottom: 10px;
+  @include ProximaNovaTextBold19();
+
+  @media (min-width: $screen-lg) {
+    @include MontserratBold54();
+  }
+}
+
+.excellence__text {
+  @include ProximaNovaTextRegular16();
+  margin: 0;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular32();
+  }
+}

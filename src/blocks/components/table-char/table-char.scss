@@ -23,6 +23,9 @@
 }
 
 .table-char {
+  display: block;
+  width: 100%;
+
   &.is-active .table-char__title::after {
     transform: translateY(-50%) rotate(-0deg);
   }
@@ -62,7 +65,7 @@
   @include ProximaNovaTextRegular16();
   @include identTable();
   font-weight: 700;
-  white-space: nowrap;
+  white-space: nowrap; //TODO: Подумать
 
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular26();

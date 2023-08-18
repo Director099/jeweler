@@ -1,0 +1,8 @@
+.statistics-brand__grid {
+  gap: 30px;
+
+  @media (min-width: $screen-lg) {
+    gap: 60px;
+  }
+}
+

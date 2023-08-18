@@ -1,0 +1,34 @@
+-
+  const listExcellence = [
+    {
+      title: '30 лет',
+      text: 'работы на рынке'
+    },
+    {
+      title: 'более 100 ',
+      text: 'магазинов'
+    },
+    {
+      title: '50 000',
+      text: 'ювелирных изделий'
+    },
+    {
+      title: 'топ 10',
+      text: 'ювелирных сетей России'
+    },
+    {
+      title: '400+',
+      text: 'человек в команде'
+    },
+
+  ]
+
+mixin statistics-brand
+  .statistics-brand
+    .statistics-brand__grid.grid-tpl-2.grid-tpl-xl-3
+      each item, i in listExcellence
+        - const firstBlock = i === 0 && `grid-tpl-col-2 grid-tpl-col-xl-1`;
+        +excellence({
+          title: item.title,
+          text: item.text
+        })(class=firstBlock).statistics-brand__item

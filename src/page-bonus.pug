@@ -6,7 +6,7 @@ block meta
   title= pages.pageBonus.text
 
 block content
-  +main.main-ident
+  +main
     .stack.stack--main-gap
       .container.d-none.d-lg-block.d-xl-none
         +link-icon({
@@ -14,7 +14,7 @@ block content
           text: "Назад",
           widthIcon: 14,
           heightIcon: 14,
-        })(href=pages.index.href).link-back
+        })(href=pages.index.href).link-back //TODO: Сделать глобально или шаблон?
       +banner
       .container.stack.stack--main-gap
         +status-table

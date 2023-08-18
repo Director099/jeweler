@@ -27,7 +27,7 @@
 
   @media (min-width: $screen-lg) {
     //TODO: Есть отдельный класс
-    @include MontserratBuild54();
+    @include MontserratBold54();
     margin-bottom: 80px;
   }
 }

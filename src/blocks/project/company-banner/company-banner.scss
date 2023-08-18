@@ -1,0 +1,62 @@
+.company-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 500px;
+
+  @media (max-width: $screen-lg) {
+    &--xs-m-container {
+      margin: 0 -15px;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    min-height: 689px;
+  }
+}
+
+.company-banner__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 35px;
+  padding: 30px;
+  color: $white;
+
+  p {
+    margin: 0;
+  }
+
+  @media (min-width: $screen-lg) {
+    row-gap: 60px;
+  }
+}
+
+
+.company-banner__bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.company-banner__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.company-banner__content-text {
+  @include MontserratRegular30();
+  text-transform: uppercase;
+
+  @media (min-width: $screen-lg) {
+    @include MontserratBold54();
+    text-transform: inherit;
+  }
+}

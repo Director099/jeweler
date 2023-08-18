@@ -1,0 +1,65 @@
+.about-company__header {
+  text-align: center;
+  margin-bottom: 30px;
+  @media (min-width: $screen-lg) {
+    margin-bottom: 60px;
+  }
+}
+
+.about-company__title {
+  @include ProximaNovaTextRegular22();
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-lg) {
+    @include MontserratBold54();
+    font-weight: 400;
+    letter-spacing: 18.5px;
+  }
+}
+
+.about-company__content {
+  @include ProximaNovaTextRegular16();
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular32();
+  }
+
+  @media (min-width: $screen-xl) {
+    max-width: 733px;
+    width: 100%;
+  }
+}
+
+.about-company__content p:last-child {
+  margin-bottom: 0;
+}
+
+.about-company__row {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: $screen-xl) {
+    flex-direction: row;
+    gap: 80px;
+
+    &--xl-reverse {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.about-company__img {
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+
+  @media (min-width: $screen-lg) {
+    border-radius: 20px;
+  }
+}

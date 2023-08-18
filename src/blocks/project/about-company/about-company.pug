@@ -1,0 +1,10 @@
+mixin about-company({img, title, classReverse})
+  - const reverse = classReverse && `about-company__row--xl-reverse`
+  .about-company
+    header.about-company__header
+      h2.about-company__title= title
+    .about-company__row(class=reverse)
+      .about-company__img
+        img(src=img, alt=title)
+      .about-company__content
+        block
