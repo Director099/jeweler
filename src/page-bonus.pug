@@ -9,17 +9,16 @@ block meta
 block content
   +main-content({
     standartTpl: false
-  })
-    .stack.stack--main-gap
-      .container.d-none.d-lg-block.d-xl-none
-        +link-icon({
-          icon: 'icon-arrow',
-          text: "Назад",
-          widthIcon: 14,
-          heightIcon: 14,
-        })(href=pages.index.href).link-back
-      +banner
-      .container.stack.stack--main-gap
-        +status-table
-        +add-benefits
-        +faq
+  }).stack.stack--main-gap
+    .container.d-none.d-lg-block.d-xl-none
+      +link-icon({
+        icon: 'icon-arrow',
+        text: "Назад",
+        widthIcon: 14,
+        heightIcon: 14,
+      })(href=pages.index.href).link-back
+    +banner
+    .container.stack.stack--main-gap
+      +status-table
+      +add-benefits
+      +faq
