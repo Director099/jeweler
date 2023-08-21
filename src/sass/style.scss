@@ -105,7 +105,8 @@
     margin: 0;
   }
 
-  a {
+  a:not(.link-back) {
+    //TODO: Переделать, зависимостей быть не должно
     text-decoration: none;
     color: $other-blue;
   }
@@ -141,9 +142,20 @@
   @include ProximaNovaTextRegular22();
   display: none;
   text-transform: uppercase;
+  color: $tp-black;
+
+  span {
+    color: inherit;
+  }
 
   @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular22();
+    color: $tp-black;
     display: inline-flex;
+
+    span {
+      color: inherit;
+    }
   }
 
   @media (min-width: $screen-xl) {

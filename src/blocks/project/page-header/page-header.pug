@@ -30,7 +30,7 @@
   ]
 
 mixin page-header({elemBottom=true, elemMenu=true})
-  header.page-header
+  header.page-header&attributes(attributes)
     .container
       .page-header__top-inner
         +burger('Меню').page-header__burger.d-lg-none

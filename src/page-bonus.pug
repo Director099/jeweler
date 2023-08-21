@@ -7,7 +7,9 @@ block meta
   title= pages.pageBonus.text
 
 block content
-  +main
+  +main-content({
+    standartTpl: false
+  })
     .stack.stack--main-gap
       .container.d-none.d-lg-block.d-xl-none
         +link-icon({
@@ -15,7 +17,7 @@ block content
           text: "Назад",
           widthIcon: 14,
           heightIcon: 14,
-        })(href=pages.index.href).link-back //TODO: Сделать глобально или шаблон?
+        })(href=pages.index.href).link-back
       +banner
       .container.stack.stack--main-gap
         +status-table

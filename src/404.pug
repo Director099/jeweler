@@ -7,7 +7,9 @@ block meta
   title Сраница не найдена
 
 block content
-  +main.order-page
+  +main-content({
+    standartTpl:false
+  }).order-page
     img.order-page__img(src='img/content/404-error.png', alt='Страница не найдена')
     h1.order-page__title К сожалению, страница не найдена
     a.btn.btn--dark.order-page__btn(href=pages.index.href) Перейти на главную

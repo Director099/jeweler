@@ -1,3 +1,16 @@
-mixin main
+mixin main-content({title, standartTpl=true})
   main.main-ident.page__content&attributes(attributes)
-    block
+    if(standartTpl)
+      .container
+        +link-icon({
+          icon: 'icon-arrow',
+          text: "Назад",
+          widthIcon: 14,
+          heightIcon: 14,
+        })(href=pages.index.href).link-back.main-ident__link-back
+        if(title)
+          h1.main-ident__title= title
+        .stack.stack--main-gap
+          block
+    else
+      block

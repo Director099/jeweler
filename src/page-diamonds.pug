@@ -31,14 +31,14 @@ block meta
   title= pageMainTitle
 
 block content
-  +main
-    .container
-      h1.main-ident__title= pageMainTitle
-      .main-ident__page-info
-        +navigation-changer(listPageDiamonds).d-none.d-xl-block
-        +accordion({
-          list: listPageDiamonds,
-          count: true,
-          classElement: 'is-active',
-          scrollId: true,
-        }).accordion--text-content.text-content(data-close-inner="")
+  +main-content({
+    title: pageMainTitle
+  })
+    .main-ident__page-info
+      +navigation-changer(listPageDiamonds).d-none.d-xl-block
+      +accordion({
+        list: listPageDiamonds,
+        count: true,
+        classElement: 'is-active',
+        scrollId: true,
+      }).accordion--text-content.text-content(data-close-inner="")
