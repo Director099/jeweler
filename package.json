@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
+    "imask": "^7.1.3",
     "swiper": "^10.0.4"
   },
   "scripts": {

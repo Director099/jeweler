@@ -14,13 +14,16 @@ block var
       {
         title: 'Номер телефона',
         attrs: {
-          placeholder: '+7 (___) ___ - __ - __'
+          type: 'tel',
+          minlength: 18,
+          "data-pristine-minlength-message": " "
         }
       },
       {
         title: 'Полных лет',
         attrs: {
-          placeholder: '30'
+          placeholder: '30',
+          "data-age": ""
         }
       },
       {
@@ -76,13 +79,19 @@ block content
               li Корпоративные скидки на украшения
         section.vacancies__form-group
           h2.vacancies__title.vacancies__title--form Оставить отклик
-          +form.vacancies__form
+          +form.vacancies__form(action="404.html" method="POST" data-form)
             each item in formFilelds
               +field-text({
                 title: item.title,
                 isTextarea: item.isTextarea,
                 attrs: {
                   placeholder: item.attrs.placeholder,
+                  required: true,
+                  type: item.attrs.type ? item.attrs.type : 'text',
+                  minlength: item.attrs.minlength,
+                  'data-pristine-required-message': " ",
+                  'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
+                  "data-age": item.attrs['data-age']
                 }
               }).field-text--std
             +field-checkbox([
@@ -90,11 +99,12 @@ block content
                 title: 'Я даю согласие на обработку <a href="page-privacy-policy.html" target="_blank">персональных данных</a>',
                 attrs: {
                   name: 'check',
-                  checked: true
+                  checked: true,
+                  required: true,
                 }
               },
             ])
-            button.btn.btn--dark.vacancies__btn Откликнуться
+            button.btn.btn--dark.vacancies__btn(disabled, data-form-btn) Откликнуться
 
 
 
