@@ -15,12 +15,12 @@ $border-radius: 10px;
 .btn {
 
   $block-name: &; // #{$block-name}__element
-  @include ProximaNovaTextRegular24();
+  @include ProximaNovaTextRegular18();
   box-sizing: border-box;
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  padding: $field-padding-vertical $field-padding-horizontal;
+  padding: 8px 24px;
   white-space: nowrap;
   user-select: none;
   text-align: center;
@@ -32,6 +32,11 @@ $border-radius: 10px;
   //background-color: $gray-lightest;
   background-image: none;
   cursor: pointer;
+
+  @media(min-width: $screen-lg) {
+    @include ProximaNovaTextRegular24();
+    padding: $field-padding-vertical $field-padding-horizontal;
+  }
 
   //&:hover,
   //&:focus {

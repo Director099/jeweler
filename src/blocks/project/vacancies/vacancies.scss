@@ -1,8 +1,12 @@
 .vacancies__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   margin-bottom: 40px;
 
   @media (min-width: $screen-xl) {
     margin-bottom: 0;
+    gap: 60px;
   }
 }
 
@@ -40,5 +44,27 @@
       font-weight: 700;
       text-align: center;
     }
+  }
+}
+
+.vacancies__group {
+  @include ProximaNovaTextRegular16();
+
+  ul:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular32();
+  }
+}
+
+.vacancies__btn {
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+
+  @media (min-width: $screen-lg) {
+    max-width: 350px;
   }
 }
