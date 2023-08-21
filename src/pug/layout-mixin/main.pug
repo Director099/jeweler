@@ -1,5 +1,5 @@
 mixin main-content({title, standartTpl=true})
-  main.main-ident.page__content&attributes(attributes)
+  main.main-content.page__content&attributes(attributes)
     if(standartTpl)
       .container
         +link-icon({
@@ -7,9 +7,9 @@ mixin main-content({title, standartTpl=true})
           text: "Назад",
           widthIcon: 14,
           heightIcon: 14,
-        })(href=pages.index.href).link-back.main-ident__link-back
+        })(href=pages.index.href).link-back.main-content__link-back
         if(title)
-          h1.main-ident__title= title
+          h1.main-content__title= title
         .stack.stack--main-gap
           block
     else

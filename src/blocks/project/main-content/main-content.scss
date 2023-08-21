@@ -1,4 +1,4 @@
-.main-ident {
+.main-content {
   padding-bottom: 60px;
 
   @media (min-width: $screen-lg) {
@@ -10,7 +10,7 @@
   }
 }
 
-.main-ident__page-info {
+.main-content__page-info {
   position: relative;
   display: grid;
 
@@ -21,7 +21,7 @@
   }
 }
 
-.main-ident__title {
+.main-content__title {
   @include ProximaNovaTextBold25();
   margin-bottom: 30px;
 
@@ -32,14 +32,14 @@
   }
 }
 
-.main-ident__gap-table {
+.main-content__gap-table {
   gap: 40px;
   @media (min-width: $screen-lg) {
     gap: 88px;
   }
 }
 
-.main-ident__group-title {
+.main-content__group-title {
   @include ProximaNovaTextBold19();
   padding: 0 10px;
   margin-bottom: 20px;
@@ -54,6 +54,6 @@
   }
 }
 
-.main-ident__link-back {
+.main-content__link-back {
   margin-bottom: 30px;
 }
