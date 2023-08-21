@@ -1,5 +1,4 @@
 extends pug/layout.pug
-
 block var
   - const pageCurrent = pages.pageVacancy.href;
   - const pageMainTitle = pages.pageVacancy.text;
@@ -23,6 +22,8 @@ block var
         title: 'Полных лет',
         attrs: {
           placeholder: '30',
+          min: 18,
+          "data-pristine-min-message": " ",
           "data-age": ""
         }
       },
@@ -46,6 +47,7 @@ block var
         }
       },
     ]
+
 
 block meta
   title= pageMainTitle
@@ -89,8 +91,10 @@ block content
                   required: true,
                   type: item.attrs.type ? item.attrs.type : 'text',
                   minlength: item.attrs.minlength,
+                  min: item.attrs.min,
                   'data-pristine-required-message': " ",
                   'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
+                  'data-pristine-min-message': item.attrs['data-pristine-min-message'],
                   "data-age": item.attrs['data-age']
                 }
               }).field-text--std
