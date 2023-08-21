@@ -1,0 +1,100 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.pageVacancy.href;
+  - const pageMainTitle = pages.pageVacancy.text;
+  -
+    const formFilelds = [
+      {
+        title: 'Имя',
+        attrs: {
+          placeholder: 'Имя',
+        }
+      },
+      {
+        title: 'Номер телефона',
+        attrs: {
+          placeholder: '+7 (___) ___ - __ - __'
+        }
+      },
+      {
+        title: 'Полных лет',
+        attrs: {
+          placeholder: '30'
+        }
+      },
+      {
+        title: 'Гражданство',
+        attrs: {
+          placeholder: 'Россия'
+        }
+      },
+      {
+        title: 'В каком городе хотите работать? ',
+        attrs: {
+          placeholder: 'Уфа'
+        }
+      },
+      {
+        title: 'Опыт работы в продажах',
+        isTextarea: true,
+        attrs: {
+          placeholder: 'Опыт работы в продажах'
+        }
+      },
+    ]
+
+block meta
+  title= pageMainTitle
+
+block content
+  +main-content({
+    title: pageMainTitle
+  })
+    .vacancies
+      .vacancies__grid
+        .vacancies__content.order-xl-1
+          section.vacancies__group
+            h2.vacancies__title Обязанности
+            ul
+              li Консультирование клиентов по ассортименту и коллекциям
+              li Помощь в создании индивидуального ювелирного образа с учетом предпочтений покупателя
+              li Командная работа на выполнение плановых показателей магазина
+              li Поддержание высокого уровня клиентского сервиса
+              li Упаковка в соответствии со стандартами компании
+              li Работа с кассовым терминалом
+          section.vacancies__group
+            h2.vacancies__title Условия
+            ul
+              li Официальное трудоустройство
+              li Премия от продаж
+              li Фиксированный оклад
+              li Бонусы от компании
+              li График работы 2/2 рядом с домом
+              li Бесплатное обучение и профессиональное развитие
+              li Карьерный рост
+              li Корпоративные скидки на украшения
+        section.vacancies__form-group
+          h2.vacancies__title.vacancies__title--form Оставить отклик
+          +form.vacancies__form
+            each item in formFilelds
+              +field-text({
+                title: item.title,
+                isTextarea: item.isTextarea,
+                attrs: {
+                  placeholder: item.attrs.placeholder,
+                }
+              }).field-text--std
+            +field-checkbox([
+              {
+                title: 'Я даю согласие на обработку <a href="page-privacy-policy.html" target="_blank">персональных данных</a>',
+                attrs: {
+                  name: 'check',
+                  checked: true
+                }
+              },
+            ])
+            button.btn.btn--dark.vacancies__btn Откликнуться
+
+
+

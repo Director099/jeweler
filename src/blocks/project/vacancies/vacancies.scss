@@ -1,0 +1,44 @@
+.vacancies__content {
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 0;
+  }
+}
+
+.vacancies__form {
+  display: flex;
+  flex-direction: column;
+  //align-items: flex-start;
+  gap: 20px;
+
+  @media (min-width: $screen-xl) {
+    gap: 30px;
+  }
+}
+
+.vacancies__grid {
+  display: grid;
+  @media (min-width: $screen-xl) {
+    grid-template-columns: minmax(auto, 573px) minmax(auto, 1fr);
+    gap: 155px;
+  }
+}
+
+.vacancies__title {
+  @include ProximaNovaTextBold19();
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextBold40();
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: $screen-lg - 1) {
+    &--form {
+      @include ProximaNovaTextRegular16();
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+}

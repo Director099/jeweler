@@ -88,3 +88,32 @@ $border-radius:               3px;
     //@include field-help-text;
   }
 }
+
+.field-text--std {
+  margin-bottom: 0;
+
+  .field-text__input {
+    @include ProximaNovaTextRegular16();
+    border-color: $border-gray;
+    border-radius: 10px;
+    padding: 9px 19px;
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular26();
+      padding: 13px 29px;
+    }
+  }
+
+  .field-text__name {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular22();
+    }
+  }
+
+  textarea.field-text__input {
+    min-height: 100px;
+  }
+}
