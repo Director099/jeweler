@@ -10,13 +10,10 @@ import '../blocks/project/blog-place/blog-place.js';
 const telMask = document.querySelectorAll('[type="tel"]');
 
 telMask.forEach((item) => {
-  IMask(item, {
-    mask: '{+7} (000) 000-00-00',
-    // lazy: false,  // make placeholder always visible
-    // overwrite: 'shift',
+  const phoneMask = IMask(item, {
+    mask: '{+7} (000) 000 00 00',
+    lazy: false,
   });
-
-  console.log(item.value)
 })
 
 const dataAge = document.querySelectorAll('[data-age]');
@@ -36,12 +33,12 @@ form && form.forEach((itemForm) => {
   });
 
   const submitForm = (e) =>  {
+    const _disabled = 'disabled';
     const valid = pristine.validate();
     const btnSubmit = pristine.form.querySelector("[data-form-btn]");
-    valid ? btnSubmit.removeAttribute("disabled") : btnSubmit.setAttribute("disabled", "disabled");
+    valid ? btnSubmit.removeAttribute(_disabled) : btnSubmit.setAttribute(_disabled, _disabled);
     return valid ? true : e.preventDefault();
   }
 
-  itemForm.addEventListener('submit', (e) => submitForm(e));
-  itemForm.addEventListener('input', (e) => submitForm(e));
+  ["submit", "input"].forEach(item => itemForm.addEventListener(item, e => submitForm(e)))
 })

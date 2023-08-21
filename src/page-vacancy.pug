@@ -14,8 +14,8 @@ block var
         title: 'Номер телефона',
         attrs: {
           type: 'tel',
-          minlength: 18,
-          "data-pristine-minlength-message": " "
+          pattern: `/(\\+7|8)[\\s(]*\\d{3}[)\\s][\\s]\\d{3}[\\s]\\d{2}[\\s]\\d{2}/i`,
+          "data-pristine-pattern-message": " "
         }
       },
       {
@@ -92,9 +92,11 @@ block content
                   type: item.attrs.type ? item.attrs.type : 'text',
                   minlength: item.attrs.minlength,
                   min: item.attrs.min,
+                  pattern: item.attrs.pattern,
                   'data-pristine-required-message': " ",
                   'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
                   'data-pristine-min-message': item.attrs['data-pristine-min-message'],
+                  'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
                   "data-age": item.attrs['data-age']
                 }
               }).field-text--std
