@@ -43,29 +43,16 @@ $grid-gutter-width:           30px !default;
 
   @media (min-width: $screen-sm) {
     width: $container-sm;
-
-
-      padding-left: math.div($sm-grid-gutter, 2);
-      padding-right: math.div($sm-grid-gutter, 2);
-
   }
 
   @media (min-width: $screen-md) {
     width: $container-md;
-
-    @if ($md-grid-gutter != $sm-grid-gutter) {
-      padding-left: math.div($md-grid-gutter, 2);
-      padding-right: math.div($md-grid-gutter, 2);
-    }
   }
 
   @media (min-width: $screen-lg) {
     width: $container-lg;
-
-    @if ($lg-grid-gutter != $md-grid-gutter) {
-      padding-left: math.div($lg-grid-gutter, 2);
-      padding-right: math.div($lg-grid-gutter, 2);
-    }
+    padding-left: math.div($lg-grid-gutter, 2);
+    padding-right: math.div($lg-grid-gutter, 2);
   }
 
   @media (min-width: $screen-xl) {

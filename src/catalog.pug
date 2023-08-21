@@ -3,6 +3,9 @@ extends pug/layout.pug
 block meta
   title Все украшения
 
+block var
+  - const headerClass = 'page-header--xs-mb-none';
+
 
 block content
   +catalog({

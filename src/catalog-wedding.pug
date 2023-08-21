@@ -3,6 +3,9 @@ extends pug/layout.pug
 block meta
   title= pages.catalogWedding.text
 
+block var
+  - const headerClass = 'page-header--xs-mb-none';
+
 block content
   +catalog({
     catalogFilter: false,

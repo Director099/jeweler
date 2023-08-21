@@ -43,7 +43,7 @@ html(lang='ru').page
 
   body.page__body
     .page__inner
-      +page-header({})
+      +page-header({})(class=headerClass)
       block content
       +page-footer().d-none.d-xl-block
       +mobile-menu(pageCurrent)
