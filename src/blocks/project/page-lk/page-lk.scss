@@ -1,0 +1,15 @@
+.page-lk__grid {
+  display: grid;
+  @media (min-width: $screen-lg) {
+    gap: 20px;
+    grid-template-columns: 346px 1fr;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 40px;
+  }
+}
+
+.page-lk__link-back {
+  margin-bottom: 30px; //TODO: .page-catalog__link-back едины
+}

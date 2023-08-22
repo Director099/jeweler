@@ -46,6 +46,7 @@
 @import "../blocks/project/page-footer/page-footer";
 @import "../blocks/project/main-content/main-content";
 @import "../blocks/project/page-catalog/page-catalog";
+@import "../blocks/project/page-lk/page-lk";
 @import "../blocks/project/promo/promo";
 @import "../blocks/project/vacancies/vacancies";
 @import "../blocks/project/main-slider/main-slider";
@@ -145,6 +146,11 @@
   display: none;
   text-transform: uppercase;
   color: $tp-black;
+  margin-bottom: 30px;
+
+  &--mb-none {
+    margin-bottom: 0px;
+  }
 
   span {
     color: inherit;

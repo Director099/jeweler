@@ -1,0 +1,15 @@
+mixin lk({pageSubCatalogCurrentTitle, pageLkCurrentHref})
+  .page-lk.page__content&attributes(attributes)
+    .container
+      +link-icon({
+        icon: 'icon-arrow',
+        text: "Назад",
+        widthIcon: 14,
+        heightIcon: 14,
+      })(href=pages.index.href).link-back
+      .page-lk__grid
+        aside
+          p lorem
+        main.page-lk__content
+          //-h1.page-lk__titl.d-lg-none= pageSubCatalogCurrentTitle Todo: ХЗХЗХЗХЗ
+          block
