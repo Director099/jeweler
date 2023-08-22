@@ -36,22 +36,37 @@ block content
     }
 
   main.container
-    - const pageCatalogs = (elem) => !elem.href.indexOf('catalog');
+    - const pageCatalogs = (elem) => elem.href.indexOf('catalog');
+    - const pageLk = (elem) => elem.href.indexOf('lk');
+    - const pageOrder = (elem) => elem.href.indexOf('page');
+    - const pageBasket = (elem) => elem.href.indexOf('basket');
+    - const pageMain = (elem) => ['index.html', '404.html'].includes(elem["href"]);
+
     fieldset
       legend Внутр. стр.
       ol
         each item in pages
-          if(!item.hidden && !pageCatalogs(item))
+          if(!pageOrder(item) || pageMain(item))
             li
               a(href=item.href)= item.text
     fieldset
       legend Каталог
       ol
         each item in pages
-          if(!item.hidden && pageCatalogs(item))
+          if(!pageCatalogs(item))
             li
               a(href=item.href)= item.text
     fieldset
       legend Корзина
+      ol
+        each item in pages
+          if(!pageBasket(item))
+            li
+              a(href=item.href)= item.text
     fieldset
       legend ЛК
+      ol
+        each item in pages
+          if(!pageLk(item))
+            li
+              a(href=item.href)= item.text
