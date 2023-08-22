@@ -1,0 +1,9 @@
+mixin lk-menu({pageLkCurrentHref})
+  .lk-menu&attributes(attributes)
+    ul.lk-menu__list
+      each item, i in lkMenuList
+        - const currentActive = item.href === pageLkCurrentHref ? "active" : "";
+        if (!item.navBarHidden)
+          li.lk-menu__item
+            a.lk-menu__link(href=item.href class=`${currentActive ? "active" : ''}`)= item.text
+    a.lk-menu__link(href=pages.index.href) Выход

@@ -1,0 +1,18 @@
+.lk-menu__list {
+  @include ul-reset();
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 40px 0;
+  margin-bottom: 80px;
+}
+
+.lk-menu__link {
+  @include ProximaNovaTextRegular28();
+  color: $tp-grey;
+  text-decoration: none;
+
+  &.active {
+    color: $tp-black;
+  }
+}

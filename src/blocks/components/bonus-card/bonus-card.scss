@@ -1,0 +1,47 @@
+.bonus-card {
+  @include ProximaNovaTextRegular13();
+  position: relative;
+  background-image: url("../img/decor/bonus-card.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  max-width: 426px;
+  border-radius: 20px;
+  padding: 30px 30px 20px 24px;
+  color: $white;
+  text-transform: uppercase;
+
+  @media(min-width: $screen-lg) {
+    @include ProximaNovaTextRegular22();
+  }
+}
+
+.bonus-card__count-bonus {
+  @include MontserratRegular30();
+  text-align: center;
+  margin-bottom: 38px;
+
+  @media(min-width: $screen-lg) {
+    @include ProximaNovaTextRegular40();
+    margin-bottom: 46px;
+  }
+}
+
+.bonus-card__icon {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.bonus-card__status {
+  margin-bottom: 30px;
+
+  @media(min-width: $screen-lg) {
+    margin-bottom: 36px;
+  }
+}
+
+.bonus-card__name {
+  padding-right: 40px;
+}

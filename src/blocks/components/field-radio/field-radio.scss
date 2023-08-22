@@ -9,30 +9,7 @@ $line-height:                 1.5 !default;
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: 1rem;
-
-  &__title {
-    display: block;
-    font-weight: 700;
-    line-height: $line-height;
-    margin-bottom: 0.4em;
-  }
-
-  &__input-wrap {
-
-    & + & {
-      margin-top: 1rem;
-    }
-  }
-
-  &__name {
-    position: relative;
-    display: inline-block;
-    padding-left: 1.5em;
-    margin-right: 0.6em;
-    font-weight: 400;
-    line-height: $line-height;
-  }
+  //margin-bottom: 1rem
 
   &__name-text {
     display: inline-block;
@@ -42,10 +19,10 @@ $line-height:                 1.5 !default;
     // &:before {
     //   content: '';
     //   position: absolute;
-    //   top: rem(5px);
+    //   top: 5px;
     //   left: 0;
-    //   width: rem(14px);
-    //   height: rem(14px);
+    //   width: 14px;
+    //   height: 14px;
     //   background-image: svg-load('../blocks/field-radio/bg-img/radiobutton.svg');
     //   background-size: 100%;
     // }
@@ -60,12 +37,13 @@ $line-height:                 1.5 !default;
     &:before {
       content: '';
       position: absolute;
-      top: rem(5px);
+      top: 50%;
       left: 0;
-      width: rem(14px);
-      height: rem(14px);
-      border: 2px solid currentColor;
+      width: 24px;
+      height: 24px;
+      box-shadow: 0 0 0 1px currentColor;
       border-radius: 50%;
+      transform: translateY(-50%);
     }
 
     @at-root input:focus ~ &:before {
@@ -75,14 +53,15 @@ $line-height:                 1.5 !default;
     &:after {
       content: '';
       position: absolute;
-      top: rem(9px);
-      left: rem(4px);
-      width: rem(6px);
-      height: rem(6px);
+      top: 50%;
+      left: 6px;
+      width: 12px;
+      height: 12px;
       opacity: 0;
       border-radius: 50%;
       background-color: currentColor;
-      transition: opacity $transition-time;
+      transition: opacity $time;
+      transform: translateY(-50%);
 
       @at-root input:checked ~ & {
         opacity: 1;
@@ -108,12 +87,35 @@ $line-height:                 1.5 !default;
     // сокрытие инпута в случае использования своей радиокнопки
     opacity: 0;
   }
+}
 
-  &__help-text-wrap {
-    padding-left: 1.5em;
+.field-radio__title {
+  display: inline-block;
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular22();
   }
+}
 
-  &__help-text {
-    @include field-help-text;
+.field-radio__name {
+  position: relative;
+  display: inline-block;
+
+  padding-left: 44px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular28();
+  }
+}
+
+.field-radio__input-wrap {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 24px 60px;
+
+  &--row {
+    flex-direction: row;
   }
 }

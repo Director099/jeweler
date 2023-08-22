@@ -1,0 +1,29 @@
+.link-back {
+  @include ProximaNovaTextRegular22();
+  display: none;
+  text-transform: uppercase;
+  color: $tp-black;
+  margin-bottom: 30px;
+
+  &--mb-none {
+    margin-bottom: 0px;
+  }
+
+  span {
+    color: inherit;
+  }
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular22();
+    color: $tp-black;
+    display: inline-flex;
+
+    span {
+      color: inherit;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    display: none;
+  }
+}

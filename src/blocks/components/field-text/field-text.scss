@@ -105,11 +105,13 @@ $border-radius:               3px;
   }
 
   .field-text__name {
+    @include ProximaNovaTextRegular16();
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 
     @media (min-width: $screen-lg) {
       @include ProximaNovaTextRegular22();
+      margin-bottom: 20px;
     }
   }
 

@@ -8,8 +8,15 @@ mixin lk({pageSubCatalogCurrentTitle, pageLkCurrentHref})
         heightIcon: 14,
       })(href=pages.index.href).link-back
       .page-lk__grid
-        aside
-          p lorem
+        aside.lk-sidebar.page-lk__sidebar
+          +user({
+            img: 'img/content/default-photo-profile.svg',
+            name: 'Ильназ',
+            status: 'Platinum'
+          }).lk-sidebar__user
+          +lk-menu({
+            pageLkCurrentHref: pageLkCurrentHref
+          })
         main.page-lk__content
           //-h1.page-lk__titl.d-lg-none= pageSubCatalogCurrentTitle Todo: ХЗХЗХЗХЗ
           block

@@ -1,7 +1,7 @@
 //- Все примеси в этом файле должны начинаться c имени блока (field-radio)
 
-mixin field-radio(radiobuttons, title)
-
+mixin field-radio({radiobuttons, title, helpText, orientationRow})
+  - const hasOrientation = orientationRow && 'field-radio__input-wrap--row'
   //- Принимает:
   //-   radiobuttons {array}
   //-     {object}
@@ -35,19 +35,20 @@ mixin field-radio(radiobuttons, title)
   .field-radio&attributes(attributes)
     if(typeof(title) !== 'undefined' && title)
       .field-radio__title!= title
-    each checkbox in radiobuttons
-      -
-        var allMods = '';
-        if(typeof(checkbox.mods) !== 'undefined' && checkbox.mods) {
-          var modsList = checkbox.mods.split(',');
-          for (var i = 0; i < modsList.length; i++) {
-            allMods = allMods + ' field-radio__input-wrap--' + modsList[i].trim();
+    .field-radio__input-wrap(class=[allMods, hasOrientation])
+      each checkbox in radiobuttons
+        -
+          var allMods = '';
+          if(typeof(checkbox.mods) !== 'undefined' && checkbox.mods) {
+            var modsList = checkbox.mods.split(',');
+            for (var i = 0; i < modsList.length; i++) {
+              allMods = allMods + ' field-radio__input-wrap--' + modsList[i].trim();
+            }
           }
-        }
-      .field-radio__input-wrap(class=allMods)
+
         label.field-radio__name
           input.field-radio__input(type='radio')&attributes(checkbox.attrs)
           span.field-radio__name-text!= checkbox.title
-        if(typeof(checkbox.helpText) !== 'undefined' && checkbox.helpText)
-          .field-radio__help-text-wrap
-            .field-radio__help-text!= checkbox.helpText
+    if(typeof(helpText) !== 'undefined' && helpText)
+      .field-radio__help-text-wrap
+        .field-radio__help-text!= helpText

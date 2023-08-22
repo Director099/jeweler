@@ -2,11 +2,108 @@ extends pug/layout.pug
 
 block var
   - const pageCurrent = pages.lk.href;
+  -
+    //- TODO Вынести общий список инпутов
+    const formFileldsLk = [
+      {
+        title: 'Фамилия',
+        attrs: {
+          type: 'text'
+        }
+      },
+      {
+        title: 'Имя',
+        attrs: {
+          type: 'text'
+        }
+      },
+      {
+        title: 'Email',
+        attrs: {
+          type: 'mail',
+          "data-pristine-pattern-message": " "
+        }
+      },
+      {
+        title: 'Телефон',
+        attrs: {
+          type: 'tel',
+          pattern: `/(\\+7|8)[\\s(]*\\d{3}[)\\s][\\s]\\d{3}[\\s]\\d{2}[\\s]\\d{2}/i`,
+          "data-pristine-pattern-message": " "
+        }
+      },
+    ]
 
 block meta
   title= pages.lk.text
 
 block content
-  +lk({})
-    p lorem
+  +lk({
+    pageLkCurrentHref: pageCurrent
+  })
+    .box-content
+      .box-content__form
+        .box-content__width
+          +bonus-card.box-content__bonus-card
+        +form(action="404.html" method="POST" data-form)
+          +fieldset.form__lk-fieldset.box-content__width
+            each item in formFileldsLk
+              +field-text({
+                title: item.title,
+                isTextarea: item.isTextarea,
+                attrs: {
+                  placeholder: item.attrs.placeholder,
+                  required: true,
+                  type: item.attrs.type ? item.attrs.type : 'text',
+                  minlength: item.attrs.minlength,
+                  min: item.attrs.min,
+                  pattern: item.attrs.pattern,
+                  'data-pristine-required-message': " ",
+                  'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
+                  'data-pristine-min-message': item.attrs['data-pristine-min-message'],
+                  'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
+                  "data-age": item.attrs['data-age']
+                }
+              }).field-text--std
+            +field-radio({
+              radiobuttons: [
+                {
+                  title: 'Женский',
+                  attrs: {
+                    name: 'gender',
+                    checked: true,
+                  }
+                },
+                {
+                  title: 'Мужской',
+                  attrs: {
+                    name: 'gender',
+                  }
+                },
+              ],
+              title: "Пол",
+              orientationRow: true
+            })
+
+          +fieldset.form__lk-checked
+            +field-checkbox([
+              {
+                title: 'Я даю согласие на обработку <a href="page-privacy-policy.html" target="_blank">персональных данных</a>',
+                attrs: {
+                  name: 'check',
+                  checked: true,
+                  required: true,
+                }
+              },
+              {
+                title: 'Я подтверждаю согласие на получение сообщений рекламного характера. Отказаться от рассылки можно в личном кабинете.',
+                attrs: {
+                  name: 'check',
+                  required: true,
+                }
+              },
+            ])
+          .box-content__width.form__center
+            button.btn.btn--dark.form__lk-btn(disabled, data-form-btn) Откликнуться
+
 

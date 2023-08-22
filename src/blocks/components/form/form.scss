@@ -41,9 +41,9 @@ $line-height:                 1.5 !default;
   margin: 0;
   border: 0;
 
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
+  //&:not(:last-child) {
+  //  margin-bottom: 1rem;
+  //}
 }
 
 .form__legend {
@@ -85,4 +85,38 @@ $line-height:                 1.5 !default;
   margin-right: -1px;
   margin-top: -1px;
   margin-bottom: -1px;
+}
+
+.form__lk-fieldset {
+  display: grid;
+  gap: 20px;
+
+  @media (min-width: $screen-lg) {
+    gap: 30px;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 40px;
+    margin-bottom: 30px;
+  }
+}
+
+.form__center {
+  text-align: center;
+}
+
+.form__lk-fieldset .field-text__name {
+  @include ProximaNovaTextRegular22();
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular28();
+  }
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular26();
+  }
+}
+
+.form__lk-checked {
+  @media (min-width: $screen-lg) {
+    margin-bottom: 40px;
+  }
 }

@@ -27,20 +27,26 @@
 @import "../blocks/components/page/page";
 @import "../blocks/components/form/form";
 @import "../blocks/components/logo/logo";
+@import "../blocks/components/user/user";
+@import "../blocks/components/lk-sidebar/lk-sidebar";
 @import "../blocks/components/benefits/benefits";
 @import "../blocks/components/socials/socials";
 @import "../blocks/components/field-text/field-text";
 @import "../blocks/components/field-checkbox/field-checkbox";
+@import "../blocks/components/field-radio/field-radio";
 @import "../blocks/components/link-icon/link-icon";
+@import "../blocks/components/link-back/link-back";
 @import "../blocks/components/filter-link/filter-link";
 @import "../blocks/components/category-list/category-list";
 @import "../blocks/components/category-link/category-link";
 @import "../blocks/components/category-tile/category-tile";
 @import "../blocks/components/catalog-title/catalog-title";
 @import "../blocks/components/table-char/table-char";
+@import "../blocks/components/bonus-card/bonus-card";
 
 @import "../blocks/components/navigation/navigation";
 @import "../blocks/components/section-content/section-content";
+@import "../blocks/components/box-content/box-content";
 
 @import "../blocks/project/page-header/page-header";
 @import "../blocks/project/page-footer/page-footer";
@@ -64,6 +70,7 @@
 @import "../blocks/project/add-benefits/add-benefits";
 @import "../blocks/project/mobile-menu/mobile-menu";
 @import "../blocks/project/catalog-menu/catalog-menu";
+@import "../blocks/project/lk-menu/lk-menu";
 @import "../blocks/project/category-filter/category-filter";
 @import "../blocks/project/statistics-brand/statistics-brand";
 @import "../blocks/project/about-company/about-company";
@@ -139,34 +146,4 @@
 .swiper-button-prev {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='26' viewBox='0 0 14 26' fill='none'%3E%3Cpath d='M13 25L1 13L13 1' stroke='%23F75394' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   left: 0px;
-}
-
-.link-back {
-  @include ProximaNovaTextRegular22();
-  display: none;
-  text-transform: uppercase;
-  color: $tp-black;
-  margin-bottom: 30px;
-
-  &--mb-none {
-    margin-bottom: 0px;
-  }
-
-  span {
-    color: inherit;
-  }
-
-  @media (min-width: $screen-lg) {
-    @include ProximaNovaTextRegular22();
-    color: $tp-black;
-    display: inline-flex;
-
-    span {
-      color: inherit;
-    }
-  }
-
-  @media (min-width: $screen-xl) {
-    display: none;
-  }
 }
