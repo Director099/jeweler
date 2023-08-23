@@ -1,5 +1,8 @@
 .lk-sidebar {
   @media (min-width: $screen-lg) {
+    position: sticky;
+    top: 0;
+    left: 0;
     padding: 30px 38px;
     background-color: $white;
     border-radius: 15px;

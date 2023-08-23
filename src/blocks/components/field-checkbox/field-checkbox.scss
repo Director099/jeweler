@@ -20,12 +20,12 @@ $border-radius:               3px !default;
     margin-bottom: 0.4em;
   }
 
-  &__input-wrap {
-
-    & + & {
-      margin-top: 1rem;
-    }
-  }
+  //&__input-wrap {
+  //
+  //  & + & {
+  //    margin-top: 1rem;
+  //  }
+  //}
 
   &__name {
     position: relative;

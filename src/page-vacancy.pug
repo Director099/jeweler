@@ -100,16 +100,18 @@ block content
                   "data-age": item.attrs['data-age']
                 }
               }).field-text--std
-            +field-checkbox([
-              {
-                title: 'Я даю согласие на обработку <a href="page-privacy-policy.html" target="_blank">персональных данных</a>',
-                attrs: {
-                  name: 'check',
-                  checked: true,
-                  required: true,
-                }
-              },
-            ])
+            +field-checkbox({
+              checkboxes: [
+                {
+                  title: 'Я даю согласие на обработку <a href="page-privacy-policy.html" target="_blank">персональных данных</a>',
+                  attrs: {
+                    name: 'check',
+                    checked: true,
+                    required: true,
+                  }
+                },
+              ]
+            })
             button.btn.btn--dark.vacancies__btn(disabled, data-form-btn) Откликнуться
 
 

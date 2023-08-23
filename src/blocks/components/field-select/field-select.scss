@@ -14,10 +14,10 @@ $border-radius:               rem(3px) !default;
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: 1rem;
+  //margin-bottom: 1rem;
 
   &__name {
-    @include field-name;
+    //@include field-name;
   }
 
   &__input-wrap {}
@@ -34,7 +34,7 @@ $border-radius:               rem(3px) !default;
     border-radius: $border-radius;
     appearance: none;
     background-color: #fff;
-    background-image: svg-load('../blocks/field-select/bg-img/select-down.svg');
+    //background-image: svg-load('../blocks/field-select/bg-img/select-down.svg');
     background-repeat: no-repeat;
     background-position: right 0.3em center;
     background-size: 1.063em 0.688em;
@@ -61,6 +61,75 @@ $border-radius:               rem(3px) !default;
   }
 
   &__help-text {
-    @include field-help-text;
+    //@include field-help-text;
+  }
+}
+
+.field-select {
+  .choices .choices__inner {
+    @include ProximaNovaTextRegular16();
+    position: relative;
+    padding: 9.5px 42px 9.5px 16px;
+    border-radius: 10px;
+    border-color: $border-gray;
+    z-index: 2;
+    background-color: $white;
+    min-height: auto;
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular26();
+      padding: 13px 61px 13px 16px;
+    }
+  }
+
+  .choices__list--single {
+    padding: 0;
+  }
+
+  .choices__list--dropdown .choices__item--selectable,
+  .choices__list[aria-expanded]
+  .choices__item--selectable {
+    @include ProximaNovaTextRegular13();
+    padding: 10px 16px;
+    white-space: nowrap;
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular22();
+      padding: 14px 16px;
+    }
+  }
+
+  .choices[data-type*=select-one]::after {
+    content: "";
+    border: none;
+    right: 16px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='14' viewBox='0 0 26 14' fill='none'%3E%3Cpath d='M25 1L13 13L0.999999 1' stroke='%23070707' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
+    margin: 0;
+    transition: $time;
+    z-index: 2;
+
+    @media (min-width: $screen-lg) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .choices.is-open::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .choices__list--dropdown,
+  .choices__list[aria-expanded] {
+    border-top: none;
+    border-color: $border-gray;
+    margin-top: -10px;
+    padding-top: 10px;
   }
 }

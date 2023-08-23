@@ -50,14 +50,7 @@ $line-height:                 1.5 !default;
   display: block;
   width: 100%;
   max-width: 100%; // Привет IE
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-size: $font-size--h3;
-  font-family: $font-family--headings;
-  font-weight: 700;
-  line-height: $line-height;
-  white-space: normal; // Привет IE
-  color: currentColor;
+  margin: 0;
 }
 
 //.form__search-btn {
@@ -90,9 +83,11 @@ $line-height:                 1.5 !default;
 .form__lk-fieldset {
   display: grid;
   gap: 20px;
+  margin-bottom: 30px;
 
   @media (min-width: $screen-lg) {
     gap: 30px;
+    margin-bottom: 40px;
   }
 
   @media (min-width: $screen-xl) {
@@ -105,18 +100,45 @@ $line-height:                 1.5 !default;
   text-align: center;
 }
 
-.form__lk-fieldset .field-text__name {
+.form__lk-checked {
+  margin-bottom: 40px;
+  @media (min-width: $screen-xl) {
+    margin-bottom: 33px;
+  }
+}
+
+.form__birthday-row {
+  display: flex;
+  gap: 10px;
+  @media (min-width: $screen-lg) {
+    gap: 28px;
+  }
+}
+
+.form__birthday-title {
   @include ProximaNovaTextRegular22();
+  display: inline-block;
+  margin-bottom: 16px;
+
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular28();
+    margin-bottom: 20px;
   }
+
   @media (min-width: $screen-xl) {
     @include ProximaNovaTextRegular26();
   }
 }
 
-.form__lk-checked {
-  @media (min-width: $screen-lg) {
-    margin-bottom: 40px;
+.form__field-checkbox {
+  .field-checkbox__input-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
+}
+
+.form__lk-btn {
+  max-width: 260px;
+  width: 100%;
 }

@@ -6,15 +6,31 @@
 }
 
 .box-content__form {
-  max-width: 707px;
+  @media (min-width: $screen-lg) {
+    max-width: 590px;
+    margin-left: auto;
+  }
+
+  @media (min-width: $screen-xl) {
+    max-width: 707px;
+    margin: 0;
+  }
 }
 
 .box-content__bonus-card {
-  margin: 0 auto 80px;
+  margin: 0 auto 40px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 50px;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 80px;
+  }
 }
 
 .box-content__width {
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     max-width: 541px;
   }
 }

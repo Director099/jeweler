@@ -1,5 +1,20 @@
+.page-lk {
+  padding-bottom: 60px;
+
+  @media (min-width: $screen-lg) {
+    padding-bottom: 100px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-bottom: 200px;
+  }
+}
+
 .page-lk__grid {
+  position: relative;
   display: grid;
+  align-items: flex-start;
+
   @media (min-width: $screen-lg) {
     gap: 10px;
     grid-template-columns: 346px 1fr;
@@ -10,6 +25,10 @@
   }
 }
 
-.page-lk__link-back {
-  margin-bottom: 30px; //TODO: .page-catalog__link-back едины
+.page-lk__personal-data {
+  @media (max-width: $screen-xl - 1) {
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
 }

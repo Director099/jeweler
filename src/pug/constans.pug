@@ -278,3 +278,44 @@
     "Нефрит",
     "Янтарь",
   ]
+
+  const selectData = [];
+  for (let i = 1; i <= 31; i++)
+    selectData.push({
+      title: i,
+      attrs: {
+        value: i,
+      },
+    })
+
+  const selectMonth = [];
+  const selectMonthList = [
+    "Январь",
+    "Февраль",
+    "Март",
+    "Апрель",
+    "Май",
+    "Июнь",
+    "Июль",
+    "Август",
+    "Сентябрь",
+    "Октябрь",
+    "Ноябрь",
+    "Декабрь",
+  ]
+  selectMonthList.forEach((item, i) =>
+    selectMonth.push({
+      title: selectMonthList[i],
+      attrs: {
+        value: selectMonthList[i],
+      },
+    })
+  )
+  const selectYear = [];
+  for (let i = 2000; i <= 2020; i++)
+    selectYear.push({
+      title: i,
+      attrs: {
+        value: i,
+      },
+    })

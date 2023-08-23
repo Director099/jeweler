@@ -1,4 +1,4 @@
-.bonus-card {
+.bonus-card__ {
   @include ProximaNovaTextRegular13();
   position: relative;
   background-image: url("../img/decor/bonus-card.svg");
@@ -11,6 +11,7 @@
   padding: 30px 30px 20px 24px;
   color: $white;
   text-transform: uppercase;
+  margin: 0 auto;
 
   @media(min-width: $screen-lg) {
     @include ProximaNovaTextRegular22();
@@ -44,4 +45,11 @@
 
 .bonus-card__name {
   padding-right: 40px;
+}
+
+.bonus-card__warning {
+  @include ProximaNovaTextBold19();
+  font-weight: 400;
+  margin: 20px auto 0;
+  max-width: 266px;
 }

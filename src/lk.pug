@@ -20,8 +20,8 @@ block var
       {
         title: 'Email',
         attrs: {
-          type: 'mail',
-          "data-pristine-pattern-message": " "
+          type: "email",
+          "data-pristine-email-message": " "
         }
       },
       {
@@ -41,7 +41,7 @@ block content
   +lk({
     pageLkCurrentHref: pageCurrent
   })
-    .box-content
+    .box-content.page-lk__personal-data
       .box-content__form
         .box-content__width
           +bonus-card.box-content__bonus-card
@@ -54,7 +54,7 @@ block content
                 attrs: {
                   placeholder: item.attrs.placeholder,
                   required: true,
-                  type: item.attrs.type ? item.attrs.type : 'text',
+                  type: item.attrs.type,
                   minlength: item.attrs.minlength,
                   min: item.attrs.min,
                   pattern: item.attrs.pattern,
@@ -62,9 +62,11 @@ block content
                   'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
                   'data-pristine-min-message': item.attrs['data-pristine-min-message'],
                   'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
-                  "data-age": item.attrs['data-age']
+                  "data-age": item.attrs['data-age'],
+                  "data-pristine-email-message": item.attrs["data-pristine-email-message"]
                 }
-              }).field-text--std
+              }).field-text--lk-input
+                span.field-text__add-point +500 ББ
             +field-radio({
               radiobuttons: [
                 {
@@ -83,27 +85,52 @@ block content
               ],
               title: "Пол",
               orientationRow: true
-            })
-
+            }).field-radio--lk-radio
+            section.form__birthday
+              h3.form__birthday-title Дата рождения
+              .form__birthday-row
+                +field-select({
+                  attrs: {
+                    name: 'date-birthday',
+                    "data-choices-select": ""
+                  },
+                  options: selectData,
+                }).form__birthday-date
+                +field-select({
+                  attrs: {
+                    name: 'date-month',
+                    "data-choices-select": ""
+                  },
+                  options: selectMonth,
+                }).form__birthday-month
+                +field-select({
+                  attrs: {
+                    name: 'date-year',
+                    "data-choices-select": ""
+                  },
+                  options: selectYear,
+                }).form__birthday-year
           +fieldset.form__lk-checked
-            +field-checkbox([
-              {
-                title: 'Я даю согласие на обработку <a href="page-privacy-policy.html" target="_blank">персональных данных</a>',
-                attrs: {
-                  name: 'check',
-                  checked: true,
-                  required: true,
-                }
-              },
-              {
-                title: 'Я подтверждаю согласие на получение сообщений рекламного характера. Отказаться от рассылки можно в личном кабинете.',
-                attrs: {
-                  name: 'check',
-                  required: true,
-                }
-              },
-            ])
+            +field-checkbox({
+              checkboxes: [
+                {
+                  title: 'Я даю согласие на обработку <a href="page-privacy-policy.html" target="_blank">персональных данных</a>',
+                  attrs: {
+                    name: 'check',
+                    checked: true,
+                    required: true,
+                  }
+                },
+                {
+                  title: 'Я подтверждаю согласие на получение сообщений рекламного характера. Отказаться от рассылки можно в личном кабинете.',
+                  attrs: {
+                    name: 'check',
+                    required: true,
+                  }
+                },
+              ]
+            }).form__field-checkbox
           .box-content__width.form__center
-            button.btn.btn--dark.form__lk-btn(disabled, data-form-btn) Откликнуться
+            button.btn.btn--dark.form__lk-btn(disabled, data-form-btn) Сохранить
 
 
