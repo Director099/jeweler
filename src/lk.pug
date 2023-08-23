@@ -2,6 +2,7 @@ extends pug/layout.pug
 
 block var
   - const pageCurrent = pages.lk.href;
+  - const pageSidebarCurrent = pages.lk.href
   -
     //- TODO Вынести общий список инпутов
     const formFileldsLk = [
@@ -39,7 +40,7 @@ block meta
 
 block content
   +lk({
-    pageLkCurrentHref: pageCurrent
+    pageLkCurrentHref: pageSidebarCurrent
   })
     .box-content.page-lk__personal-data
       .box-content__form

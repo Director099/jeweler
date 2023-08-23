@@ -1,0 +1,17 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.lk.href;
+  - const pageSidebarCurrent = pages.lkBuy.href
+
+block meta
+  title= pages.lkNoBuy.text
+
+block content
+  +lk({
+    pageLkCurrentHref: pageSidebarCurrent
+  })
+    h1 На данный момент у вас не было заказов
+    a.btn.btn--dark(href=pages.catalog.href) Перейти в каталог
+
+
