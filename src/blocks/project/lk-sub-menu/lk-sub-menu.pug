@@ -1,0 +1,9 @@
+mixin lk-sub-menu
+  ul.lk-sub-menu&attributes(attributes).d-lg-none
+    each item in lkMenuList
+      if(item.icon)
+        li.lk-sub-menu__item
+          a.lk-sub-menu__link(href=`${item.href}`)
+            svg.lk-sub-menu__icon(width="23" height="23")
+              use(href=`img/symbols.svg#icon-${item.icon}`)
+            span.lk-sub-menu__text!= item.text

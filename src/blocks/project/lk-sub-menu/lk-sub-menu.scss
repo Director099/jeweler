@@ -1,0 +1,21 @@
+.lk-sub-menu {
+  @include ul-reset();
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 0 0px 40px;
+}
+
+.lk-sub-menu__link {
+  @include ProximaNovaTextRegular16();
+  display: block;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.lk-sub-menu__icon {
+  display: block;
+  margin: 0 auto 15px;
+  color: transparent;
+}
