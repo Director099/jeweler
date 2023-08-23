@@ -1,22 +1,35 @@
 .user {
-  display: block;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  text-align: center;
+
+  @media (min-width: $screen-lg) {
+    display: block;
+    text-align: center;
+  }
 }
 
 .user__img {
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
   border-radius: 50px;
   background-color: $bg-gray-2;
-  margin: 0 auto 20px;
+
   color: initial;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media (min-width: $screen-lg) {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
   }
 }
 
@@ -36,9 +49,13 @@
   color: initial;
 }
 
-.user__status {
+.user__status-text {
   @include ProximaNovaTextRegular22();
   margin-bottom: 0;
-  color: $tp-grey;
+  color: initial;
+
+  @media (min-width: $screen-lg) {
+    color: $tp-grey;
+  }
 }
 

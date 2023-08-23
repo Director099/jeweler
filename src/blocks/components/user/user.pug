@@ -4,4 +4,6 @@ mixin user({name, status, img})
       img(src=img, alt=name)
     section.user__info
       h3.user__name= name
-      span.user__status= status
+      p.user__status-text
+        span.d-lg-none Статус:
+        span.user__status= status
