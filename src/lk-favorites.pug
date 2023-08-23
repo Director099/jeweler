@@ -1,0 +1,17 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.lkFavorites.href;
+  - const pageSidebarCurrent = pages.lkFavorites.href
+  -
+
+block meta
+  title= pages.lkFavorites.text
+
+block content
+  +lk({
+    pageLkCurrentHref: pageSidebarCurrent
+  })
+    +favorites()
+
+

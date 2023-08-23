@@ -10,6 +10,14 @@
   }
 }
 
+.page-lk--xs-main-center {
+  @media (max-width: $screen-lg - 1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .page-lk__grid {
   position: relative;
   display: grid;
@@ -31,4 +39,8 @@
     padding: 0;
     box-shadow: none;
   }
+}
+
+.page-lk__content {
+  height: 100%;
 }

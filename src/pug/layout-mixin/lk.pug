@@ -1,4 +1,5 @@
 mixin lk({pageSubCatalogCurrentTitle, pageLkCurrentHref})
+  - const pageMainLk = (pages.lk.href !== pageLkCurrentHref) && `d-none d-lg-block`;
   .page-lk.page__content&attributes(attributes)
     .container
       +link-icon({
@@ -8,7 +9,7 @@ mixin lk({pageSubCatalogCurrentTitle, pageLkCurrentHref})
         heightIcon: 14,
       })(href=pages.index.href).link-back
       .page-lk__grid
-        aside.lk-sidebar.page-lk__sidebar
+        aside.lk-sidebar.page-lk__sidebar(class=pageMainLk)
           +user({
             img: 'img/content/default-photo-profile.svg',
             name: 'Ильназ',

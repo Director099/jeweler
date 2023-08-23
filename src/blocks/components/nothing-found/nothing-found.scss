@@ -1,0 +1,32 @@
+.nothing-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100%;
+  gap: 20px;
+
+  @media (min-width: $screen-lg) {
+    gap: 40px;
+  }
+}
+
+.nothing-found__title {
+  @include ProximaNovaTextBold19();
+  font-weight: 400;
+  margin-bottom: 0;
+  text-align: center;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular32();
+  }
+}
+
+.nothing-found__btn {
+  max-width: 284px;
+  width: 100%;
+
+  @media (min-width: $screen-lg) {
+    max-width: 470px;
+  }
+}

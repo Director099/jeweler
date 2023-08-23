@@ -1,0 +1,7 @@
+mixin favorites()
+  .favorites
+    .favorites__grid.grid-tpl-2.grid-tpl-xl-4
+      - for(let i = 1; i < 5; i++)
+        +preview({
+          img: `prev-${i}`
+        }).favorites__preview

@@ -2,15 +2,13 @@ extends pug/layout.pug
 
 block var
   - const pageCurrent = pages.lk.href;
-  - const pageSidebarCurrent = pages.lkBuy.href
+  - const pageSidebarCurrent = pages.lkFavorites.href
 
 block meta
-  title= pages.lkNoBuy.text
+  title= pages.lkNoFavorite.text
 
 block content
   +lk({
     pageLkCurrentHref: pageSidebarCurrent
   }).page-lk--xs-main-center
-    +nothing-found(pages.lkNoBuy.text)
-
-
+    +nothing-found(pages.lkNoFavorite.text)
