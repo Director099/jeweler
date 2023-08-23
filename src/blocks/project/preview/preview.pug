@@ -6,9 +6,14 @@ mixin preview(item)
       link = "#",
       priceCurrent = "15 400",
       priceOld = "30 800",
-      img
+      img,
+      btnFavorite = false
     } = item
   article.preview&attributes(attributes)
+    if(btnFavorite)
+      button.preview__btn-favorite.active(type="button")
+        svg.preview__svg-icon(width="24" height="24")
+          use(href="img/symbols.svg#icon-heart")
     a.preview__link(href="#")
       header.preview__img
         img(src=`img/content/${img}.jpg` alt=title)

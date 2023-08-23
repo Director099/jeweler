@@ -1,3 +1,7 @@
+.preview {
+  position: relative;
+}
+
 .preview__link {
   display: block;
   text-decoration: none;
@@ -55,7 +59,7 @@
     margin-left: 3px;
     display: inline-block;
 
-    @media (min-width: $screen-xl) {
+    @media (min-width: $screen-lg) {
       width: 16px;
       height: 17px;
       margin-left: 6px;
@@ -74,11 +78,20 @@
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
+  color: $border-gray;
+
+  svg {
+    width: 8px;
+    height: 8px;
+    @media (min-width: $screen-lg) {
+      width: 13px;
+      height: 13px;
+    }
+  }
 
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextLight20();
   }
-  color: $border-gray;
 
   &::after {
     content: "";
@@ -90,5 +103,41 @@
     height: 1px;
     width: 100%;
     background-color: $primary-graphite;
+  }
+}
+
+.preview__btn-favorite {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 10px;
+  margin: 0;
+  border: none;
+  color: transparent;
+  cursor: pointer;
+  z-index: 2;
+
+  @media (min-width: $screen-lg) {
+    top: 10px;
+    right: 10px;
+  }
+
+  svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    @media (min-width: $screen-lg) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &.active {
+    color: $primary-pink-1;
+
+    svg {
+      stroke: $primary-pink-1;
+    }
   }
 }

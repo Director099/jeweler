@@ -1,0 +1,43 @@
+.favorites {
+  @media (min-width: $screen-lg) {
+    padding-left: 20px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-left: 14px;
+  }
+}
+
+.favorites__grid {
+  gap: 15px;
+
+  @media (min-width: $screen-lg) {
+    gap: 30px 44px;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 20px;
+  }
+}
+
+.favorites__preview {
+  .preview__title {
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular28();
+    }
+
+    @media (min-width: $screen-xl) {
+      @include ProximaNovaTextRegular26();
+    }
+  }
+
+  .preview__price-text--current {
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular28();
+    }
+
+    @media (min-width: $screen-xl) {
+      @include ProximaNovaTextRegular26();
+    }
+  }
+}
