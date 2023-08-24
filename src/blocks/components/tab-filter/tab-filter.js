@@ -2,12 +2,24 @@ export class TabFilter {
   constructor(elem) {
     this._ALL = 'all';
     this._elTabs = document.querySelector(elem);
-    if (this._elTabs) {
-      this._elButtons = this._elTabs.querySelectorAll('[data-btn-filter]');
-      this._elPanes = this._elTabs.querySelectorAll('[data-filter]');
-      this._init();
+
+    if (!window.matchMedia(this._elTabs.dataset?.destroy).matches) {
+      if (this._elTabs) {
+        this._elButtons = this._elTabs.querySelectorAll('[data-btn-filter]');
+        this._elPanes = this._elTabs.querySelectorAll('[data-filter]');
+        this._init();
+      }
     }
   }
+
+  defaultActivePanelFilter() {
+    this._elButtons.forEach((e) => {
+      if (!e.classList.contains('active')) {
+        const currentTab = e.dataset.btnFilter;
+        this._elTabs.querySelectorAll(`[data-filter=${currentTab}]`).forEach(e => e.setAttribute('hidden', ''));
+      }
+    })
+  };
 
   tabFilterPanel(elem) {
     const currentTab = elem.target.dataset.btnFilter;
@@ -35,6 +47,7 @@ export class TabFilter {
 
   _init() {
     this._events();
+    this.defaultActivePanelFilter();
   };
 }
 
