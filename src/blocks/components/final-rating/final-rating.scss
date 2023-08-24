@@ -1,0 +1,21 @@
+.final-rating__row {
+  display: flex;
+  gap: 6px;
+
+  @media (min-width: $screen-lg) {
+    gap: 4px;
+  }
+}
+
+.final-rating__star {
+  fill: $bg-gray-2;
+
+  &--filled {
+    fill: $border-gold;
+  }
+
+  @media (min-width: $screen-lg) {
+    width: 18px;
+    height: 18px;
+  }
+}

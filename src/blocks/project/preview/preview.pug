@@ -7,7 +7,8 @@ mixin preview(item)
       priceCurrent = "15 400",
       priceOld = "30 800",
       img,
-      btnFavorite = false
+      btnFavorite = false,
+      showRating = false
     } = item
   article.preview&attributes(attributes)
     if(btnFavorite)
@@ -27,3 +28,5 @@ mixin preview(item)
             span.preview__price-text.preview__price-text--old= priceOld
               svg(width="13" height="13")
                 use(href=`img/symbols.svg#icon-rouble-1`)
+        if(showRating)
+          +final-rating.preview__rating.d-lg-none
