@@ -1,0 +1,12 @@
+.lk-title {
+  @include ProximaNovaTextRegular22();
+  margin-bottom: 0;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular32();
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular36();
+  }
+}

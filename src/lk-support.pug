@@ -1,0 +1,22 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.lk.href;
+  - const pageSidebarCurrent = pages.lkSupport.href
+  -
+
+block meta
+  title= pages.lkSupport.text
+
+block content
+  +lk({
+    pageLkCurrentHref: pageSidebarCurrent
+  }).page-lk--xs-main-center
+    .support
+      h1.lk-title.support__title Служба поддержки
+      section.support__group
+        h2.support__sub-title Напишите нам
+        +socials.support__socials
+      section.support__group
+        h2.support__sub-title Позвоните нам
+        a.support__phone(href=numberPhone.href)= numberPhone.text

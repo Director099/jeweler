@@ -1,0 +1,61 @@
+.support {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+
+  @media (min-width: $screen-lg) {
+    padding: 60px 80px;
+    border-radius: 15px;
+    background: $bg-white;
+    box-shadow: 0px 2px 7px 2px rgba(0, 0, 0, 0.05);
+    gap: 80px;
+
+    height: 100%;
+    margin-left: 10px;
+    justify-content: center;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-left: 0;
+    height: auto;
+  }
+}
+
+.support__group {
+  text-align: center;
+}
+
+.support__socials {
+  justify-content: center;
+
+  .socials__icon {
+    @media (min-width: $screen-lg) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.support__sub-title {
+  @include ProximaNovaTextBold19();
+  font-weight: 400;
+  margin-bottom: 20px;
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular28();
+    margin-bottom: 20px;
+  }
+}
+
+.support__phone {
+  @include ProximaNovaTextBold25();
+  font-weight: 700;
+  text-decoration: none;
+  color: $tp-black;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular36();
+    font-weight: 700;
+  }
+}
