@@ -1,0 +1,7 @@
+mixin tab-filter({list, listClass})
+  .tab-filter(data-tab-filter="")&attributes(attributes)
+    ul.tab-filter__list(class=listClass)
+      each item in list
+        li.tab-filter__item
+          a.tab-filter__btn(class= `${item.active ? 'active' : ''}` data-btn-filter= item.filter)= item.text
+    block

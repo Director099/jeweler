@@ -1,0 +1,35 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.lk.href;
+  - const pageSidebarCurrent = pages.lkBuy.href
+
+block meta
+  title= pages.lkBuy.text
+
+block content
+  +lk({
+    pageLkCurrentHref: pageSidebarCurrent
+  })
+    section.lk-order
+      h1.lk-title.lk-order__title= pages.lkBuy.text
+      +tab-filter({
+        list: [
+          {
+            text: 'Текущие',
+            filter: 'current',
+            active: true
+          },
+          {
+            text: 'Прошлые',
+            filter: 'old'
+          }
+        ],
+        listClass: 'd-lg-none'
+      }).lk-order__filter
+        ul.lk-order__list
+          -for (let i = 0; i < 3; i++)
+            - const currentsTab = i !== 2;
+            - const currentsTabFilter = currentsTab ? 'current' : 'old';
+            li.lk-order__item(data-filter=currentsTabFilter)
+              +order-product({statusBtn: currentsTab})

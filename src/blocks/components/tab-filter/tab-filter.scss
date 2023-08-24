@@ -1,0 +1,26 @@
+.tab-filter__list {
+  @include ul-reset;
+  display: flex;
+  gap: 30px;
+}
+
+.tab-filter__btn {
+  position: relative;
+  display: block;
+  padding: 0px 0px 4px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &.active {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: $primary-pink-1;
+    }
+  }
+}

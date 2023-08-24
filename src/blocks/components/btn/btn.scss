@@ -91,6 +91,30 @@ $border-radius: 10px;
     }
   }
 
+  &--success {
+    color: $tp-white;
+    background-color: $other-green;
+    border-color: $other-green;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($other-green, 10%);
+      border-color: lighten($other-green, 10%);
+    }
+  }
+
+  &--gray {
+    color: $tp-white;
+    background-color: $bg-gray-2;
+    border-color: $bg-gray-2;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($bg-gray-2, 10%);
+      border-color: lighten($bg-gray-2, 10%);
+    }
+  }
+
   &--pink {
     color: $tp-white;
     background-color: $primary-pink-1;

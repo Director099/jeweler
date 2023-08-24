@@ -1,0 +1,12 @@
+mixin order-product({statusBtn=true})
+  - const hasStatusBtn = statusBtn ? 'btn--success' : 'btn--gray';
+  - const hasStatusBtnText = statusBtn ? 'Выкуплен' : 'Ожидание';
+  a.order-product(href="#")
+    .order-product__content
+      section.order-product__info
+        h3.order-product__title= order.personal.date
+        p.order-product__text= order.personal.number
+      section.order-product__info
+        h3.order-product__title= order.sale.shop
+        p.order-product__text= order.sale.address
+      span.btn(class=hasStatusBtn).order-product__btn= hasStatusBtnText

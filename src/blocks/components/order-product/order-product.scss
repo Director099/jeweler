@@ -1,0 +1,68 @@
+.order-product {
+  text-decoration: none;
+  color: inherit;
+}
+
+.order-product__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  padding-right: 30px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='26' viewBox='0 0 14 26' fill='none'%3E%3Cpath d='M1 1L13 13L1 25' stroke='%23070707' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+    @media (min-width: $screen-lg) {
+      width: 14px;
+      height: 24px;
+    }
+  }
+}
+
+.order-product__title {
+  @include ProximaNovaTextRegular16();
+  margin-bottom: 10px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular26();
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 8px;
+  }
+}
+
+.order-product__text {
+  @include ProximaNovaTextRegular16();
+  margin: 0;
+  color: $tp-grey;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular26();
+  }
+}
+
+.order-product__btn {
+  @include ProximaNovaTextRegular16();
+  padding: 5px;
+  width: 100%;
+  max-width: 152px;
+
+  @media (min-width: $screen-lg) {
+    padding: 9.5px;
+    max-width: 200px;
+  }
+}
