@@ -3,7 +3,7 @@ export class TabFilter {
     this._ALL = 'all';
     this._elTabs = document.querySelector(elem);
 
-    if (!window.matchMedia(this._elTabs.dataset?.destroy).matches) {
+    if (!window.matchMedia(this._elTabs?.dataset?.destroy).matches) {
       if (this._elTabs) {
         this._elButtons = this._elTabs.querySelectorAll('[data-btn-filter]');
         this._elPanes = this._elTabs.querySelectorAll('[data-filter]');
