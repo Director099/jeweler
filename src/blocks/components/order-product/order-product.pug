@@ -1,12 +1,35 @@
 mixin order-product({statusBtn=true})
   - const hasStatusBtn = statusBtn ? 'btn--success' : 'btn--gray';
   - const hasStatusBtnText = statusBtn ? 'Выкуплен' : 'Ожидание';
-  a.order-product(href="#")
+  a.order-product(href=pages.lkBuyMore.href)
     .order-product__content
-      section.order-product__info
+      section.order-product__info.order-product__info--xs-row
         h3.order-product__title= order.personal.date
         p.order-product__text= order.personal.number
       section.order-product__info
         h3.order-product__title= order.sale.shop
         p.order-product__text= order.sale.address
       span.btn(class=hasStatusBtn).order-product__btn= hasStatusBtnText
+
+mixin order-product-more()
+  .order-product
+    .order-product__more-content
+      section.order-product__row
+        h3.order-product__title= order.personal.date
+        p.order-product__text= order.personal.number
+      section.order-product__info
+        h3.order-product__title= order.sale.shopAddress
+        p.order-product__text= order.sale.address
+      section.order-product__info
+        h3.order-product__title Получатель
+        .order-product__stack
+          p.order-product__text= order.user.fio
+          p.order-product__text= order.user.phone
+      section.order-product__info
+        h3.order-product__title Ваш заказ
+        ul.order-product__stack
+          each item in order.order
+            li.order-product__row
+              h4.order-product__text= item.title
+              p.order-product__title.order-product__title--min-width= item.price
+

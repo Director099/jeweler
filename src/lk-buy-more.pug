@@ -1,0 +1,16 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.lk.href;
+  - const pageSidebarCurrent = pages.lkBuy.href
+
+block meta
+  title= pages.lkBuyMore.text
+
+block content
+  +lk({
+    pageLkCurrentHref: pageSidebarCurrent
+  })
+    section.lk-order.lk-order--more
+      h1.lk-title.lk-order__title-more= pages.lkBuy.text
+      +order-product-more
