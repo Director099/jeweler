@@ -18,12 +18,12 @@
     height: auto;
     padding-top: 0;
     gap: 20px;
-    grid-template-columns: auto minmax(auto, 734px);
+    grid-template-columns: 266px 1fr;
   }
 
   @media (min-width: $screen-xl) {
     gap: 40px;
-    grid-template-columns: auto minmax(auto, 1354px);
+    grid-template-columns: 266px 1fr;
   }
 }
 
