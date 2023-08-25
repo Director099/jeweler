@@ -32,4 +32,11 @@ mixin order-product-more()
             li.order-product__row
               h4.order-product__text= item.title
               p.order-product__title.order-product__title--min-width= item.price
-
+      ul.order-product__preview
+        li.order-product__preview-item
+          .order-product__preview-img
+            img(src="img/content/prev-1.jpg" alt="Кольцо")
+          section.order-product__preview-content
+            p.order-product__text Артикул 1234567
+            h4.order-product__title Золотое кольцо с бриллиантами
+            p.order-product__text 1 шт. 16 размер

@@ -1,4 +1,5 @@
 .lk-title {
+  position: relative;
   @include ProximaNovaTextRegular22();
   margin-bottom: 0;
 
@@ -9,4 +10,12 @@
   @media (min-width: $screen-xl) {
     @include ProximaNovaTextRegular36();
   }
+}
+
+.lk-title__link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: transparent;
+  text-decoration: none;
 }

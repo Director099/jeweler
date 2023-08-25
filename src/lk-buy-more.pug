@@ -12,5 +12,9 @@ block content
     pageLkCurrentHref: pageSidebarCurrent
   })
     section.lk-order.lk-order--more
-      h1.lk-title.lk-order__title-more= pages.lkBuy.text
+      h1.lk-title.lk-order__title-more
+        a.lk-title__link.d-none.d-xl-inline-block(href=pages.lkBuy.href)
+          svg(width="24" height="24")
+            use(href="img/symbols.svg#icon-arrow")
+        = pages.lkBuy.text
       +order-product-more
