@@ -1,0 +1,33 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.lk.href;
+  - const pageSidebarCurrent = pages.lkReview.href
+  -
+    const reviewHistory = [
+      {
+        data: 'Отзыв от 21.02.2023',
+        desc: 'Купил кольцо жене на денб рождение. Кольцо понравилось и всем его рекомендую'
+      },
+      {
+        data: 'Отзыв от 17.04.2023',
+        desc: 'Делал предложение руки и сердца своей девушке и она сказала мне дааа!!!!'
+      }
+    ]
+
+block meta
+  title= pages.lkReview.text
+
+block content
+  +lk({
+    pageLkCurrentHref: pageSidebarCurrent
+  })
+    section.lk-order.lk-order--review
+      ul.lk-order__list
+        each item in reviewHistory
+          li.lk-order__item
+            +review-history({
+              data: item.data,
+              desc: item.desc,
+            })
+

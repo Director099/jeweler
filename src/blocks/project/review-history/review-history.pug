@@ -1,0 +1,9 @@
+mixin review-history({data, desc})
+  .review-history&attributes(attributes)
+    .review-history__content
+      span.review-history__data= data
+      +final-rating.review-history__rating.order-lg-2
+      .review-history__img
+        img(src="img/content/prev-1.jpg", alt="Кольцо")
+      .review-history__desc
+        p= desc
