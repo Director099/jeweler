@@ -44,3 +44,14 @@ form.forEach((itemForm) => {
 
   ["submit", "input"].forEach(item => itemForm.addEventListener(item, e => submitForm(e)))
 })
+
+const clipboard = document.querySelectorAll('[data-copy-code]');
+clipboard?.forEach(item =>
+  item?.addEventListener('click', () => {
+    const inputCopy = item.querySelector('input');
+    console.log(inputCopy, 'inputCopy')
+    inputCopy.select();
+    document.execCommand("copy");
+    inputCopy.value;
+  })
+)

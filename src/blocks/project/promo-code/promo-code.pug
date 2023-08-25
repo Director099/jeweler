@@ -1,0 +1,10 @@
+mixin promo-code({date, desc, lock = false})
+  - const hasLock = lock && 'promo-code__copy--lock';
+  .promo-code
+    .promo-code__info
+      span.promo-code__data= date
+      p.promo-code__desc= desc
+    .promo-code__copy(data-copy-code="", class=hasLock) Y988344
+      input.promo-code__hidden(value="Y988344")
+      svg(width="20", height="26")
+        use(href="img/symbols.svg#icon-copy")

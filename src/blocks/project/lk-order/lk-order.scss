@@ -47,6 +47,32 @@
   }
 }
 
+.lk-order--promo-code {
+  min-height: 100%;
+
+  .lk-order__item {
+    @media (min-width: $screen-xl) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  .lk-order__item:first-child {
+    @media (max-width: $screen-lg - 1) {
+      padding-top: 0;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    padding-top: 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
 .lk-order__title-more {
   display: none;
 
