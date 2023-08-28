@@ -31,7 +31,22 @@ block content
                    svg(width="24" height="24")
                      use(href="img/symbols.svg#icon-close")
             button.page-category__reset(type="button" data-reset-form="") Сбросить все
-          .page-category__dropdown
+          .page-category__sort
+            +dropdown({
+              text: 'По популярности',
+            })
+              .dropdown__content
+                span.menu__item-content
+                  a.menu__link-content.active(href='#') По популярности
+                span.menu__item-content
+                  a.menu__link-content(href='#') По возрастанию цены
+                span.menu__item-content
+                  a.menu__link-content(href='#') По убыванию цены
+            +link-icon({
+              icon: 'icon-filter',
+              widthIcon: 16,
+              heightIcon: 16,
+            })(href="#")
           .page-category__gap-tpl.grid-tpl-2.grid-tpl-xl-4
             - for(let i = 1; i < 43; i++)
               if(i % 15 === 0)

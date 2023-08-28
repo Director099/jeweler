@@ -1,6 +1,7 @@
 'use strict';
 
 import "../blocks/components/accordion/accordion.js";
+import "../blocks/components/dropdown/dropdown.js";
 import "../blocks/components/tab-filter/tab-filter.js";
 import "../blocks/components/navigation-changer/move-to.js";
 import "../blocks/components/field-select/field-select.js";

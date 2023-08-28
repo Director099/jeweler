@@ -171,6 +171,13 @@
   line-height: normal;
 }
 
+@mixin ProximaNovaTextRegular14 {
+  font-family: $font-family;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+
 @mixin ProximaNovaTextRegular13 {
   font-family: $font-family;
   font-size: 13px;

@@ -114,3 +114,13 @@
     padding: 13px 4px;
   }
 }
+
+.page-category__sort {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 30px;
+  }
+}
