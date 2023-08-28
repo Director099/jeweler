@@ -12,6 +12,7 @@ mixin preview(item)
       showRating = false,
       badgeDunger = false,
       badgePink = false,
+      busket = false
     } = item
   article.preview&attributes(attributes)
     if(btnFavorite)
@@ -24,12 +25,12 @@ mixin preview(item)
           span.badge.badge--pink Намекни
         if(badgeDunger)
           span.badge.badge--dunger Шок-цена
-    a.preview__link(href="#")
-      header.preview__img
-        img(src=`img/content/${img}.jpg` alt=title)
-      footer.preview__footer
-        h3.preview__title= title
-        .preview__price
+    a.preview__img(href="#")
+      img(src=`img/content/${img}.jpg` alt=title)
+    footer.preview__footer
+      h3.preview__title= title
+      .preview__footer-row
+        a.preview__price(href="#")
           span.preview__price-text.preview__price-text--current= priceCurrent
             svg(width="16" height="17")
               use(href=`img/symbols.svg#icon-rouble-1`)
@@ -37,5 +38,9 @@ mixin preview(item)
             span.preview__price-text.preview__price-text--old= priceOld
               svg(width="13" height="13")
                 use(href=`img/symbols.svg#icon-rouble-1`)
-        if(showRating)
-          +final-rating.preview__rating.d-lg-none
+        if (busket)
+          button.preview__busket.d-xl-none(type="button")
+            svg(width="22" height="22")
+              use(href="img/symbols.svg#icon-basket")
+      if(showRating)
+        +final-rating.preview__rating.d-lg-none

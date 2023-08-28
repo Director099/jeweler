@@ -115,7 +115,7 @@ $transition-time:             0.3s !default;
   }
 }
 
-.menu__link-content {
+.dropdown__link-content {
   @include ProximaNovaTextRegular16();
   white-space: nowrap;
   text-decoration: none;

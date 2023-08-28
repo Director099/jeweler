@@ -36,12 +36,12 @@ block content
               text: 'По популярности',
             })
               .dropdown__content
-                span.menu__item-content
-                  a.menu__link-content.active(href='#') По популярности
-                span.menu__item-content
-                  a.menu__link-content(href='#') По возрастанию цены
-                span.menu__item-content
-                  a.menu__link-content(href='#') По убыванию цены
+                span.dropdown__item-content
+                  a.dropdown__link-content.active(href='#') По популярности
+                span.dropdown__item-content
+                  a.dropdown__link-content(href='#') По возрастанию цены
+                span.dropdown__item-content
+                  a.dropdown__link-content(href='#') По убыванию цены
             +link-icon({
               icon: 'icon-filter',
               widthIcon: 16,
@@ -67,6 +67,7 @@ block content
                   btnFavorite: true,
                   badgeDunger: i % 5 === 0,
                   badgePink: i % 3 === 0,
+                  busket: true,
                 })
           +pagination.pagination--center.page-category__pagination
             +pagination-item('1', '#', 'active')
