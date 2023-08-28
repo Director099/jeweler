@@ -25,12 +25,12 @@ mixin preview(item)
           span.badge.badge--pink Намекни
         if(badgeDunger)
           span.badge.badge--dunger Шок-цена
-    a.preview__img(href="#")
+    a.preview__img(href=pages.pageSingle.href)
       img(src=`img/content/${img}.jpg` alt=title)
     footer.preview__footer
       h3.preview__title= title
       .preview__footer-row
-        a.preview__price(href="#")
+        a.preview__price(href=pages.pageSingle.href)
           span.preview__price-text.preview__price-text--current= priceCurrent
             svg(width="16" height="17")
               use(href=`img/symbols.svg#icon-rouble-1`)

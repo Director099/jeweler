@@ -11,14 +11,13 @@ mixin blog-place
           title: 'специальные цены на бриллианты'
         }
       ]
-    .container
-      .swiper.blog-place__slider(data-slider-place="")
-        .swiper-wrapper
-          each item in blogList
-            .swiper-slide.blog-place__item
-              +promo({
-                src: item.src,
-                title: item.title
-              })(href="#").blog-place__content
-        .swiper-button-next.swiper-button-arrow
-        .swiper-button-prev.swiper-button-arrow
+    .swiper.blog-place__slider(data-slider-place="")
+      .swiper-wrapper
+        each item in blogList
+          .swiper-slide.blog-place__item
+            +promo({
+              src: item.src,
+              title: item.title
+            })(href="#").blog-place__content
+      .swiper-button-next.swiper-button-arrow
+      .swiper-button-prev.swiper-button-arrow

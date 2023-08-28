@@ -10,11 +10,12 @@ block meta
 block content
   +main-content({
     standartTpl: false
-  }).stack.stack--main-gap
+  }).stack.stack--main-gap.overflow
     +main-slider({})
-    +section-content({title: pages.catalogActions.text})
-    +blog-place
-    +section-content({title: "Новинки", link: pages.pageCategory.href})
-    +wedding-offer
-    +section-content({title: "Успей купить", link: pages.pageCategory.href})
-    +collection
+    .container.stack.stack--main-gap
+      +section-content({title: pages.catalogActions.text})
+      +blog-place
+      +section-content({title: "Новинки", link: pages.pageCategory.href})
+      +wedding-offer
+      +section-content({title: "Успей купить", link: pages.pageCategory.href})
+      +collection
