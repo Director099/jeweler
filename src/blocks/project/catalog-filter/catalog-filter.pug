@@ -26,6 +26,8 @@ mixin catalog-filter
               +field-checkbox({
                 checkboxes: arrayCheckbox(item.list, i),
               }).catalog-filter__checkbox
+            else
+              +range
       +field-checkbox({
         checkboxes: [
           {
