@@ -29,12 +29,26 @@
     padding-top: 20px;
 
     @media (min-width: $screen-lg) {
-      @include ProximaNovaTextRegular32();
       padding-top: 30px;
     }
 
     @media (min-width: $screen-xl) {
       padding-top: 26px;
+    }
+  }
+
+  .field-checkbox__name-text {
+    @include ProximaNovaTextRegular13();
+    line-height: 1;
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular24();
+      line-height: 1;
+    }
+
+    @media (min-width: $screen-xl) {
+      @include ProximaNovaTextRegular26();
+      line-height: 1;
     }
   }
 }
@@ -58,5 +72,20 @@
   .field-checkbox__input-wrap {
     display: grid;
     gap: 30px;
+  }
+
+  .field-checkbox__name-text {
+    @include ProximaNovaTextRegular13();
+    line-height: 1;
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular24();
+      line-height: 1;
+    }
+
+    @media (min-width: $screen-xl) {
+      @include ProximaNovaTextRegular26();
+      line-height: 1;
+    }
   }
 }
