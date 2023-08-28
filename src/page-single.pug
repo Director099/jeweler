@@ -17,4 +17,14 @@ block content
           +breadcrumbs()
             +breadcrumbs-item(pages.index.text, pages.index.href)
             +breadcrumbs-item(pages.catalog.text, pages.catalog.href)
-            +breadcrumbs-item(pages.pageSingle.text )
+            +breadcrumbs-item(pages.pageSingle.text)
+        +section-content({
+          classTitle: 'section-content__products-title',
+          title: "Вам может понравиться",
+          link: false
+        })
+        +section-content({
+          classTitle: 'section-content__products-title',
+          title: "Недавно просмотренные",
+          link: false
+        })

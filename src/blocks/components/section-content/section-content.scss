@@ -59,3 +59,18 @@
     margin-top: 0;
   }
 }
+
+.section-content__products-title {
+  @include ProximaNovaTextRegular17();
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-lg) {
+    @include MontserratRegular34();
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular36();
+  }
+}

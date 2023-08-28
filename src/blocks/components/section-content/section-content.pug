@@ -1,6 +1,6 @@
-mixin section-content({title, link, textLink="смотреть"})
-  section.section-content
-    h2.main-title-montserrat.section-content__title= title
+mixin section-content({title, classTitle, link, textLink="смотреть"})
+  section.section-content&attributes(attributes)
+    h2(class=classTitle)= title
     .swiper.section-content__slider(data-product-slider="")
       .swiper-wrapper
         - for(let i = 1; i < 9; i++)
@@ -10,5 +10,6 @@ mixin section-content({title, link, textLink="смотреть"})
             })
       .swiper-button-next.swiper-button-arrow
       .swiper-button-prev.swiper-button-arrow
-    .section-content__link-wrap.d-none.d-lg-block.d-xl-none
-      a.line-link.section-content__link(href=link)= textLink
+    if(textLink)
+      .section-content__link-wrap.d-none.d-lg-block.d-xl-none
+        a.line-link.section-content__link(href=link)= textLink
