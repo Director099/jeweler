@@ -1,0 +1,39 @@
+-
+  const arrayCheckbox = (list, idx) => {
+    let checkboxes = [];
+    list.forEach((item) =>
+      checkboxes.push({
+        title: item,
+        attrs: {
+          name: `check-${idx}`
+        }
+      })
+    )
+    return checkboxes;
+  }
+
+mixin catalog-filter
+  aside.catalog-filter&attributes(attributes)
+    +accordionParent.catalog-filter__accordion
+      each item, i in filter
+        +accordionItem({
+          title: item.title,
+          classElement: 'catalog-filter__accordion-item is-active'
+        })
+          if(item.list)
+            +field-checkbox({
+              checkboxes: arrayCheckbox(item.list, i),
+            }).catalog-filter__checkbox
+    +field-checkbox({
+      checkboxes: [
+        {
+          title: 'Новинка'
+        },
+        {
+          title: 'Изделие со скидкой'
+        },
+        {
+          title: 'Хит'
+        }
+      ],
+    }).catalog-filter__more

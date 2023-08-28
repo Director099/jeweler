@@ -1,0 +1,62 @@
+.catalog-filter__accordion {
+  display: grid;
+  margin-bottom: 30px;
+  @media (min-width: $screen-lg) {
+    gap: 50px;
+    margin-bottom: 50px;
+  }
+  @media (min-width: $screen-xl) {
+    gap: 80px;
+    margin-bottom: 80px;
+  }
+}
+
+.catalog-filter__accordion-item {
+  .accordion__title {
+    @include ProximaNovaTextRegular16();
+    font-weight: 700;
+    margin-bottom: 0px;
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular32();
+      display: inline-block;
+      padding-right: 36px;
+    }
+  }
+
+  .accordion__wrapper {
+    padding-bottom: 0;
+    padding-top: 20px;
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular32();
+      padding-top: 30px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 26px;
+    }
+  }
+}
+
+.catalog-filter__checkbox {
+  .field-checkbox__input-wrap {
+    display: grid;
+    gap: 20px;
+
+    @media (min-width: $screen-lg) {
+      gap: 30px;
+    }
+
+    @media (min-width: $screen-xl) {
+      gap: 26px;
+    }
+  }
+}
+
+.catalog-filter__more {
+  .field-checkbox__input-wrap {
+    display: grid;
+    gap: 30px;
+  }
+}

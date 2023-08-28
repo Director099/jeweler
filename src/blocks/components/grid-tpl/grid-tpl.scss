@@ -49,3 +49,27 @@
     }
   }
 }
+
+@for $i from 1 through 12 {
+  .grid-tpl-row-#{$i} {
+    grid-row: auto/span $i;
+  }
+
+  .grid-tpl-row-md-#{$i} {
+    @media (min-width: $screen-md) {
+      grid-row: auto/span $i;
+    }
+  }
+
+  .grid-tpl-row-lg-#{$i} {
+    @media (min-width: $screen-lg) {
+      grid-row: auto/span $i;
+    }
+  }
+
+  .grid-tpl-row-xl-#{$i} {
+    @media (min-width: $screen-xl) {
+      grid-row: auto/span $i;
+    }
+  }
+}
