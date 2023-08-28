@@ -1,0 +1,15 @@
+.badge {
+  @include ProximaNovaTextRegular18();
+  border-radius: 4px;
+  padding: 4px;
+
+  &--dunger {
+    color: $white;
+    background-color: $other-red;
+  }
+
+  &--pink {
+    color: $tp-black;
+    background-color: $bg-pink;
+  }
+}

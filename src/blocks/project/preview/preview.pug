@@ -8,13 +8,22 @@ mixin preview(item)
       priceOld = "30 800",
       img,
       btnFavorite = false,
-      showRating = false
+      btnFavoriteActive = false,
+      showRating = false,
+      badgeDunger = false,
+      badgePink = false,
     } = item
   article.preview&attributes(attributes)
     if(btnFavorite)
-      button.preview__btn-favorite.active(type="button")
+      button.preview__btn-favorite(type="button" class=btnFavoriteActive && 'active')
         svg.preview__svg-icon(width="24" height="24")
           use(href="img/symbols.svg#icon-heart")
+    if(badgeDunger || badgePink)
+      .preview__list-badge
+        if(badgePink)
+          span.badge.badge--pink Намекни
+        if(badgeDunger)
+          span.badge.badge--dunger Шок-цена
     a.preview__link(href="#")
       header.preview__img
         img(src=`img/content/${img}.jpg` alt=title)

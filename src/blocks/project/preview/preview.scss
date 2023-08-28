@@ -122,12 +122,12 @@
     right: 10px;
   }
 
-  svg {
+  .preview__svg-icon {
     display: block;
     width: 16px;
     height: 16px;
-    stroke: $primary-pink-1;
-    stroke-width: 1px;
+    stroke: $black;
+    stroke-width: 2px;
 
     @media (min-width: $screen-lg) {
       width: 24px;
@@ -146,4 +146,14 @@
 
 .preview__rating {
   margin-top: 5px;
+}
+
+.preview__list-badge {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 200px;
 }

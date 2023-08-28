@@ -136,6 +136,11 @@
 }
 
 .page-header__link-icon {
+  svg {
+    stroke: $black;
+    stroke-width: 2px;
+  }
+
   @media (min-width: $screen-xl) {
     @include ProximaNovaTextRegular22();
   }
