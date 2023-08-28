@@ -70,3 +70,39 @@
     margin-bottom: 80px;
   }
 }
+
+.page-category__active-filtres {
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+  margin-bottom: 40px;
+}
+
+.page-category__tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px 25px;
+
+  @media (min-width: $screen-xl) {
+    gap: 30px 35px;
+  }
+}
+
+.page-category__reset {
+  @include ProximaNovaTextRegular20();
+  padding: 8px 4px;
+  border-bottom: 0;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular22();
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular20();
+    padding: 13px 4px;
+  }
+}

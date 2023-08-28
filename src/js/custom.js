@@ -55,3 +55,8 @@ clipboard?.forEach(item =>
     inputCopy.value;
   })
 )
+
+const dataFormFilter = document.querySelector('[data-form-filter]');
+const dataResetFormFilter = document.querySelector('[data-reset-form]');
+
+dataResetFormFilter.addEventListener('change', () => dataFormFilter.reset());

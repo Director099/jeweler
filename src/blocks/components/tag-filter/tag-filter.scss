@@ -1,0 +1,15 @@
+.tag-filter {
+  @include ProximaNovaTextRegular22();
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 7px 18px;
+  border-radius: 10px;
+  border: 1px solid $primary-black;
+  cursor: pointer;
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular28();
+    gap: 34px;
+  }
+}

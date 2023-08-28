@@ -126,6 +126,8 @@
     display: block;
     width: 16px;
     height: 16px;
+    stroke: $primary-pink-1;
+    stroke-width: 1px;
 
     @media (min-width: $screen-lg) {
       width: 24px;
