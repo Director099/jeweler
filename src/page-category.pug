@@ -7,10 +7,7 @@ block meta
   title= pages.pageCategory.text
 
 block content
-  //TOdo: Сделать новый раздел не майн контент, категорий или типо того
-  +main-content({
-    standartTpl: false
-  })
+  .page-category.page__content
     .container
       +link-icon({
         icon: 'icon-arrow',
@@ -18,26 +15,30 @@ block content
         widthIcon: 14,
         heightIcon: 14,
       })(href=pages.index.href).link-back
-      .page-category
-        h1.main-content__title.d-none.d-lg-block Ювелирные изделия
-        
-        .page-category__grid
-          +catalog-filter.d-none.d-lg-block
-          .page-category__gap-tpl.grid-tpl-2.grid-tpl-xl-4
-            - for(let i = 1; i < 43; i++)
-              if((i % 15 === 0))
-                .grid-tpl-col-2.grid-tpl-row-lg-2
-                  a.page-category__promo-link(href=pages.catalogActions.href)
-                    if (i === 15)
-                      picture
-                        source(srcset=`img/content/catalog-pictures/catalog-picture-lg-1.jpg` media=`(min-width: ${media.lg}px)`)
-                        img.page-category__img(src=`img/content/catalog-pictures/catalog-picture-xs-1.jpg` alt=pages.catalogActions.text)
-                    if (i === 30)
-                      picture
-                        source(srcset=`img/content/catalog-pictures/catalog-picture-lg-2.jpg` media=`(min-width: ${media.lg}px)`)
-                        img.page-category__img(src=`img/content/catalog-pictures/catalog-picture-xs-2.jpg` alt=pages.catalogActions.text)
-              else
-                +preview({
-                  img: `prev-1`,
-                  btnFavorite: true,
-                })
+      h1.main-content__title.page-category__title.d-none.d-lg-block= pages.pageCategory.text
+        span.page-category__title-count 42 383 товара
+      +breadcrumbs().page-category__breadcrumbs
+        +breadcrumbs-item(pages.index.text, pages.index.href)
+        +breadcrumbs-item(pages.catalog.text, pages.catalog.href)
+        +breadcrumbs-item(pages.pageCategory.text)
+      .page-category__grid
+        +catalog-filter.d-none.d-lg-block
+        .page-category__gap-tpl.grid-tpl-2.grid-tpl-xl-4
+          - for(let i = 1; i < 43; i++)
+            if((i % 15 === 0))
+              .grid-tpl-col-2.grid-tpl-row-xl-2
+                a.page-category__promo-link(href=pages.catalogActions.href)
+                  //TODO: Подумать
+                  if (i === 15)
+                    picture
+                      source(srcset=`img/content/catalog-pictures/catalog-picture-lg-1.jpg` media=`(min-width: ${media.xl}px)`)
+                      img.page-category__img(src=`img/content/catalog-pictures/catalog-picture-xs-1.jpg` alt=pages.catalogActions.text)
+                  if (i === 30)
+                    picture
+                      source(srcset=`img/content/catalog-pictures/catalog-picture-lg-2.jpg` media=`(min-width: ${media.xl}px)`)
+                      img.page-category__img(src=`img/content/catalog-pictures/catalog-picture-xs-2.jpg` alt=pages.catalogActions.text)
+            else
+              +preview({
+                img: `prev-1`,
+                btnFavorite: true,
+              })

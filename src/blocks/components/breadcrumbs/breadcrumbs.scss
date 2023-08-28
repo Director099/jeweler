@@ -5,15 +5,15 @@
 $text-color:                  hsl(0, 0%, 10%) !default;
 
 .breadcrumbs {
-
-  $block-name:                &;
-  // #{$block-name}__element
-
+  @include ProximaNovaTextRegular16();
   padding: 0;
+  margin: 0;
   list-style: none;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   color: $text-color;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular20();
+  }
 
   a {
     color: $text-color;
@@ -25,17 +25,15 @@ $text-color:                  hsl(0, 0%, 10%) !default;
       text-decoration: none;
     }
   }
+}
 
-  &__item {
-    display: inline-block;
-    margin-right: 0.6em;
-    white-space: nowrap;
+.breadcrumbs__item {
+  display: inline-block;
+  white-space: nowrap;
 
-    &:not(:last-child):after {
-      content: '>';
-      display: inline-block;
-      margin-left: 0.8rem;
-      color: $gray;
-    }
+  &:not(:last-child)::after {
+    content: "/";
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
