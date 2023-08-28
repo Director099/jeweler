@@ -9,8 +9,8 @@ mixin accordion({count=false, list=[], classElement, firstActive, scrollId})
         .accordion__content(data-accordion="content")
           .accordion__wrapper!= item.tplContent
 
-//TODO: Переделать на 2миксина
 mixin accordionParent()
+  //- TODO: Переделать на 2миксина
   .accordion(data-accordion="parent")&attributes(attributes)
     block
 

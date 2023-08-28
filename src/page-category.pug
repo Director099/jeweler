@@ -15,7 +15,7 @@ block content
         widthIcon: 14,
         heightIcon: 14,
       })(href=pages.index.href).link-back
-      //TODO: Title не тот блок вынеси в класс единый
+      //-TODO: Title не тот блок вынеси в класс единый
       h1.main-content__title.page-category__title.d-none.d-lg-block= pages.pageCategory.text
         span.page-category__title-count 42 383 товара
       +breadcrumbs().page-category__breadcrumbs
@@ -53,7 +53,7 @@ block content
               if(i % 15 === 0)
                 .grid-tpl-col-2.grid-tpl-row-xl-2
                   a.page-category__promo-link(href=pages.catalogActions.href)
-                    //TODO: Подумать
+                    //-TODO: Подумать
                     if (i === 15)
                       picture
                         source(srcset=`img/content/catalog-pictures/catalog-picture-lg-1.jpg` media=`(min-width: ${media.xl}px)`)
