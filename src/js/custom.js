@@ -12,7 +12,7 @@ import '../blocks/project/blog-place/blog-place.js';
 const telMask = document.querySelectorAll('[type="tel"]');
 
 telMask.forEach((item) => {
-  const phoneMask = IMask(item, {
+  IMask(item, {
     mask: '{+7} (000) 000 00 00',
     lazy: false,
   });
@@ -56,7 +56,38 @@ clipboard?.forEach(item =>
   })
 )
 
-const dataFormFilter = document.querySelector('[data-form-filter]');
-const dataResetFormFilter = document.querySelector('[data-reset-form]');
-
-dataResetFormFilter.addEventListener('change', () => dataFormFilter.reset());
+//TODO: Если время будет
+// const dataFormFilter = document.querySelector('[data-form-filter]');
+// const dataResetFormFilter = document.querySelector('[data-reset-form]');
+// const dataFormInput = dataFormFilter.querySelectorAll('input');
+// const dataFormContainer = document.querySelector('[data-container]');
+// const dataFormTpl = ({text, inputId}) => {
+//   return `
+//     <button class="tag-filter" type="button" data-label="${inputId}">
+//       ${text}
+//       <svg width="24" height="24">
+//         <use href="img/symbols.svg#icon-close"></use>
+//       </svg>
+//     </button>
+//   `
+// }
+//
+// dataResetFormFilter.addEventListener('click', () => dataFormFilter.reset());
+//
+// dataFormInput.forEach((item) => {
+//   item.addEventListener('change', (e) => {
+//     const elemInput = e.target;
+//     const textCheckbox = elemInput.closest('label').textContent;
+//
+//
+//     if(elemInput.checked) {
+//       dataFormContainer.insertAdjacentHTML(
+//       "afterbegin",
+//         dataFormTpl({
+//           text: textCheckbox,
+//           inputId: 'asd'
+//         })
+//       )
+//     }
+//   })
+// })

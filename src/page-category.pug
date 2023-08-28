@@ -25,12 +25,13 @@ block content
         +catalog-filter.d-none.d-lg-block
         .page-category__products
           .page-category__active-filtres.d-none.d-lg-flex
-            .page-category__tag-list
-              - for(let i = 1; i <= 6; i++)
-                button.tag-filter(type="button") Кольцо
-                  svg(width="24" height="24")
-                    use(href="img/symbols.svg#icon-close")
+            .page-category__tag-list(data-container="")
+               - for(let i = 1; i <= 6; i++)
+                 button.tag-filter(type="button") Кольцо
+                   svg(width="24" height="24")
+                     use(href="img/symbols.svg#icon-close")
             button.page-category__reset(type="button" data-reset-form="") Сбросить все
+          .page-category__dropdown
           .page-category__gap-tpl.grid-tpl-2.grid-tpl-xl-4
             - for(let i = 1; i < 43; i++)
               if(i % 15 === 0)

@@ -8,22 +8,14 @@ $text-color:                  hsl(0, 0%, 10%) !default;
   @include ProximaNovaTextRegular16();
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 0;
   list-style: none;
   color: $text-color;
 
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular20();
-  }
-
-  a {
-    color: $text-color;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      color: $text-color;
-      text-decoration: none;
-    }
   }
 }
 
@@ -31,9 +23,30 @@ $text-color:                  hsl(0, 0%, 10%) !default;
   display: inline-block;
   white-space: nowrap;
 
+  a {
+    color: $tp-grey;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $text-color;
+      text-decoration: none;
+    }
+
+    @media (min-width: $screen-lg) {
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
+
   &:not(:last-child)::after {
     content: "/";
     margin-left: 3px;
-    margin-right: 3px;
+    margin-right: 5px;
+    color: $tp-grey;
+
+    @media (min-width: $screen-lg) {
+      color: $text-color;
+    }
   }
 }
