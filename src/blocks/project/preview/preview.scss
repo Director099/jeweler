@@ -150,10 +150,16 @@
 
 .preview__list-badge {
   position: absolute;
-  left: 20px;
-  top: 20px;
+  left: 10px;
+  top: 10px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  max-width: 200px;
+  padding-right: 35px;
+
+  @media (min-width: $screen-lg) {
+    left: 20px;
+    top: 20px;
+    padding-right: 50px;
+  }
 }

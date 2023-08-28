@@ -1,7 +1,7 @@
 .badge {
-  @include ProximaNovaTextRegular18();
+  @include ProximaNovaTextRegular10();
   border-radius: 4px;
-  padding: 4px;
+  padding: 3px;
 
   &--dunger {
     color: $white;
@@ -11,5 +11,10 @@
   &--pink {
     color: $tp-black;
     background-color: $bg-pink;
+  }
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular18();
+    padding: 4px;
   }
 }
