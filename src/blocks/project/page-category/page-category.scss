@@ -1,3 +1,15 @@
+.page-category {
+  padding-bottom: 60px;
+
+  @media (min-width: $screen-lg) {
+    padding-bottom: 100px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-bottom: 200px;
+  }
+}
+
 .page-category__gap-tpl {
   gap: 20px 15px;
 
@@ -123,4 +135,8 @@
   @media (min-width: $screen-lg) {
     margin-bottom: 30px;
   }
+}
+
+.page-category__pagination {
+  margin-top: 60px;
 }

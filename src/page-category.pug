@@ -46,7 +46,7 @@ block content
               icon: 'icon-filter',
               widthIcon: 16,
               heightIcon: 16,
-            })(href="#")
+            })(href="#").d-lg-none
           .page-category__gap-tpl.grid-tpl-2.grid-tpl-xl-4
             - for(let i = 1; i < 43; i++)
               if(i % 15 === 0)
@@ -68,3 +68,10 @@ block content
                   badgeDunger: i % 5 === 0,
                   badgePink: i % 3 === 0,
                 })
+          +pagination.pagination--center.page-category__pagination
+            +pagination-item('1', '#', 'active')
+            +pagination-item('2', '#')
+            +pagination-item('3', '#')
+            +pagination-item('...')
+            +pagination-item('15', '#')
+            +pagination-item('16', '#')

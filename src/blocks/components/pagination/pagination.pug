@@ -13,8 +13,8 @@ mixin pagination(mods)
           +pagination-item('6', '/6')
           +pagination-item('...')
           +pagination-item('999', '/999')
-  -
-    // список модификаторов
+
+  //- список модификаторов
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
@@ -24,9 +24,14 @@ mixin pagination(mods)
     }
 
   .pagination(class=allMods, aria-label='Page navigation')&attributes(attributes)
-    block
-
-
+    a.pagination__direction(href="#")
+      svg(width="24", height="24")
+        use(href="img/symbols.svg#icon-arrow-2")
+    ul.pagination__list
+      block
+    a.pagination__direction.pagination__direction--next(href="#")
+      svg(width="24", height="24")
+        use(href="img/symbols.svg#icon-arrow-2")
 
 mixin pagination-item(text, href, active, mods)
 
@@ -35,8 +40,8 @@ mixin pagination-item(text, href, active, mods)
   //-   href   {string} - ссылка этого пункта (если пустая, то это не ссылка, а span)
   //-   active {bool}   - флаг «это активный пункт»
   //-   mods   {string} - список модификаторов
-  -
-    // список модификаторов
+
+  //- список модификаторов
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
@@ -45,10 +50,12 @@ mixin pagination-item(text, href, active, mods)
       }
     }
     if(typeof(active) !== 'undefined' && active) {
-      allMods = allMods + ' pagination--active';
+      allMods = allMods + ' pagination__link--active';
     }
 
   if(typeof(href) !== 'undefined' && href)
-    a.pagination__item(class=allMods, href=href)&attributes(attributes)!= text
+    li.pagination__item(class=active)
+      a.pagination__link(href=href)&attributes(attributes)!= text
   else
-    span.pagination__item(class=allMods)&attributes(attributes)!= text
+    li.pagination__item
+      span.pagination__link(class=allMods)&attributes(attributes)!= text
