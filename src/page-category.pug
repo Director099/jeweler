@@ -26,10 +26,10 @@ block content
         .page-category__products
           .page-category__active-filtres.d-none.d-lg-flex
             .page-category__tag-list(data-container="")
-               - for(let i = 1; i <= 6; i++)
-                 button.tag-filter(type="button") Кольцо
-                   svg(width="24" height="24")
-                     use(href="img/symbols.svg#icon-close")
+             - for(let i = 1; i <= 2; i++)
+               button.tag-filter(type="button") Кольцо
+                 svg(width="24" height="24")
+                   use(href="img/symbols.svg#icon-close")
             button.page-category__reset(type="button" data-reset-form="") Сбросить все
           .page-category__sort
             +dropdown({
