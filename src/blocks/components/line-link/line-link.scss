@@ -1,6 +1,9 @@
 .line-link {
   @include ProximaNovaTextRegular10();
   position: relative;
+  padding: 0;
+  margin: 0;
+  border: none;
   text-decoration: none;
   color: $other-blue;
 

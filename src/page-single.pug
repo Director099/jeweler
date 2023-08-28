@@ -3,6 +3,29 @@ extends pug/layout.pug
 block var
   - const headerClass = 'page-header--xs-mb-none';
   - const pageCurrent = pages.catalog.href;
+  -
+    const review = [
+      {
+        text: 'Отличное кольцо, жене понравилось!',
+        data: 'Сергей Газин, 26 октября 2022'
+      },
+      {
+        text: 'Все понравилось',
+        data: 'Андрей Назаров, 11 ноября 2022'
+      },
+      {
+        text: 'Нежное и изящное колечко. Элегантно выглядит на руке и сразу привлекает взгляды. отлично смотрится рядом с тонким обручальным кольцом',
+        data: 'Алина Кальметьева, 26 ноября 2022'
+      },
+      {
+        text: 'Шикарное кольцо, всем рекомендую! Подарок понравился)))',
+        data: 'Раиль Аккубеков, 10 декабря 2022'
+      },
+      {
+        text: 'Влад Стогниенко, 14 января 2023',
+        data: 'Прекрасное изделие'
+      },
+    ]
 
 block meta
   title= pages.pageSingle.text
@@ -10,7 +33,7 @@ block meta
 block content
   +main-content({
     standartTpl: false
-  })
+  }).overflow
     .container
       .stack.stack--main-gap
         .asd
@@ -28,3 +51,5 @@ block content
           title: "Недавно просмотренные",
           link: false
         })
+        +reviews-author()
+

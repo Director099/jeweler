@@ -1,0 +1,6 @@
+mixin review-content({data, text})
+  .review-content&attributes(attributes)
+    span.review-content__date= data
+    +final-rating.review-content__rating
+    .review-content__desc
+      p= text

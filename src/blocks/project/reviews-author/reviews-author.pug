@@ -1,0 +1,16 @@
+mixin reviews-author()
+  section.reviews-author
+    h2.reviews-author__title Отзывы (258)
+    .reviews-author__gap.grid-tpl-1.grid-tpl-xl-12
+      .grid-tpl-col-xl-4.order-xl-1
+        +rating-product.reviews-author__rating
+      .grid-tpl-col-xl-8
+        ul.reviews-author__list
+          each item in review
+            li.reviews-author__item
+              +review-content({
+                text: item.text,
+                data: item.data
+              })
+        .reviews-author__show-more
+          button.line-link Показать еще 5 отзывов

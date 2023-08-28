@@ -1,0 +1,8 @@
+mixin rating-product()
+  .rating-product&attributes(attributes)
+    .rating-product__content
+      strong.rating-product__number 5
+      .rating-product__row
+        +final-rating.rating-product__stars
+        span.rating-product__text Общий рейтинг
+    a.btn.btn--dark.rating-product__btn Оставить отзыв
