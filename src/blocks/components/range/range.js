@@ -1,4 +1,5 @@
 (function () {
+  //TODO: Классы
   var slider = document.getElementById('slider-range');
   var input0 = document.getElementById('input-range-0');
   var input1 = document.getElementById('input-range-1');

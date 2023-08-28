@@ -1,26 +1,57 @@
 .range__slider {
-  height: 3px;
+  height: 2px;
   bottom: 0;
   box-shadow: none;
   border: none;
+  margin-bottom: 20px;
+  padding-left: 18px;
+  padding-right: 8px;
 
   .noUi-connect {
-    background-color: #566DFB;
+    background-color: $bg-gray-2;
   }
 
   .noUi-handle {
-    width: 16px;
-    height: 16px;
+    width: 26px;
+    height: 26px;
     border-radius: 50px;
     margin: 0;
     right: -8px;
-    top: -7px;
-    border: 3px solid #566DFB;
-    background-color: $white;
+    top: -12px;
+    box-shadow: none;
+    background-color: $primary-pink-2;
+    border: none;
 
     &::after,
     &::before {
       display: none;
     }
   }
+}
+
+.range__row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 2px;
+}
+
+.range__label {
+  position: relative;
+  display: block;
+}
+
+.range__input {
+  display: block;
+  padding: 4px 16px 4px 45px;
+  border-radius: 5px;
+  border: 1px solid $border-gray;
+  width: 100%;
+}
+
+.range__text {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
 }
