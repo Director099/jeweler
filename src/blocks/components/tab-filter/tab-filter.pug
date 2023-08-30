@@ -1,5 +1,5 @@
-mixin tab-filter({list, listClass})
-  .tab-filter(data-tab-filter="" data-destroy=`(min-width: ${media.lg}px)`)&attributes(attributes)
+mixin tab-filter({list, listClass, destroy})
+  .tab-filter(data-tab-filter="" data-destroy=destroy)&attributes(attributes)
     ul.tab-filter__list(class=listClass)
       each item in list
         li.tab-filter__item

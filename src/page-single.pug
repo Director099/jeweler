@@ -44,6 +44,7 @@ block content
           .product-card__grid
             +product-gallery()
             .product-card__content
+              +complement.order-xl-1
               a.product-card__link-rewiew(href="#reviews" data-smooth-scroll="")
                 +final-rating()
                 span.line-link 278 отзывов
@@ -64,7 +65,24 @@ block content
                   }).product-card__prices-size-old
                   span.product-card__prices-sale 50%
               +size-product
-              +complement
+        +tab-filter({
+          list: [
+            {
+              text: 'Текущие',
+              filter: 'current',
+              active: true
+            },
+            {
+              text: 'Прошлые',
+              filter: 'old'
+            }
+          ],
+        })
+          ul
+            li(data-filter="current")
+              p 213
+            li(data-filter="old")
+              p lorem123213123123
         +section-content({
           classTitle: 'section-content__products-title',
           title: "Вам может понравиться",
