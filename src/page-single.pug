@@ -44,9 +44,15 @@ block content
           .product-card__grid
             +product-gallery()
             .product-card__content
-              a(href="#reviews" data-smooth-scroll="")
+              a.product-card__link-rewiew(href="#reviews" data-smooth-scroll="")
                 +final-rating()
                 span.line-link 278 отзывов
+              section.product-card__supreme
+                span.product-card__code.d-none.d-xl-block Артикул: 111000
+                h1.product-card__supreme-title Золотое кольцо с бриллиантами
+                p.product-card__price 30 000 60 000 50%
+              +size-product
+              +complement
         +section-content({
           classTitle: 'section-content__products-title',
           title: "Вам может понравиться",

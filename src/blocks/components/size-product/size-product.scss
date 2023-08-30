@@ -1,0 +1,102 @@
+.size-product__btn-size {
+  @include ProximaNovaTextRegular13();
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid $border-black;
+  border-radius: 10px;
+  cursor: pointer;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular20();
+    width: 55px;
+    height: 44px;
+    padding: 2px;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular20();
+    padding: 2px;
+  }
+}
+
+.size-product__btn-wrap {
+  margin: 0 25px;
+
+  @media (min-width: $screen-lg) {
+    margin: 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-left: 74px;
+  }
+}
+
+.size-product__btn {
+  width: 100%;
+
+  @media (min-width: $screen-lg) {
+    max-width: 470px;
+  }
+}
+
+.size-product__grid {
+  @include ul-reset();
+  display: flex;
+  gap: 8px;
+  margin: 0 -20px 14px;
+  overflow: auto;
+  padding: 0 20px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 0;
+    gap: 16px;
+    max-width: 623px;
+    margin: 0 0 30px;
+  }
+  @media (min-width: $screen-xl) {
+    gap: 20px 16px;
+    max-width: 552px;
+    margin-bottom: 20px;
+  }
+}
+
+.size-product__title {
+  @include ProximaNovaTextRegular13();
+  margin-bottom: 0;
+
+  @media(min-width: $screen-lg) {
+    @include ProximaNovaTextRegular28();
+  }
+}
+
+.size-product__row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.size-product__info {
+  margin: 0;
+}
+
+.size-product__danger {
+  @include ProximaNovaTextRegular10();
+  color: $other-red;
+
+  @media(min-width: $screen-lg) {
+    @include ProximaNovaTextRegular16();
+  }
+
+  @media(min-width: $screen-xl) {
+    @include ProximaNovaTextRegular18();
+  }
+}

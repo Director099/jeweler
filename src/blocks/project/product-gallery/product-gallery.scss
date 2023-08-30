@@ -1,6 +1,8 @@
 .product-gallery {
   display: flex;
   gap: 40px;
+  margin-left: -20px;
+  margin-right: -20px;
 
   @media (min-width: $screen-lg) {
     flex-direction: row-reverse;
@@ -33,9 +35,12 @@
 
 .product-gallery__slider {
   position: relative;
-  border-radius: 20px;
-  box-shadow: 0px 2px 7px 2px rgba(0, 0, 0, 0.05);
   background-color: $white;
+
+  @media (min-width: $screen-lg) {
+    border-radius: 20px;
+    box-shadow: 0px 2px 7px 2px rgba(0, 0, 0, 0.05);
+  }
 }
 
 .product-gallery__thumbs {
