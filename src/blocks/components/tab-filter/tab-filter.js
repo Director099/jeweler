@@ -32,8 +32,9 @@ export class TabFilter {
   };
 
   tabBtnElemActive(currentElem) {
+    const dataBtnValue = currentElem.target.dataset.btnFilter;
     this._elButtons.forEach((e) => e.classList.remove('active'));
-    currentElem.target.classList.add('active');
+    this._elTabs.querySelectorAll(`[data-btn-filter=${dataBtnValue}]`).forEach(e => e.classList.add('active'));
   };
 
   _events() {

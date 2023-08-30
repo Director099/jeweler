@@ -1,0 +1,35 @@
+-
+  const specifications = [
+    {
+      label: 'Артикул',
+      value: '111000'
+    },
+    {
+      label: 'Примерный вес',
+      value: '1,6 г  '
+    },
+    {
+      label: 'Материал',
+      value: 'Желтое золото  '
+    },
+    {
+      label: 'Вставка',
+      value: 'Бриллиант'
+    },
+    {
+      label: 'Проба',
+      value: '585  '
+    },
+    {
+      label: 'Покрытие',
+      value: 'Родирование  '
+    },
+  ]
+
+mixin specifications
+  .specifications&attributes(attributes)
+    ul.specifications__list
+      each item in specifications
+        li.specifications__item
+          span= item.label
+          span= item.value

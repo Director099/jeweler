@@ -65,24 +65,7 @@ block content
                   }).product-card__prices-size-old
                   span.product-card__prices-sale 50%
               +size-product
-        +tab-filter({
-          list: [
-            {
-              text: 'Текущие',
-              filter: 'current',
-              active: true
-            },
-            {
-              text: 'Прошлые',
-              filter: 'old'
-            }
-          ],
-        })
-          ul
-            li(data-filter="current")
-              p 213
-            li(data-filter="old")
-              p lorem123213123123
+        +product-info
         +section-content({
           classTitle: 'section-content__products-title',
           title: "Вам может понравиться",

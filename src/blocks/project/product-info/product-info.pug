@@ -1,0 +1,25 @@
+mixin product-info
+  +tab-filter({
+    list: [
+      {
+        text: 'Описание',
+        filter: 'desc',
+        active: true
+      },
+      {
+        text: 'Оплата',
+        filter: 'buy'
+      }
+    ],
+    listClass: 'd-none d-lg-flex'
+  }).product-info
+    ul.product-info__list
+      li.product-info__item
+        h4.product-info__tab-title.active.d-lg-none(data-btn-filter="desc") Описание
+        .product-info__tab-wrap(data-filter="desc")
+          +specifications
+      li.product-info__item
+        h4.product-info__tab-title.d-lg-none(data-btn-filter="buy") Оплата
+        .product-info__tab-wrap(data-filter="buy")
+          .das
+            p lorem123213123123
