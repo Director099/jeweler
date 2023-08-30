@@ -67,3 +67,67 @@
 .product-card__price {
   margin: 0;
 }
+
+.product-card__prices {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.product-card__prices-size {
+  @include ProximaNovaTextBold19();
+
+  svg {
+    width: 12px;
+    height: 12px;
+
+    @media (min-width: $screen-lg) {
+      width: 18px;
+      height: 23px;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    @include MontserratRegular34();
+    font-weight: 700;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular36();
+    font-weight: 700;
+  }
+}
+
+.product-card__prices-sale {
+  @include ProximaNovaTextRegular13();
+
+  svg {
+    width: 12px;
+    height: 12px;
+
+    @media (min-width: $screen-lg) {
+      width: 15px;
+      height: 19px;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular26();
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular28();
+  }
+}
+
+.product-card__prices-size-old {
+  @include ProximaNovaTextRegular13();
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular26();
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular28();
+  }
+}

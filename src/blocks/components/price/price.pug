@@ -1,0 +1,6 @@
+mixin price({icon="2", text, svgWidth="17", svgHeight="17", oldPrice})
+  p.price(class=oldPrice && 'price--old')&attributes(attributes)
+    span.price__text= text
+    svg(width=svgWidth height=svgHeight)
+      use(href=`img/symbols.svg#icon-rouble-${icon}`)
+

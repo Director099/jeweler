@@ -5,11 +5,11 @@
   margin-right: -20px;
 
   @media (min-width: $screen-lg) {
-    flex-direction: row-reverse;
+    margin: 0;
   }
 
   @media (min-width: $screen-xl) {
-    gap: 50px;
+    gap: 40px;
   }
 }
 

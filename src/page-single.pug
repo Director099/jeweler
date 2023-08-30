@@ -50,7 +50,19 @@ block content
               section.product-card__supreme
                 span.product-card__code.d-none.d-xl-block Артикул: 111000
                 h1.product-card__supreme-title Золотое кольцо с бриллиантами
-                p.product-card__price 30 000 60 000 50%
+                .product-card__prices
+                  +price({
+                    text: '30 000',
+                    svgWidth: 18,
+                    svgHeight: 23,
+                  }).product-card__prices-size
+                  +price({
+                    text: '60 000',
+                    oldPrice: true,
+                    svgWidth: 15,
+                    svgHeight: 19,
+                  }).product-card__prices-size-old
+                  span.product-card__prices-sale 50%
               +size-product
               +complement
         +section-content({
