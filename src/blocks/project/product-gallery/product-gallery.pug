@@ -1,0 +1,22 @@
+mixin product-gallery()
+  - const lastElem = 5;
+  .product-gallery&attributes(attributes)
+    .product-gallery__row
+      .swiper.product-gallery__slider(data-gallery-top="")
+        button.product-gallery__btn-favorite.d-none.d-lg-block(type="button")
+          svg.product-gallery__svg-icon(width="24" height="24")
+            use(href="img/symbols.svg#icon-heart")
+        .swiper-wrapper
+          - for(let i = 1; i <= 5; i++)
+            .swiper-slide
+              .product-gallery__item
+                if(i === lastElem)
+                  video(src="https://g5.sunlight.net/media/product/video-crf23-1000/2023/02/09/6ace5f0159986de7f0d13f0dcbddb6f754e0850a.mp4" loop="loop" muted="muted" autoplay="")
+                else
+                  img(src=`img/content/main-photo/main-photo-${i}.jpg` alt="Золотое кольцо с бриллиантами")
+      .swiper.product-gallery__thumbs.d-none.d-lg-block(data-gallery-thumbs="")
+        .swiper-wrapper
+          - for(let i = 1; i <= 5; i++)
+            .swiper-slide
+              .product-gallery__thumbs-item(class=i === lastElem && "product-gallery__thumbs-item--video")
+                img(src=`img/content/main-photo/main-photo-${i}.jpg` alt="Золотое кольцо с бриллиантами")

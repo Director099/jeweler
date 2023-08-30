@@ -36,20 +36,24 @@ block content
   }).overflow
     .container
       .stack.stack--main-gap
-        .asd
-          +breadcrumbs()
+        .product-card
+          +breadcrumbs().product-card__breadcrumbs.d-none.d-lg-flex
             +breadcrumbs-item(pages.index.text, pages.index.href)
             +breadcrumbs-item(pages.catalog.text, pages.catalog.href)
             +breadcrumbs-item(pages.pageSingle.text)
+          .product-card__grid
+            +product-gallery()
+            .product-card__content
+              p gap128
         +section-content({
           classTitle: 'section-content__products-title',
           title: "Вам может понравиться",
-          link: false
-        })
+          textLink: false
+        }).section-content--single
         +section-content({
           classTitle: 'section-content__products-title',
           title: "Недавно просмотренные",
-          link: false
-        })
+          textLink: false
+        }).section-content--single
         +reviews-author()
 

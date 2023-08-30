@@ -9,6 +9,7 @@ import "../blocks/components/field-select/field-select.js";
 import "../blocks/components/navigation-changer/navigation-changer.js";
 import '../blocks/components/section-content/section-content.js';
 import '../blocks/project/main-slider/main-slider.js';
+import '../blocks/project/product-gallery/product-gallery.js';
 import '../blocks/project/blog-place/blog-place.js';
 
 const telMask = document.querySelectorAll('[type="tel"]');

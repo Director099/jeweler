@@ -1,0 +1,16 @@
+.product-card__breadcrumbs {
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 60px;
+  }
+}
+
+.product-card__grid {
+  display: grid;
+
+  @media (min-width: $screen-xl) {
+    grid-template-columns: 900px 1fr;
+    gap: 60px;
+  }
+}

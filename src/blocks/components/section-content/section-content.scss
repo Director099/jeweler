@@ -1,5 +1,9 @@
-.section-content {
-  //overflow: hidden;
+.section-content--single {
+  @media (max-width: $screen-lg - 1) {
+    .section-content__item {
+      max-width: 140px;
+    }
+  }
 }
 
 .section-content__item {
