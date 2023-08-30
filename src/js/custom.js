@@ -12,6 +12,20 @@ import '../blocks/project/main-slider/main-slider.js';
 import '../blocks/project/product-gallery/product-gallery.js';
 import '../blocks/project/blog-place/blog-place.js';
 
+const anchors = document.querySelectorAll('[data-smooth-scroll]')
+anchors?.forEach((item) =>
+  item.addEventListener('click',  (e) => {
+    e.preventDefault()
+
+    const blockID = item.getAttribute('href')
+
+    document.querySelector(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+)
+
 const telMask = document.querySelectorAll('[type="tel"]');
 
 telMask.forEach((item) => {
