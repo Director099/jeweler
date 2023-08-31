@@ -1,0 +1,45 @@
+-
+  const listAmount = [
+    {
+      label: 'Сумма за 1 товар',
+      value: '100 000',
+    },
+    {
+      label: 'Сумма со скидкой',
+      value: '50 000',
+    },
+    {
+      label: 'Скидка с учетом бонусов',
+      value: '52 000',
+    },
+  ]
+
+mixin total-amount
+  aside.total-amount
+    ul.total-amount__list
+      each item in listAmount
+        li.total-amount__item
+          span=item.label
+          span
+            +price({
+              text: item.value,
+              svgWidth: 15,
+              svgHeight: 15,
+              icon: 1
+            })
+    ul.total-amount__list.total-amount__list--result
+      li.total-amount__item
+        span Итого
+        span
+          +price({
+            text: '48 000',
+            svgWidth: 15,
+            svgHeight: 15,
+          })
+    +field-text({
+      attrs: {
+        placeholder: 'Введите промокод'
+      },
+    }).total-amount__input
+      button.total-amount__btn(type="button") Применить
+    button.btn.btn--dark Оформить заказ

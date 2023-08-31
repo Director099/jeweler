@@ -1,0 +1,12 @@
+mixin basket
+  .basket.page__content
+    .container
+      +link-icon({
+        icon: 'icon-arrow',
+        text: "Назад",
+        widthIcon: 14,
+        heightIcon: 14,
+      })(href=pages.index.href).link-back
+      +form(action=pages['404'].href).basket__grid
+        block
+        +total-amount
