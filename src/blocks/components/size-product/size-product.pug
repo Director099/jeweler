@@ -2,7 +2,7 @@ mixin size-product
   .size-product
     section.size-product__row
       h2.size-product__title Размер, мм
-      p.size-product__info
+      p.size-product__info.d-none.d-lg-inline-block
         a.line-link Как определить размер?
       span.size-product__danger Выберите размер
     ul.size-product__grid.grid-tpl-lg-9.grid-tpl-xl-8
@@ -11,5 +11,7 @@ mixin size-product
           button.size-product__btn-size= i
         li.size-product__item
           button.size-product__btn-size= i + '.5'
+    p.size-product__info.d-lg-none
+      a.line-link Как определить размер?
     .size-product__btn-wrap
       button.btn.btn--dark.size-product__btn Добавить в корзину

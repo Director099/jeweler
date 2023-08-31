@@ -1,3 +1,11 @@
+.complement {
+  margin-bottom: 20px;
+
+  @media(min-width: $screen-lg) {
+    margin-bottom: 0;
+  }
+}
+
 .complement__title {
   @include ProximaNovaTextRegular16();
   margin-bottom: 20px;

@@ -30,10 +30,11 @@
 .product-card__content {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
 
   @media (min-width: $screen-lg) {
     max-width: 714px;
+    gap: 40px;
   }
 
   @media (min-width: $screen-xl) {

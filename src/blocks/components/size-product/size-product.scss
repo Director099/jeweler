@@ -85,7 +85,13 @@
 }
 
 .size-product__info {
-  margin: 0;
+  display: flex;
+  margin-bottom: 30px;
+
+  @media(min-width: $screen-lg) {
+    display: block;
+    margin-bottom: 0;
+  }
 }
 
 .size-product__danger {
