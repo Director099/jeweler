@@ -8,7 +8,7 @@ mixin size-product
     ul.size-product__grid.grid-tpl-lg-9.grid-tpl-xl-8
       - for (let i = 15; i <= 22; i++)
         li.size-product__item
-          button.size-product__btn-size= i
+          button.size-product__btn-size(class=i===15 && 'active')= i
         li.size-product__item
           button.size-product__btn-size= i + '.5'
     p.size-product__info.d-lg-none
