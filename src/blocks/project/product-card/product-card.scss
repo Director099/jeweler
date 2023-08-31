@@ -70,7 +70,10 @@
 .product-card__prices {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 10px;
+  @media (min-width: $screen-lg) {
+    gap: 30px;
+  }
 }
 
 .product-card__prices-size {
@@ -121,6 +124,21 @@
 
 .product-card__prices-size-old {
   @include ProximaNovaTextRegular13();
+
+  svg {
+    width: 10px;
+    height: 8px;
+
+    @media (min-width: $screen-lg) {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 15px;
+      height: 19px;
+    }
+  }
 
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular26();

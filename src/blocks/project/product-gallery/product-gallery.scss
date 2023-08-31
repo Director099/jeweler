@@ -1,10 +1,7 @@
 .product-gallery {
-  display: flex;
-  gap: 40px;
-  margin: 0 -20px 30px;
+  margin: 0 -20px 20px;
 
   @media (min-width: $screen-lg) {
-    gap: 50px;
     margin: 0 auto 50px;
     max-width: 920px;
     width: 100%;
@@ -14,6 +11,19 @@
   @media (min-width: $screen-xl) {
     margin: 0;
     padding: 0;
+    gap: 40px;
+  }
+}
+
+.product-gallery__row {
+  display: flex;
+  gap: 40px;
+
+  @media (min-width: $screen-lg) {
+    gap: 50px;
+  }
+
+  @media (min-width: $screen-xl) {
     gap: 40px;
   }
 }
@@ -116,5 +126,28 @@
   @media (min-width: $screen-xl) {
     width: 40px;
     height: 40px;
+  }
+}
+
+.product-gallery__pagination {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  &.swiper-pagination-horizontal {
+    top: 0;
+    bottom: initial;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 2px;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $primary-pink-2;
   }
 }

@@ -1,0 +1,47 @@
+.pay {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @media (min-width: $screen-lg) {
+    gap: 30px;
+  }
+}
+
+.pay__span {
+  max-width: 20px;
+  flex-shrink: 0;
+
+  @media(min-width: $screen-lg) {
+    max-width: initial;
+  }
+}
+
+.pay__content {
+  @include ProximaNovaTextRegular13();
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular20();
+  }
+}
+
+.pay__content-title {
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.pay__content-text {
+  margin: 0;
+  color: $tp-grey;
+}
+
+.product-info__list-pay {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (min-width: $screen-lg) {
+    gap: 35px;
+  }
+}
+

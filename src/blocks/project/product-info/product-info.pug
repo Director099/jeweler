@@ -1,3 +1,28 @@
+-
+  const listPay = [
+    {
+      img: 'img/pay/icon-card-online.svg',
+      text: 'Картой онлайн',
+      title: 'Оплата банковской картой на сайте'
+    },
+    {
+      img: 'img/pay/icon-cash.svg',
+      text: 'Оплата при получении',
+      title: 'Заказ можно оплатить наличными или картой при получении'
+    },
+    {
+      img: 'img/pay/icon-spb.svg',
+      text: 'СБП',
+      title: 'Система быстрых платежей'
+    },
+  ]
+
+mixin product-info-accordion(text)
+  li.product-info__item.is-active(data-accordion="element")&attributes(attributes)
+    h4.product-info__tab-title.d-lg-none(data-accordion="button")= text
+    .product-info__tab-wrap(data-accordion="content")
+      block
+
 mixin product-info
   +tab-filter({
     list: [
@@ -11,15 +36,18 @@ mixin product-info
         filter: 'buy'
       }
     ],
+    destroy: `(max-width: ${media.lg - 1}px)`,
     listClass: 'd-none d-lg-flex'
   }).product-info
-    ul.product-info__list
-      li.product-info__item
-        h4.product-info__tab-title.active.d-lg-none(data-btn-filter="desc") Описание
-        .product-info__tab-wrap(data-filter="desc")
-          +specifications
-      li.product-info__item
-        h4.product-info__tab-title.d-lg-none(data-btn-filter="buy") Оплата
-        .product-info__tab-wrap(data-filter="buy")
-          .das
-            p lorem123213123123
+    ul.product-info__list(data-accordion="parent")
+      +product-info-accordion("Описание")(data-filter="desc")
+        +specifications.product-info__tab-ident
+      +product-info-accordion("Оплата")(data-filter="buy")
+        .product-info__tab-ident
+          .product-info__list-pay
+            each item in listPay
+              +pay({
+                img: item.img,
+                text: item.text,
+                title: item.title
+              })
