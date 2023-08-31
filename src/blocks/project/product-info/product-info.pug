@@ -18,7 +18,7 @@
   ]
 
 mixin product-info-accordion(text)
-  li.product-info__item.is-active(data-accordion="element")&attributes(attributes)
+  li.product-info__item.is-active(data-accordion="element" data-destroy=`(min-width:  ${media.lg}px)`)&attributes(attributes)
     h4.product-info__tab-title.d-lg-none(data-accordion="button")= text
     .product-info__tab-wrap(data-accordion="content")
       block

@@ -1,14 +1,28 @@
 .review-content__date {
+  @include ProximaNovaTextRegular16();
   display: block;
   margin-bottom: 15px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular28();
+  }
 }
 
 .review-content__rating {
-  margin-bottom: 30px;
+  margin-bottom: 16px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 30px;
+  }
 }
 
 .review-content__desc {
+  @include ProximaNovaTextRegular13();
   p {
     margin: 0;
+  }
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular26();
   }
 }
