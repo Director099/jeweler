@@ -181,3 +181,45 @@ $border-radius:               3px;
     right: 30px;
   }
 }
+
+.field-text--apply-code {
+  position: relative;
+
+  .field-text__input {
+    border-radius: 15px;
+
+    &::placeholder {
+      color: $tp-grey;
+    }
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular20;
+      padding: 16px 120px 14px 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      @include ProximaNovaTextRegular22;
+      padding: 16px 120px 16px 20px;
+    }
+  }
+}
+
+.field-text__apply-code-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  color: $tp-grey;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular16
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular18
+  }
+}

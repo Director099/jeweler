@@ -1,7 +1,18 @@
 .total-amount {
-  padding: 40px 40px 47px;
+  position: sticky;
+  top: 0;
+  right: 0;
+  padding: 15px;
   border-radius: 15px;
   border: 1px solid $border-gray;
+
+  @media (min-width: $screen-lg) {
+    padding: 42px 15px 37px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 40px 40px 47px;
+  }
 }
 
 .total-amount__list {
@@ -10,15 +21,63 @@
   flex-direction: column;
   gap: 20px;
   margin-bottom: 33px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular20;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular22;
+  }
+}
+
+.total-amount__list--result {
+  @include ul-reset;
+  margin-bottom: 40px;
+
+  .price {
+    font-weight: 700;
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular28;
+      font-weight: 700;
+    }
+
+    @media (min-width: $screen-xl) {
+      @include ProximaNovaTextRegular28;
+      font-weight: 700;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular32;
+    font-weight: 700;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular36;
+    font-weight: 700;
+  }
 }
 
 .total-amount__item {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 10px;
+
+  .price {
+    font-weight: 700;
+  }
 }
 
-.total-amount__list--result {
-  @include ul-reset;
-  margin-bottom: 40px;
+.total-amount__btn {
+  @include ProximaNovaTextRegular25;
+  width: 100%;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular25;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
 }

@@ -15,18 +15,17 @@
   ]
 
 mixin total-amount
-  aside.total-amount
+  aside.total-amount&attributes(attributes)
     ul.total-amount__list
       each item in listAmount
         li.total-amount__item
           span=item.label
-          span
-            +price({
-              text: item.value,
-              svgWidth: 15,
-              svgHeight: 15,
-              icon: 1
-            })
+          +price({
+            text: item.value,
+            svgWidth: 15,
+            svgHeight: 15,
+            icon: 1
+          })
     ul.total-amount__list.total-amount__list--result
       li.total-amount__item
         span Итого
@@ -40,6 +39,6 @@ mixin total-amount
       attrs: {
         placeholder: 'Введите промокод'
       },
-    }).total-amount__input
-      button.total-amount__btn(type="button") Применить
-    button.btn.btn--dark Оформить заказ
+    }).field-text--apply-code
+      button(type="button").field-text__apply-code-btn Применить
+    button.btn.btn--dark.total-amount__btn Оформить заказ
