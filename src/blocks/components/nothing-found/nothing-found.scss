@@ -12,6 +12,21 @@
 }
 
 .nothing-found__title {
+  @include ProximaNovaTextRegular28;
+  margin: 0;
+
+  @media (min-width: $screen-lg) {
+    @include MontserratBold48;
+    font-weight: 400;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include MontserratBold54;
+    font-weight: 400;
+  }
+}
+
+.nothing-found__text {
   @include ProximaNovaTextBold19();
   font-weight: 400;
   margin-bottom: 0;

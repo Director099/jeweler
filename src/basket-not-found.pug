@@ -1,0 +1,21 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.basketNotFound.href;
+
+block meta
+  title= pages.basketNotFound.text
+
+block content
+  .basket.basket--nothing.page__content
+    .container
+      +link-icon({
+        icon: 'icon-arrow',
+        text: "Назад",
+        widthIcon: 14,
+        heightIcon: 14,
+      })(href=pages.index.href).link-back
+    .basket__nothing-wrap
+      +nothing-found("Переходи в каталог, там много красивых изделий", pages.basketNotFound.text)
+
+

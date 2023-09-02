@@ -1,6 +1,11 @@
 .basket {
   padding-bottom: 80px;
 
+  &--nothing {
+    display: flex;
+    flex-direction: column;
+  }
+
   @media (min-width: $screen-lg) {
     padding-bottom: 100px;
   }
@@ -10,9 +15,13 @@
   }
 }
 
-.basket__grid {
-  //display: grid;
+.basket__nothing-wrap {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
 
+.basket__grid {
   @media (min-width: $screen-lg) {
     display: grid;
     grid-template-columns: 600px 1fr;

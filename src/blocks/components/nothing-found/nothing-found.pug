@@ -1,4 +1,6 @@
-mixin nothing-found(text)
+mixin nothing-found(text, title)
   section.nothing-found
-    h1.nothing-found__title= text
+    if title
+      h1.nothing-found__title= title
+    p.nothing-found__text= text
     a.btn.btn--dark.nothing-found__btn(href=pages.catalog.href) Перейти в каталог
