@@ -8,6 +8,14 @@ block meta
 
 block content
   +basket
-    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, rerum.
+    ul.basket-products
+      li.basket-products__item
+        +card-product({
+          title: 'Кольцо золотое 585 пробы',
+          textLinkSize: '16 размер',
+          status: 'В наличии',
+          src: 'img/content/prev-1.jpg'
+        })
+
 
 

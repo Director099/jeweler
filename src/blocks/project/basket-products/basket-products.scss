@@ -1,0 +1,21 @@
+.basket-products {
+  @include ul-reset;
+}
+
+.basket-products__item {
+  padding-bottom: 20px;
+
+  @media (min-width: $screen-lg) {
+    padding-bottom: 40px;
+    border-bottom: 1px solid $primary-pink-1;
+    &:not(:first-child) {
+      padding-top: 40px;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    &:not(:first-child) {
+      padding-top: 20px;
+    }
+  }
+}

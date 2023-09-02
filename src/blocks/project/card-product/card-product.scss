@@ -1,0 +1,187 @@
+.card-product {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  @media (min-width: $screen-lg) {
+    gap: 10px;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 30px;
+  }
+}
+
+.card-product__img {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+
+  @media (min-width: $screen-lg) {
+    width: 200px;
+    height: 200px;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.card-product__content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: flex-start;
+  gap: 13px;
+  width: 100%;
+
+  @media (min-width: $screen-lg) {
+    gap: 30px 15px;
+  }
+
+  @media (min-width: $screen-xl) {
+    grid-template-columns: 1fr 336px;
+    gap: 23px 88px;
+  }
+}
+
+.card-product__title {
+  margin: 0;
+  grid-column: auto/span 2; // grid-column
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular28;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular32;
+    grid-column: auto;
+  }
+}
+
+.card-product__prices {
+  @include ProximaNovaTextRegular16;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 10px;
+  grid-column: auto/span 2; // grid-column
+
+  svg {
+    width: 9px;
+
+    @media (min-width: $screen-lg) {
+      width: 18px;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular28;
+    grid-column: auto;
+  }
+
+  @media (min-width: $screen-xl) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .price--old {
+    @include ProximaNovaTextRegular13;
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular22;
+    }
+
+    svg {
+      width: 9px;
+      @media (min-width: $screen-lg) {
+        width: 14px;
+      }
+    }
+  }
+}
+
+.card-product__btn-icon {
+  padding: 0;
+  margin: 0;
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+
+  svg {
+    display: block;
+    stroke-width: 2px;
+    stroke: $tp-black;
+    width: 12px;
+    height: 12px;
+
+    @media (min-width: $screen-lg) {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 5px;
+  }
+}
+
+.card-product__group {
+  @include ProximaNovaTextRegular13;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular28;
+    gap: 30px;
+
+    &--info {
+      order: 1; // order
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular32;
+    gap: 23px;
+
+    &--info {
+      order: 0;
+    }
+  }
+
+  &--btns {
+    flex-direction: row-reverse;
+    gap: 30px;
+
+    @media (min-width: $screen-lg) {
+      gap: 15px;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex-direction: column;
+      padding: 10px 0;
+      height: 100%;
+    }
+  }
+}
+
+.card-product__sizes {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-product__status--main {
+  color: $other-blue;
+}
+
+.card-product__status--danger {
+  color: $other-red;
+}
+
+.card-product__status--success {
+  color: $other-green;
+}

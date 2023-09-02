@@ -7,6 +7,7 @@ mixin basket
         widthIcon: 14,
         heightIcon: 14,
       })(href=pages.index.href).link-back
+      h1.basket__title.d-none.d-lg-block Корзина
       +form(action=pages['404'].href).basket__grid
         block
         +total-amount.d-none.d-lg-block

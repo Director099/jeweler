@@ -1,0 +1,30 @@
+mixin card-product({title, textLinkSize, status, src})
+  .card-product
+    .card-product__img
+      img(src=src alt=title)
+    section.card-product__content
+      h3.card-product__title= title
+      .card-product__prices
+        +price({
+          text: '100 000',
+          svgWidth: 18,
+          svgHeight: 18,
+          icon: 1,
+          oldPrice: true,
+        })
+        +price({
+          text: '50 000',
+          svgWidth: 18,
+          svgHeight: 18,
+          icon: 1
+        })
+      .card-product__group.card-product__group--info
+        a.card-product__sizes(href="#")= textLinkSize
+        span.card-product__status.card-product__status--success= status
+      .card-product__group.card-product__group--btns
+        button.card-product__btn-icon.card-product__btn-icon--belete
+          svg(width="22", height="22")
+            use(href="img/symbols.svg#icon-delete")
+        button.card-product__btn-icon.card-product__btn-icon--favorite
+          svg(width="22", height="22")
+            use(href="img/symbols.svg#icon-heart")
