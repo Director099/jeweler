@@ -9,5 +9,14 @@ mixin basket
       })(href=pages.index.href).link-back
       h1.basket__title.d-none.d-lg-block Корзина
       +form(action=pages['404'].href).basket__grid
-        block
+        .basket-product.stack.stack--main-gap
+          block
         +total-amount.d-none.d-lg-block
+        .basket__processing.d-lg-none
+          +price({
+            text: '48 000',
+            svgWidth: 12,
+            svgHeight: 12,
+            icon: 2
+          })
+          button.btn.btn--dark.basket__processing-btn Оформить заказ
