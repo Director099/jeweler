@@ -16,9 +16,8 @@ block content
           status: 'В наличии',
           src: 'img/content/prev-1.jpg'
         })
-    section.basket-products__not-auth
-      h1.basket-products__not-auth-title Бонусные баллы (ББ)
-      .basket-products__not-auth-desc
-        p #[a(class="line-link" href="#") Авторизуйтесь] или #[a(class="line-link" href="#") зарегистрируйтесь], чтобы применить бонусные баллы.
+    +basket-bonus({
+      auth: true
+    })
 
 

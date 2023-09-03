@@ -1,5 +1,11 @@
-mixin basket-bonus()
+mixin basket-bonus({auth=false})
   section.basket-bonus
     h1.basket-bonus__title Бонусные баллы (ББ)
-    .basket-bonus__not-auth-desc
-      p #[a(class="line-link" href="#") Авторизуйтесь] или #[a(class="line-link" href="#") зарегистрируйтесь], чтобы применить бонусные баллы.
+    if auth
+      +alert()
+        p Вы можете оплатить часть заказа бонусными баллами (не более 20% от стоимости заказа).
+        a.line-link(href=pages.bonusRules.href) Подробнее
+    else
+      .basket-bonus__not-auth-desc
+        p #[a(class="line-link" href="#") Авторизуйтесь] или #[a(class="line-link" href="#") зарегистрируйтесь], чтобы применить бонусные баллы.
+
