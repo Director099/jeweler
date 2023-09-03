@@ -1,10 +1,15 @@
-.basket-pay__list {
+.basket-profile__list {
   @include ul-reset;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 
   @media (min-width: $screen-lg) {
+    max-width: 590px;
+    gap: 10px;
+  }
+
+  @media (min-width: $screen-xl) {
     gap: 20px;
   }
 }

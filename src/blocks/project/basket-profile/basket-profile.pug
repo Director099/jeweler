@@ -1,0 +1,61 @@
+-
+  const basketFieldUser = [
+    {
+      title: 'Номер телефона',
+      attrs: {
+        type: 'tel',
+        pattern: `/(\\+7|8)[\\s(]*\\d{3}[)\\s][\\s]\\d{3}[\\s]\\d{2}[\\s]\\d{2}/i`,
+        "data-pristine-pattern-message": " "
+      }
+    },
+    {
+      title: 'Имя',
+      attrs: {
+        placeholder: 'Имя',
+      }
+    },
+    {
+      title: 'Фамилия',
+      attrs: {
+        placeholder: 'Фамилия',
+      }
+    },
+    {
+      title: 'Email',
+      attrs: {
+        placeholder: 'Email',
+        type: "email",
+        "data-pristine-email-message": " "
+      }
+    },
+    {
+      title: 'Добавить комментарий к заказу',
+      isTextarea: true,
+      attrs: {
+        placeholder: 'Добавить комментарий к заказу'
+      }
+    },
+  ]
+
+mixin basket-profile
+  +fieldset().basket-profile
+    h3.basket__title Данные получателя
+    ul.basket-profile__list
+      each item in basketFieldUser
+        li.basket-profile__item
+          +field-text({
+            isTextarea: item.isTextarea,
+            attrs: {
+              placeholder: item.attrs.placeholder,
+              required: true,
+              type: item.attrs.type ? item.attrs.type : 'text',
+              minlength: item.attrs.minlength,
+              min: item.attrs.min,
+              pattern: item.attrs.pattern,
+              'data-pristine-required-message': " ",
+              'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
+              'data-pristine-min-message': item.attrs['data-pristine-min-message'],
+              'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
+              "data-age": item.attrs['data-age']
+            }
+          }).field-text--std

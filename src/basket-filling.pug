@@ -3,6 +3,7 @@ extends pug/layout.pug
 block var
   - const pageCurrent = pages.basket.href;
 
+
 block meta
   title= pages.basket.text
 
@@ -19,6 +20,8 @@ block content
     +basket-bonus({
       auth: true
     })
+    +basket-profile
+    +basket-delivery
     +basket-pay()
 
 

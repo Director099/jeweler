@@ -2,6 +2,7 @@
   @include ProximaNovaTextRegular10();
   border-radius: 4px;
   padding: 3px;
+  text-align: center;
 
   &--dunger {
     color: $white;
@@ -11,6 +12,11 @@
   &--pink {
     color: $tp-black;
     background-color: $bg-pink;
+  }
+
+  &--success {
+    color: $white;
+    background-color: $other-green;
   }
 
   @media (min-width: $screen-lg) {

@@ -1,0 +1,54 @@
+.block-radio__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.block-radio__toggle {
+  position: relative;
+  padding: 10px 60px 10px 20px;
+  border-radius: 15px;
+  border: 1px solid $border-gray;
+  transition: $time;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='11.5' stroke='%23858585'/%3E%3C/svg%3E");
+
+    @media (min-width: $screen-xl) {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (min-width: $screen-xl) {
+      right: 30px;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 10px 60px 10px 30px;
+  }
+}
+
+.block-radio__input:checked + .block-radio__toggle {
+  border-color: $border-black;
+
+  &::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='11.5' stroke='%23181616'/%3E%3Ccircle cx='12' cy='12' r='6' fill='%23181616'/%3E%3C/svg%3E");
+  }
+}

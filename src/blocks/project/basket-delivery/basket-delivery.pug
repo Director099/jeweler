@@ -1,0 +1,39 @@
+-
+  const listDelivery = [
+    {
+      text: 'Магазины и пункты выдачи',
+      title: 'Забрать сегодня'
+    },
+    {
+      text: 'Курьер',
+      title: 'Сегодня'
+    },
+  ]
+
+mixin basket-delivery
+  +fieldset().basket-delivery
+    h3.basket__title Доставка
+    ul.basket-delivery__list.grid-tpl-1.grid-tpl-lg-2
+      each item, i in listDelivery
+        li.basket-delivery__item
+          +block-radio({
+            idxChecked: i,
+            name: "delivery-check"
+          })
+            +pay({
+              text: item.text,
+              title: item.title,
+            }).block-radio__toggle
+    .basket-delivery__content
+      .basket-delivery__row
+        section.basket-delivery__desc
+          h3.basket-delivery__title
+            svg.basket-delivery__icon.d-lg-none(width="20" height="20")
+              use(href="img/symbols.svg#icon-shop")
+            | Доставка до магазина
+          span.badge.badge--success.basket-delivery__badge Бесплатно
+          p.basket-delivery__text ТЦ Мега, Уфа Рубежная 174
+          p.basket-delivery__text пн-вс, 10:00-22:00
+          p.basket-delivery__text 8 800 550 44 48
+        .basket-delivery__col-btn
+          a.btn.btn--dark.basket-delivery__btn Выбрать другой

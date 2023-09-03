@@ -4,10 +4,13 @@ mixin basket-pay
     ul.basket-pay__list
       each item, i in listPay
         li.basket-pay__item
-          label.basket-pay__label
-            input.basket-pay__input(type="radio", name="pay-check" checked= i===0)
+          +block-radio({
+            idxChecked: i,
+            name: "pay-check"
+          })
             +pay({
               img: item.img,
               text: item.text,
               title: item.title,
-            }).basket-pay__radio
+            }).block-radio__toggle
+
