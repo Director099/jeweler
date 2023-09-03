@@ -4,6 +4,7 @@
       title: 'Номер телефона',
       attrs: {
         type: 'tel',
+        required: true,
         pattern: `/(\\+7|8)[\\s(]*\\d{3}[)\\s][\\s]\\d{3}[\\s]\\d{2}[\\s]\\d{2}/i`,
         "data-pristine-pattern-message": " "
       }
@@ -11,12 +12,14 @@
     {
       title: 'Имя',
       attrs: {
+        required: true,
         placeholder: 'Имя',
       }
     },
     {
       title: 'Фамилия',
       attrs: {
+        required: true,
         placeholder: 'Фамилия',
       }
     },
@@ -25,6 +28,7 @@
       attrs: {
         placeholder: 'Email',
         type: "email",
+        required: true,
         "data-pristine-email-message": " "
       }
     },
@@ -47,7 +51,7 @@ mixin basket-profile
             isTextarea: item.isTextarea,
             attrs: {
               placeholder: item.attrs.placeholder,
-              required: true,
+              required: item.attrs.required,
               type: item.attrs.type ? item.attrs.type : 'text',
               minlength: item.attrs.minlength,
               min: item.attrs.min,
