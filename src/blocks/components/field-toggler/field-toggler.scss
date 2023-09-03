@@ -12,11 +12,6 @@ $line-height:                 1.5 !default;
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: 1rem;
-
-  &__title {
-    @include field-name;
-  }
 
   &__input-wrap {
 
@@ -40,10 +35,10 @@ $line-height:                 1.5 !default;
     &:before {
       content: '';
       position: absolute;
-      top: rem(3px);
+      top: 3px;
       left: 0;
-      width: rem(35px);
-      height: rem(18px);
+      width: 35px;
+      height: 18px;
       background-color: #fff;
       border: 1px solid $border-color;
 
@@ -55,17 +50,17 @@ $line-height:                 1.5 !default;
     &:after {
       content: '';
       position: absolute;
-      top: rem(5px);
+      top: 5px;
       left: 2px;
-      width: rem(14px);
-      height: rem(14px);
+      width: 14px;
+      height: 14px;
       background-color: $gray-lightest;
       border: 1px solid $border-color;
       transition: all 0.3s;
     }
 
     @at-root input:checked ~ &:after {
-      transform: translate(rem(17px), 0);
+      transform: translate(17px, 0);
     }
   }
 
@@ -80,9 +75,5 @@ $line-height:                 1.5 !default;
 
   &__help-text-wrap {
     padding-left: 3.2em;
-  }
-
-  &__help-text {
-    @include field-help-text;
   }
 }

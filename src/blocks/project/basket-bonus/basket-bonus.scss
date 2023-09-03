@@ -14,6 +14,37 @@
   }
 }
 
+.basket-bonus__alert {
+  margin-bottom: 16px;
+  @media (min-width: $screen-lg) {
+    margin-bottom: 31px;
+  }
+  @media (min-width: $screen-xl) {
+    margin-bottom: 44px;
+  }
+}
+
+.basket-bonus__list {
+  @include ul-reset;
+  @include ProximaNovaTextRegular16();
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 590px;
+  width: 100%;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular26();
+    gap: 28px;
+  }
+}
+
+.basket-bonus__item {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+}
+
 .basket-bonus__not-auth-desc {
   @include ProximaNovaTextRegular16;
 
