@@ -1,0 +1,35 @@
+.basket-bonus__title {
+  @include ProximaNovaTextBold19;
+  margin-bottom: 30px;
+
+  @media (min-width: $screen-lg) {
+    @include MontserratBold34;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular40;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+}
+
+.basket-bonus__not-auth-desc {
+  @include ProximaNovaTextRegular16;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular32;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .line-link {
+    @include ProximaNovaTextRegular16;
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular32;
+    }
+  }
+}
