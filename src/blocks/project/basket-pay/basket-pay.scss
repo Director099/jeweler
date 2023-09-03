@@ -1,0 +1,20 @@
+.basket-pay__list {
+  @include ul-reset;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media (min-width: $screen-lg) {
+    gap: 20px;
+  }
+}
+
+.basket-pay__item {
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: 1px solid $border-black;
+
+  @media (min-width: $screen-xl) {
+    padding: 10px 30px;
+  }
+}

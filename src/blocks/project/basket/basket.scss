@@ -59,3 +59,19 @@
   max-width: 220px;
   width: 100%;
 }
+
+.basket__title {
+  @include ProximaNovaTextBold19;
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-lg) {
+    @include MontserratBold34;
+    margin-bottom: 43px;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular36;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+}

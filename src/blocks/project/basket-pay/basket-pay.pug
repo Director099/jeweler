@@ -1,0 +1,11 @@
+mixin basket-pay
+  +fieldset().basket-pay
+    h3.basket__title Оплата
+    ul.basket-pay__list
+      each item in listPay
+        li.basket-pay__item
+          +pay({
+            img: item.img,
+            text: item.text,
+            title: item.title
+          })
