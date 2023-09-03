@@ -1,7 +1,7 @@
 mixin pay({img, text, title})
-  .pay
+  span.pay&attributes(attributes)
     span.pay__span
       img(src=img alt=title)
-    .pay__content
-      h4.pay__content-title= title
-      p.pay__content-text= text
+    span.pay__content
+      strong.pay__content-title= text
+      span.pay__content-text= title
