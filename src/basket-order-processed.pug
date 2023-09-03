@@ -1,0 +1,11 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.basketFilling.href;
+
+block meta
+  title= pages.basketOrderProcessed.text
+
+block content
+  .basket.page__content
+    h1= pages.basketOrderProcessed.text

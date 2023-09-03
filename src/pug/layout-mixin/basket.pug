@@ -7,8 +7,8 @@ mixin basket
         widthIcon: 14,
         heightIcon: 14,
       })(href=pages.index.href).link-back
-      h1.basket__title.d-none.d-lg-block Корзина
-      +form(action=pages['404'].href).basket__grid
+      h1.title-content-montserrat.basket__title.d-none.d-lg-block Корзина
+      +form(action=pages.basketOrderProcessed.href).basket__grid
         .basket-product.stack.stack--main-gap
           block
         +total-amount.d-none.d-lg-block
