@@ -15,6 +15,17 @@
   }
 }
 
+.basket__stack {
+  gap: 40px;
+  @media (min-width: $screen-lg) {
+    gap: 130px;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 100px;
+  }
+}
+
 .basket__nothing-wrap {
   flex-grow: 1;
   display: flex;

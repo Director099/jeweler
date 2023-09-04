@@ -20,6 +20,38 @@
 
 mixin application
   .application
+    .application__table
+      header.application__table-row
+        .application__table-th-main
+          .application__row-text
+            strong Заказ 12345678
+            span.application__data от 10 апреля
+        .application__table-td
+          p.application__total-count 1 товар
+        .application__table-td
+          +price({
+            text: '50 000',
+            svgWidth: 24,
+            svgHeight: 24,
+            icon: 1
+          }).application__total-price
+      .application__table-row.application__table-row--content
+        .application__table-th-main
+          .application__product
+            .application__product-img
+              img(src="img/content/prev-1.jpg", alt="Кольцо золотое 585 пробы")
+            .application__product-content
+              p Артикул: 098765
+              p Кольцо золотое 585 пробы, 16 размер
+        .application__table-td
+          p.application__count 1 шт.
+        .application__table-td
+          +price({
+            text: '50 000',
+            svgWidth: 18,
+            svgHeight: 18,
+            icon: 1
+          }).application__price
     ul.application__info-list
       each item in listInfo
         li.application__info-item
