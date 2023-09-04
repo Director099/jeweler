@@ -42,8 +42,13 @@
 
 .application__table-row {
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+
+  @media (min-width: $screen-lg) {
+    gap: 10px;
+    grid-template-columns: 3fr 1fr 1fr;
+  }
 }
 
 .application__table-row--header {
@@ -65,6 +70,12 @@
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid $primary-pink-1;
+
+  .application__table-td {
+    @media (max-width: $screen-lg - 1) {
+      text-align: right;
+    }
+  }
 
   @media (min-width: $screen-lg) {
     padding-top: 44px;
@@ -123,6 +134,13 @@
 
   &:last-of-type {
     text-align: right;
+  }
+}
+
+.application__table-th-main {
+  grid-column: auto/span 2;
+  @media (min-width: $screen-lg) {
+    grid-column: auto;
   }
 }
 
