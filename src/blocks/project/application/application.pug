@@ -1,0 +1,27 @@
+-
+  const listInfo = [
+    {
+      label: 'Магазин:',
+      value: 'г. Уфа, ТЦ Мега, ул. Рубежная 174'
+    },
+    {
+      label: 'График работы магазина:',
+      value: 'пн-вс 10:00 - 22:00'
+    },
+    {
+      label: 'Дата получения:',
+      value: '12.04.2023 после 12:00'
+    },
+    {
+      label: 'Срок хранения:',
+      value: 'Можно забрать в течение 3-х дней'
+    },
+  ]
+
+mixin application
+  .application
+    ul.application__info-list
+      each item in listInfo
+        li.application__info-item
+          span.application__info-label= item.label
+          p.application__info-value= item.value
