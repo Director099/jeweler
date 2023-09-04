@@ -7,5 +7,9 @@ block meta
   title= pages.basketOrderProcessed.text
 
 block content
-  .basket.page__content
-    h1= pages.basketOrderProcessed.text
+  +basket(true)
+    .stack.stack--main-gap
+      +order-processed
+      .asd
+        p lorem
+      +status-claim

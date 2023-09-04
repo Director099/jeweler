@@ -1,0 +1,6 @@
+mixin order-processed()
+  section.order-processed
+    h1.title-content-montserrat.order-processed__title.d-none.d-lg-block= pages.basketOrderProcessed.text
+    .order-processed__desc
+      p Мы отправили вам письмо со всей информацией о заказе на email: #[strong bayramov@gmail.com]
+      p Если у вас возникли вопросы, свяжитесь с нами по телефону: #[a(href=numberPhone.href)= numberPhone.text]
