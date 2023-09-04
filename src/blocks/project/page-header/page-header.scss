@@ -67,12 +67,23 @@
   }
 }
 
-.page-header__top-inner {
+.page-header__top-wrap {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 25px;
+
+  &--internal {
+    @media (max-width: $screen-lg - 1) {
+      flex-direction: row-reverse;
+
+      .page-header__col-center {
+        flex-grow: 1;
+        max-width: 100%;
+      }
+    }
+  }
 
 
   @media (min-width: $screen-lg) {
@@ -109,7 +120,7 @@
   margin-left: auto;
 }
 
-.page-header__bottom-inner {
+.page-header__bottom-wrap {
   display: flex;
   align-items: flex-start;
   gap: 15px 18px;
@@ -161,4 +172,9 @@
 .page-header__btn-icon-search {
   width: 18px;
   height: 18px;
+}
+
+.page-header__title {
+  @include ProximaNovaTextRegular22;
+  margin: 0;
 }

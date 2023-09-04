@@ -29,24 +29,50 @@
     }
   ]
 
-mixin page-header({})
+mixin linkBack({iconBack=false})
+  if iconBack
+    +link-icon({
+      icon: 'icon-arrow-3',
+      widthIcon: 18,
+      heightIcon: 18,
+    })(href=iconBack).d-lg-none
+  else
+    +link-icon({
+      icon: "icon-search",
+    })(href="#").page-header__btn-icon-search.d-lg-none
+
+mixin catalogSearch({catalogSearch=false, catalogTitle=false, headerLogo=true})
+  if headerLogo
+    +logo(pages.index.href)(class=(catalogSearch || catalogTitle) && 'd-none d-lg-block')
+      img(src='img/content/logo.svg', alt='Logo')
+  if catalogSearch
+    +form.form--search.page-header__search.d-lg-none(action="#")
+      +field-text({
+        mods: '',
+        val: '',
+        attrs: {
+          placeholder: 'Поиск по каталогу'
+        }
+      })
+  if catalogTitle
+    h2.page-header__title.d-lg-none= catalogTitle
+
+mixin page-header({innerPage=false, iconBack=false, catalogSearch=false, headerBurger=true})
   header.page-header&attributes(attributes)
     .container
-      .page-header__top-inner
-        +burger('Меню').page-header__burger.d-lg-none
+      .page-header__top-wrap(class=innerPage && 'page-header__top-wrap--internal')
+        +burger('Меню')(class=!headerBurger && 'd-none').page-header__burger.d-lg-none
         .page-header__col-left.d-none.d-lg-flex
           each item in links
             +link-icon({
               icon: item.icon,
               text: item.text,
             })(href=item.href)
-        +logo(pages.index.href).page-header__col-center
-          img(src='img/content/logo.svg', alt='Logo')
+        .page-header__col-center
+          +catalogSearch({catalogSearch, catalogTitle, headerLogo})
         +navigation.page-header__col-right.d-none.d-lg-flex
-        +link-icon({
-          icon: "icon-search",
-        })(href="#").page-header__btn-icon-search.d-lg-none
-      .page-header__bottom-inner.d-none.d-lg-flex
+        +linkBack({iconBack: iconBack})
+      .page-header__bottom-wrap.d-none.d-lg-flex
         a.btn.btn--dark.page-header__btn-catalog(href=pages.catalog.href)
           svg.btn__icon.btn__icon--right(width="24" height="14")
             use(href="img/symbols.svg#icon-burger")
@@ -57,7 +83,6 @@ mixin page-header({})
             val: '',
           })
           button.btn.btn--pink.form__search-btn Поиск
-
         ul.page-header__buttons-list
           each item in buttonsList
             li.page-header__buttons-item

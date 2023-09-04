@@ -10,7 +10,7 @@ mixin basket(compliteOrder=false)
         })(href=pages.index.href).link-back
         h1.title-content-montserrat.basket__title.d-none.d-lg-block Корзина
         +form(action=pages.basketOrderProcessed.href).basket__grid
-          .basket-product.stack.stack--main-gap
+          .basket-products.stack.stack--main-gap
             block
           +total-amount.d-none.d-lg-block
           .basket__processing.d-lg-none

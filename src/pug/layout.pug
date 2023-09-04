@@ -45,7 +45,7 @@ html(lang='ru').page
 
   body.page__body
     .page__inner
-      +page-header({})(class=headerClass)
+      +page-header({innerPage, iconBack, catalogSearch, headerBurger})(class=headerClass)
       block content
       +page-footer().d-none.d-xl-block
       +mobile-menu(pageCurrent)

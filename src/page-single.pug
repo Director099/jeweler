@@ -1,6 +1,12 @@
 extends pug/layout.pug
 
 block var
+  //-Хедер
+  - const innerPage = true;
+  - const iconBack = pages.catalog.href;
+  - const headerLogo = false;
+  - const headerBurger = false;
+
   - const headerClass = 'page-header--xs-mb-none';
   - const pageCurrent = pages.catalog.href;
   -
@@ -35,6 +41,12 @@ block content
     standartTpl: false
   }).overflow
     .container
+      +link-icon({
+        icon: 'icon-arrow',
+        text: "Назад",
+        widthIcon: 14,
+        heightIcon: 14,
+      })(href=pages.index.href).link-back
       .stack.stack--main-gap
         .product-card
           +breadcrumbs().product-card__breadcrumbs.d-none.d-lg-flex

@@ -1,6 +1,11 @@
 extends pug/layout.pug
 
 block var
+  //-Хедер
+  - const innerPage = true;
+  - const iconBack = pages.lk.href;
+  - const catalogTitle = pages.lkReview.text;
+
   - const pageCurrent = pages.lk.href;
   - const pageSidebarCurrent = pages.lkReview.href
   -
