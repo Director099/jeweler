@@ -31,6 +31,7 @@ html(lang='ru').page
     //- Оптимизация шрифта
     //- link(rel='preload' href='fonts/' as='font')
 
+    link(rel='stylesheet', href='libs/fancybox/fancybox.css')
     link(rel='stylesheet', href='libs/swiper/swiper-bundle.min.css')
     link(rel='stylesheet', href="libs/choices.js/choices.min.css")
     link(rel='stylesheet', href="libs/nouislider/dist/nouislider.min.css")
@@ -50,6 +51,8 @@ html(lang='ru').page
       +page-footer().d-none.d-xl-block
       +mobile-menu(pageCurrent)
       block page-bottom
+    +modal-city
+    script(src="libs/fancybox/fancybox.umd.js")
     script(src="libs/swiper/swiper-bundle.min.js")
     script(src="libs/choices.js/choices.min.js")
     script(src="libs/nouislider/dist/nouislider.min.js")

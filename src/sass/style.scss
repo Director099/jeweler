@@ -38,6 +38,7 @@
 @import "../blocks/components/review-content/review-content";
 @import "../blocks/components/rating-product/rating-product";
 @import "../blocks/components/logo/logo";
+@import "../blocks/components/modal/modal";
 @import "../blocks/components/user/user";
 @import "../blocks/components/pay/pay";
 @import "../blocks/components/complement/complement";
@@ -123,6 +124,9 @@
 
 @import "../blocks/project/order-page/order-page";
 
+@import "../blocks/modals/modal-menu/modal-menu";
+@import "../blocks/modals/modal-city/modal-city";
+
 .text-content {
   @include ProximaNovaTextRegular16();
 
@@ -195,4 +199,8 @@
 
 .overflow {
   overflow: hidden;
+}
+
+.f-button {
+  display: none;
 }

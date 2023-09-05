@@ -21,6 +21,7 @@
     {
       icon: 'icon-geo',
       text: 'Уфа',
+      href: '#modal-city'
     },
     {
       icon: 'icon-phone',
@@ -61,13 +62,13 @@ mixin page-header({innerPage=false, iconBack=false, catalogSearch=false, headerB
   header.page-header&attributes(attributes)
     .container
       .page-header__top-wrap(class=innerPage && 'page-header__top-wrap--internal')
-        +burger('Меню')(class=!headerBurger && 'd-none').page-header__burger.d-lg-none
+        +burger('Меню')(data-fancybox="" href="#modal-menu" class=!headerBurger && 'd-none').page-header__burger.d-lg-none
         .page-header__col-left.d-none.d-lg-flex
-          each item in links
+          each item, i in links
             +link-icon({
               icon: item.icon,
               text: item.text,
-            })(href=item.href)
+            })(href=item.href  data-fancybox=i === 0 && '')
         .page-header__col-center
           +catalogSearch({catalogSearch, catalogTitle, headerLogo})
         +navigation.page-header__col-right.d-none.d-lg-flex

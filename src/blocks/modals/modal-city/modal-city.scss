@@ -1,0 +1,33 @@
+.modal-city {
+  @include ProximaNovaTextRegular16;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular22;
+    padding: 50px 53px 76px;
+
+    .modal__dialog {
+      width: 914px;
+    }
+  }
+}
+
+.modal-city__list {
+  @include ul-reset;
+  @media (min-width: $screen-lg) {
+    column-count: 4;
+    gap: 30px;
+  }
+}
+
+.modal-city__item {
+  margin-bottom: 20px;
+  @media (min-width: $screen-lg) {
+    margin-bottom: 24px;
+  }
+}
+
+.modal-city__link {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}

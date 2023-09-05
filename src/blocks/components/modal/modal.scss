@@ -16,27 +16,27 @@ $transition-time:             0.3s !default;
 
 $z-index-modal:               100 !default;
 
-.js-modal-open {
-  overflow: hidden;
-}
-
 .modal {
 
   $block-name:                &; // #{$block-name}__element
 
   display: none;
-  overflow: hidden;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  align-self: auto;
+  overflow: auto;
+  padding: 0;
+  border-radius: 0;
   z-index: $z-index-modal;
+  background-color: $primary-white;
   -webkit-overflow-scrolling: touch;
 
-  .js-modal-open & {
-    overflow-x: hidden;
-    overflow-y: auto;
+  @media (min-width: $screen-lg) {
+    position: static;
+    padding: 20px;
   }
 
   &__dialog {
@@ -61,86 +61,88 @@ $z-index-modal:               100 !default;
     flex-direction: column;
     min-width: 100%;
     min-height: 100%;
-    background-color: #fff;
+    //background-color: #fff;
     outline: 0;
-  }
 
-  &__header {
-    padding: 0 rem(40px) 0 rem(15px);
-    flex-shrink: 0;
-  }
-
-  &__title {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: $font-size--h4;
-    line-height: 1.4;
-    font-weight: 700;
-    color: currentColor;
-  }
-
-  &__close {
-    position: absolute !important; // stylelint-disable-line  declaration-no-important
-    top: 5px;
-    right: 5px;
+    padding: 96px 20px 40px;
+    @media (min-width: $screen-lg) {
+      padding: 0;
+    }
   }
 
   &__body {
-    padding: 0 rem(15px);
+    padding: 0 15px;
     flex-grow: 1;
   }
 
   &__footer {
-    padding: rem(15px);
+    padding: 15px;
     flex-shrink: 0;
   }
+}
 
-  &__backdrop {
-    position: fixed;
-    top: 0;
+.modal__header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 14px 20px;
+  min-height: 56px;
+  background-color: $primary-white;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.14);
+  z-index: 9;
+
+  @media (min-width: $screen-lg) {
+    position: relative;
+    margin-bottom: 60px;
+    box-shadow: none;
+    padding: 0;
+    min-height: inherit;
+  }
+}
+
+.modal__title {
+  @include ProximaNovaTextRegular22();
+  text-align: center;
+  color: $tp-black;
+  margin: 0;
+  @media (min-width: $screen-lg) {
+    @include MontserratRegular26();
+    text-transform: uppercase;
+  }
+}
+
+.modal__close {
+  position: absolute; // stylelint-disable-line  declaration-no-important
+  top: 50%;
+  right: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+  color: $black;
+
+  width: 18px;
+  height: 18px;
+
+  &--xs-left {
+    @media (max-width: $screen-lg - 1) {
+      left: 20px;
+      right: inherit;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
     right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: ($z-index-modal - 1);
-    background-color: rgba(0, 0, 0, $opacity);
-
-    @media (min-width: $screen-lg) {
-      animation: modal-backdrop-show $transition-time 1;
-    }
+    width: 24px;
+    height: 24px;
+    color: $icons-grey;
   }
 
-  &--open {
-
-    @media (min-width: $screen-lg) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-}
-
-
-
-@keyframes modal-backdrop-show {
-
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes modal-content-show {
-
-  0% {
-    opacity: 0;
-    transform: translateY(-2em);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 }

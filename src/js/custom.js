@@ -12,6 +12,10 @@ import '../blocks/project/main-slider/main-slider.js';
 import '../blocks/project/product-gallery/product-gallery.js';
 import '../blocks/project/blog-place/blog-place.js';
 
+Fancybox.bind("[data-fancybox]", {
+  dragToClose: false
+});
+
 const anchors = document.querySelectorAll('[data-smooth-scroll]')
 anchors?.forEach((item) =>
   item.addEventListener('click',  (e) => {
