@@ -3,5 +3,5 @@ mixin complement
     h3.complement__title Комплекты
     .complement__row
       - for (let i = 1; i <= 3; i++)
-        .complement__pic(class=i === 1 && 'active')
+        a.complement__pic(href=pages.pageSingle.href class=i === 1 && 'active')
           img(src=`img/content/prev-${i}.jpg` alt="Комплекты")
