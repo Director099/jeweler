@@ -28,7 +28,7 @@ block content
         +breadcrumbs-item(pages.catalog.text, pages.catalog.href)
         +breadcrumbs-item(pages.pageCategory.text)
       .page-category__grid
-        +catalog-filter.d-none.d-lg-block
+        +catalog-filter
         .page-category__products
           .page-category__active-filtres.d-none.d-lg-flex
             .page-category__tag-list(data-container="")
@@ -52,7 +52,7 @@ block content
               icon: 'icon-filter',
               widthIcon: 16,
               heightIcon: 16,
-            })(href="#").d-lg-none
+            })(href="#modal-form" data-fancybox="").d-lg-none
           .page-category__gap-tpl.grid-tpl-2.grid-tpl-xl-4
             - for(let i = 1; i < 43; i++)
               if(i % 15 === 0)

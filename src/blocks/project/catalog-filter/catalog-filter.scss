@@ -37,13 +37,41 @@
     }
   }
 
+  .field-checkbox__name {
+    padding-left: 0;
+  }
+
   .field-checkbox__name-text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 14px;
+
+    &::before {
+      position: static;
+      display: block;
+    }
+
+    &::after {
+      left: inherit;
+      right: 4px;
+    }
+
     @include ProximaNovaTextRegular13();
     line-height: 1;
 
     @media (min-width: $screen-lg) {
       @include ProximaNovaTextRegular24();
+      flex-direction: row;
+      justify-content: flex-start;
       line-height: 1;
+
+      &::after {
+        left: 6px;
+        right: inherit;
+      }
     }
 
     @media (min-width: $screen-xl) {
@@ -91,5 +119,78 @@
 }
 
 .catalog-filter__range {
-  max-width: 210px;
+  @media (min-width: $screen-lg) {
+    max-width: 210px;
+  }
+}
+
+@media (max-width: $screen-lg - 1) {
+  .catalog-filter--xs-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+  }
+
+  .catalog-filter__form {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: auto;
+
+    padding: 0;
+  }
+
+  .catalog-filter__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .catalog-filter__content {
+    padding: 96px 20px 40px;
+  }
+
+  .catalog-filter__accordion-item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $other-grey;
+  }
+}
+
+.catalog-filter__header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #fcfcfc;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 20px;
+  box-shadow: 0 4px 5px 0 rgba( 0,0,0,0.14);
+  margin-bottom: 40px;
+}
+
+.catalog-filter__header-title {
+  @include ProximaNovaTextRegular22;
+  margin: 0;
+}
+
+.catalog-filter__header-reset {
+  @include ProximaNovaTextRegular10;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: $tp-grey;
 }

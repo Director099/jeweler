@@ -14,30 +14,40 @@
   }
 
 mixin catalog-filter
-  aside.catalog-filter&attributes(attributes)
-    +form()(data-form-filter="")
-      +accordionParent.catalog-filter__accordion
-        each item, i in filter
-          +accordionItem({
-            title: item.title,
-            classElement: 'catalog-filter__accordion-item is-active'
-          })
-            if(item.list)
-              +field-checkbox({
-                checkboxes: arrayCheckbox(item.list, i),
-              }).catalog-filter__checkbox
-            else
-              +range.catalog-filter__range
-      +field-checkbox({
-        checkboxes: [
-          {
-            title: 'Новинка'
-          },
-          {
-            title: 'Изделие со скидкой'
-          },
-          {
-            title: 'Хит'
-          }
-        ],
-      }).catalog-filter__more
+  aside.catalog-filter.catalog-filter--xs-visually-hidden&attributes(attributes)
+    +form()(data-form-filter="" id="modal-form").catalog-filter__form
+      header.catalog-filter__header.d-lg-none
+        //TODO: Подумать хедер повторяется
+        +link-icon({
+          icon: 'icon-arrow',
+          widthIcon: 18,
+          heightIcon: 18,
+        })(data-fancybox-close="")
+        h3.catalog-filter__header-title Фильтры
+        button.catalog-filter__header-reset(aria-label='Закрыть' type="reset") Сбросить все
+      .catalog-filter__content
+        +accordionParent.catalog-filter__accordion
+          each item, i in filter
+            +accordionItem({
+              title: item.title,
+              classElement: 'catalog-filter__accordion-item is-active'
+            })
+              if(item.list)
+                +field-checkbox({
+                  checkboxes: arrayCheckbox(item.list, i),
+                }).catalog-filter__checkbox
+              else
+                +range.catalog-filter__range
+        +field-checkbox({
+          checkboxes: [
+            {
+              title: 'Новинка'
+            },
+            {
+              title: 'Изделие со скидкой'
+            },
+            {
+              title: 'Хит'
+            }
+          ],
+        }).catalog-filter__more
