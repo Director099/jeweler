@@ -146,3 +146,19 @@ $z-index-modal:               100 !default;
     height: 100%;
   }
 }
+
+.modal__header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal__header-main-close {
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  svg {
+    display: block;
+  }
+}

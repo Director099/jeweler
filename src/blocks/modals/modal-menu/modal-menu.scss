@@ -1,0 +1,33 @@
+.modal-menu__list {
+  @include ul-reset;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $primary-pink-1;
+}
+
+.modal-menu__link {
+  @include ProximaNovaTextRegular16;
+  text-decoration: none;
+  color: inherit;
+}
+
+.modal-menu__column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-menu__socials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 17px;
+}
+
+.modal__header-main-logo {
+  max-width: 168px;
+}

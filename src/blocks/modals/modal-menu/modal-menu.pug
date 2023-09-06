@@ -1,5 +1,63 @@
+-
+  const listPages = [
+    {
+      text: pages.pageBuying.text,
+      href: pages.pageBuying.href
+    },
+    {
+      text: pages.pageExchange.text,
+      href: pages.pageExchange.href
+    },
+    {
+      text: 'Возврат',
+      href: pages.pageReturn.href
+    },
+    {
+      text: 'Работа у нас',
+      href: pages.pageVacancy.href,
+    },
+    {
+      text: "Бонусная программа",
+      href: pages.pageBonus.href
+    },
+    {
+      text: pages.pagePrivacyPolicy.text,
+      href: pages.pagePrivacyPolicy.href
+    }
+  ];
+
 mixin modal-menu()
   +modal({
     id: 'modal-menu',
-    title: 'Выберите город',
-  }).modal-callback
+    mainHeader: true
+  }).modal-menu
+    .modal-menu__column
+      ul.modal-menu__list
+        li.modal-menu__item
+          //-TODO: Сделай 1ну иконку, то что в хедере убери
+          +link-icon({
+            icon: "icon-geo-2",
+            text: "Уфа",
+            widthIcon: 18,
+            heightIcon: 18
+          })(href="#modal-city" data-fancybox="").modal-menu__link
+        each item in nav
+          li.modal-menu__item
+            +link-icon({
+              icon: item.icon,
+              text: item.text,
+              widthIcon: 18,
+              heightIcon: 18
+            })(href=item.href).modal-menu__link
+      ul.modal-menu__list
+        each item in listPages
+          li.modal-menu__item
+            a.modal-menu__link(href=item.href)= item.text
+      .modal-menu__socials
+        +socials
+        +link-icon({
+          icon: "icon-phone",
+          text: numberPhone.text,
+          widthIcon: 18,
+          heightIcon: 18
+        })(href=numberPhone.href).modal-menu__link

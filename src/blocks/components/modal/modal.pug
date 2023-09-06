@@ -1,6 +1,26 @@
 //- Все примеси в этом файле должны начинаться c имени блока (modal)
 
-mixin modal({id, title, mods, classHeader, btnCloseMobileLeft=false})
+mixin main-header()
+  //-TODO: хедер и модалка одинаковы, подумать
+  .modal__header-main
+    button.modal__header-main-close(data-fancybox-close="" aria-label='Закрыть' type="button")
+      svg(width="18" height="18")
+        use(href="img/symbols.svg#icon-close")
+    +logo(pages.index.href).modal__header-main-logo
+      img(src='img/content/logo.svg', alt='Logo')
+    +link-icon({
+      icon: "icon-search",
+      widthIcon: 18,
+      heightIcon: 18
+    })(href="#")
+
+mixin header-title({btnCloseMobileLeft, title})
+  button.modal__close(data-fancybox-close="" aria-label='Закрыть' type="button" class=btnCloseMobileLeft && 'modal__close--xs-left')
+    svg(width="24" height="24")
+      use(href="img/symbols.svg#icon-close")
+  h4.modal__title!= title
+
+mixin modal({id, title, mods, classHeader, mainHeader=false, btnCloseMobileLeft=false})
 
   //- Принимает:
   //-   id      {string} - идентификатор
@@ -26,9 +46,12 @@ mixin modal({id, title, mods, classHeader, btnCloseMobileLeft=false})
   .modal(id=id, class=allMods, tabindex='-1', role='dialog')&attributes(attributes)
     .modal__dialog(role='document')
       header.modal__header(class=classHeader)
-        button.modal__close(data-fancybox-close="" aria-label='Закрыть' type="button" class=btnCloseMobileLeft && 'modal__close--xs-left')
-          svg(width="24" height="24")
-            use(href="img/symbols.svg#icon-close")
-        h4.modal__title!= title
+        if mainHeader
+          +main-header()
+        else
+          +header-title({
+            btnCloseMobileLeft,
+            title
+          })
       .modal__content
         block
