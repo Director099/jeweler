@@ -33,7 +33,7 @@ $border-radius:               3px !default;
     padding-left: 30px;
     //margin-right: 0.6em;
     font-weight: 400;
-    line-height: $line-height;
+    line-height: 1;
 
     @media (min-width: $screen-lg) {
       padding-left: 42px;

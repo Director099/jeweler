@@ -27,7 +27,7 @@ $z-index-modal:               100 !default;
   bottom: 0;
   left: 0;
   align-self: auto;
-  overflow: auto;
+  //overflow: auto;
   padding: 0;
   border-radius: 0;
   z-index: $z-index-modal;
@@ -37,6 +37,7 @@ $z-index-modal:               100 !default;
   @media (min-width: $screen-lg) {
     position: static;
     padding: 20px;
+    overflow: initial;
   }
 
   &__dialog {
@@ -44,10 +45,16 @@ $z-index-modal:               100 !default;
     margin: 0;
     width: 100%;
     height: 100%;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     @media (min-width: $screen-lg) {
       width: 600px;
       height: auto;
+      overflow: initial;
 
       #{$block-name}--open & {
         animation: modal-content-show $transition-time 1 both;

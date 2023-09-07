@@ -1,0 +1,82 @@
+-
+  const formReg = [
+    formFilelds.name,
+    formFilelds.surname,
+    formFilelds.phone,
+    formFilelds.email,
+    formFilelds.password,
+    formFilelds.reatryPassword,
+  ]
+
+  const listHeaderReg = [
+    {
+      text: 'Войти',
+      href: '#modal-entry',
+      active: false,
+    },
+    {
+      text: 'Регистрация',
+      href: '#modal-reg',
+      active: true,
+    },
+  ]
+
+mixin modal-reg()
+  +modal({
+    id: 'modal-reg',
+    headerBlock: false
+  }).modal-entry
+    button.modal-entry__close(data-fancybox-close="" aria-label='Закрыть' type="button")
+      svg(width="24" height="24")
+        use(href="img/symbols.svg#icon-close")
+    +form.modal-entry__form(action=pages.basketFilling.href method="POST" data-form)
+      ul.modal-entry__header
+        each item in listHeaderReg
+          li.modal-entry__item
+            a.modal-entry__link(data-fancybox-src=item.href class=item.active && 'active')= item.text
+      +fieldset.modal-entry__fieldset
+        each item in formReg
+          +field-text({
+            title: item.title,
+            isTextarea: item.isTextarea,
+            attrs: {
+              id: item.attrs.id,
+              placeholder: item.attrs.placeholder,
+              required: true,
+              type: item.attrs.type,
+              minlength: item.attrs.minlength,
+              min: item.attrs.min,
+              pattern: item.attrs.pattern,
+              'data-pristine-required-message': " ",
+              'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
+              'data-pristine-min-message': item.attrs['data-pristine-min-message'],
+              'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
+              "data-number-only": item.attrs['data-number-only'],
+              "data-pristine-email-message": item.attrs["data-pristine-email-message"],
+              "data-pristine-equals-message": item.attrs["data-pristine-equals-message"],
+              "data-pristine-equals": item.attrs["data-pristine-equals"]
+            }
+          }).field-text--std
+            if(item.attrs.type === 'password')
+              span.field-text__btn-password(aria-label="Показать пароль" data-btn-eye="")
+        +field-checkbox({
+          checkboxes: [
+            {
+              title: 'Я соглашаюсь c <a href="page-privacy-policy.html" target="_blank">политикой кофиденциальности.</a>',
+              attrs: {
+                name: 'check',
+                checked: true,
+                required: true,
+              }
+            },
+            {
+              title: 'Я подтверждаю согласие на получение сообщений рекламного характера. Отказаться от рассылки можно в личном кабинете.',
+              attrs: {
+                name: 'check',
+                required: true,
+              }
+            },
+          ]
+        }).form__field-checkbox
+      .modal-entry__btn-wrap
+        button.btn.btn--dark.modal-entry__btn(disabled, data-form-btn="") Войти

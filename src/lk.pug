@@ -3,36 +3,12 @@ extends pug/layout.pug
 block var
   - const pageCurrent = pages.lk.href;
   - const pageSidebarCurrent = pages.lk.href
-  //-TODO: Вынести общий список инпутов
   -
-    const formFileldsLk = [
-      {
-        title: 'Фамилия',
-        attrs: {
-          type: 'text'
-        }
-      },
-      {
-        title: 'Имя',
-        attrs: {
-          type: 'text'
-        }
-      },
-      {
-        title: 'Email',
-        attrs: {
-          type: "email",
-          "data-pristine-email-message": " "
-        }
-      },
-      {
-        title: 'Телефон',
-        attrs: {
-          type: 'tel',
-          pattern: `/(\\+7|8)[\\s(]*\\d{3}[)\\s][\\s]\\d{3}[\\s]\\d{2}[\\s]\\d{2}/i`,
-          "data-pristine-pattern-message": " "
-        }
-      },
+    const formLk = [
+      formFilelds.surname,
+      formFilelds.name,
+      formFilelds.email,
+      formFilelds.phone,
     ]
 
 block meta
@@ -49,12 +25,11 @@ block content
           +bonus-card.box-content__bonus-card
         +form(action="404.html" method="POST" data-form)
           +fieldset.form__lk-fieldset.box-content__width
-            each item in formFileldsLk
+            each item in formLk
               +field-text({
                 title: item.title,
                 isTextarea: item.isTextarea,
                 attrs: {
-                  placeholder: item.attrs.placeholder,
                   required: true,
                   type: item.attrs.type,
                   minlength: item.attrs.minlength,

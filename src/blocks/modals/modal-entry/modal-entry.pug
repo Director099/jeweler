@@ -1,0 +1,69 @@
+-
+  const formEntry = [
+    formFilelds.phone,
+    formFilelds.password,
+  ]
+
+  const listHeader = [
+    {
+      text: 'Войти',
+      href: '#modal-entry',
+      active: true,
+    },
+    {
+      text: 'Регистрация',
+      href: '#modal-reg',
+      active: false,
+    },
+  ]
+
+mixin modal-entry()
+  +modal({
+    id: 'modal-entry',
+    headerBlock: false
+  }).modal-entry
+    button.modal-entry__close(data-fancybox-close="" aria-label='Закрыть' type="button")
+      svg(width="24" height="24")
+        use(href="img/symbols.svg#icon-close")
+    +form.modal-entry__form(action=pages.basketFilling.href method="POST" data-form)
+      ul.modal-entry__header
+        each item in listHeader
+          li.modal-entry__item
+            a.modal-entry__link(data-fancybox-src=item.href class=item.active && 'active')= item.text
+      +fieldset.modal-entry__fieldset
+        each item in formEntry
+          +field-text({
+            title: item.title,
+            isTextarea: item.isTextarea,
+            attrs: {
+              placeholder: item.attrs.placeholder,
+              required: true,
+              type: item.attrs.type,
+              minlength: item.attrs.minlength,
+              min: item.attrs.min,
+              pattern: item.attrs.pattern,
+              'data-pristine-required-message': " ",
+              'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
+              'data-pristine-min-message': item.attrs['data-pristine-min-message'],
+              'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
+              "data-number-only": item.attrs['data-number-only'],
+              "data-pristine-email-message": item.attrs["data-pristine-email-message"],
+              "data-pristine-equals-message": item.attrs["data-pristine-email-message"],
+              "data-pristine-equals": item.attrs["data-pristine-equals"]
+            }
+          }).field-text--std
+            if(item.attrs.type === 'password')
+              span.field-text__btn-password(aria-label="Показать пароль" data-btn-eye="")
+        +field-checkbox({
+          checkboxes: [
+            {
+              title: 'Запомнить меня',
+              attrs: {
+                name: 'check',
+              }
+            },
+          ]
+        })
+        a.line-link.modal-entry__forgot-psw(href="#") Забыли пароль?
+      .modal-entry__btn-wrap
+        button.btn.btn--dark.modal-entry__btn(disabled, data-form-btn="") Войти

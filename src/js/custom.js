@@ -116,6 +116,15 @@ new ResultSizeRings({
   text: '[data-size-alert]'
 })
 
+const btnEye = document.querySelectorAll('[data-btn-eye]');
+btnEye?.forEach(item =>
+  item?.addEventListener('click', () => {
+    const field = item.parentElement.querySelector('input');
+    item.classList.toggle('field-text__btn-password--open');
+    item.classList.contains('field-text__btn-password--open') ? field.type = 'text' : field.type = 'password';
+  })
+)
+
 const form = document.querySelectorAll("[data-form]");
 
 form.forEach((itemForm) => {
@@ -142,6 +151,19 @@ clipboard?.forEach(item =>
     inputCopy.select();
     document.execCommand("copy");
     inputCopy.value;
+  })
+)
+
+//ВХОД И РЕГИСМТРАЦИЯ
+const btnLink = document.querySelectorAll('[data-fancybox-src]');
+btnLink?.forEach(item =>
+  item.addEventListener('click', (e) => {
+    Fancybox.close();
+    Fancybox.show([{
+      src: e.target.dataset.fancyboxSrc,
+      dragToClose: false,
+      defaultType: 'inline'
+    }]);
   })
 )
 

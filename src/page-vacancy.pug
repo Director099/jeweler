@@ -3,49 +3,13 @@ block var
   - const pageCurrent = pages.pageVacancy.href;
   - const pageMainTitle = pages.pageVacancy.text;
   -
-    const formFilelds = [
-      {
-        title: 'Имя',
-        attrs: {
-          placeholder: 'Имя',
-        }
-      },
-      {
-        title: 'Номер телефона',
-        attrs: {
-          type: 'tel',
-          pattern: `/(\\+7|8)[\\s(]*\\d{3}[)\\s][\\s]\\d{3}[\\s]\\d{2}[\\s]\\d{2}/i`,
-          "data-pristine-pattern-message": " "
-        }
-      },
-      {
-        title: 'Полных лет',
-        attrs: {
-          placeholder: '30',
-          min: 18,
-          "data-pristine-min-message": " ",
-          "data-number-only": "00",
-        }
-      },
-      {
-        title: 'Гражданство',
-        attrs: {
-          placeholder: 'Россия'
-        }
-      },
-      {
-        title: 'В каком городе хотите работать? ',
-        attrs: {
-          placeholder: 'Уфа'
-        }
-      },
-      {
-        title: 'Опыт работы в продажах',
-        isTextarea: true,
-        attrs: {
-          placeholder: 'Опыт работы в продажах'
-        }
-      },
+    const formVacancies = [
+      formFilelds.name,
+      formFilelds.phone,
+      formFilelds.year,
+      formFilelds.nation,
+      formFilelds.city,
+      formFilelds.experience,
     ]
 
 
@@ -82,7 +46,7 @@ block content
         section.vacancies__form-group
           h2.vacancies__title.vacancies__title--form Оставить отклик
           +form.vacancies__form(action="404.html" method="POST" data-form)
-            each item in formFilelds
+            each item in formVacancies
               +field-text({
                 title: item.title,
                 isTextarea: item.isTextarea,
@@ -113,6 +77,3 @@ block content
               ]
             })
             button.btn.btn--dark.vacancies__btn(disabled, data-form-btn) Откликнуться
-
-
-

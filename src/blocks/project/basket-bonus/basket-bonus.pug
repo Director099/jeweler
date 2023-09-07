@@ -48,5 +48,5 @@ mixin basket-bonus({auth=false})
             +helpTplBonus(item.value, TPL1)
     else
       .basket-bonus__not-auth-desc
-        p #[a(class="line-link" href="#") Авторизуйтесь] или #[a(class="line-link" href="#") зарегистрируйтесь], чтобы применить бонусные баллы.
+        p #[a(class="line-link" href="#modal-entry" data-fancybox="") Авторизуйтесь] или #[a(class="line-link" href="#modal-reg" data-fancybox="") зарегистрируйтесь], чтобы применить бонусные баллы.
 
