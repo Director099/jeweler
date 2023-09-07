@@ -5,6 +5,18 @@
     'Введите результат в миллиметрах',
   ]
 
+  const stepSizeBracelet = [
+    'Возьмите нитку и обмотайте вокруг запястья и измерьте длину линейкой.',
+    'Прибавьте к полученной цифре 2-3 см.',
+    'Чем больше прибавите, тем свободнее будет сидеть украшение.',
+  ]
+
+  const stepSizeСhain = [
+    'Возьмите нить и обмотайте ее вокруг шеи.',
+    'Зафиксируйте ее так, как, по вашему мнению, должна лежать цепь.',
+    'Округлите значение до 0 или 5.',
+  ]
+
 mixin modal-size-product()
   +modal({
     id: 'modal-size-product',
@@ -25,3 +37,13 @@ mixin modal-size-product()
             else
               input.modal-size-product__input(type="text" data-number-only="00" data-size-input="")
           p.modal-size-product__text= item
+    // ВНИМАНИЕ: Разный контент в зависимости от выбранного товара, контент на браслет + поялвяется кнопка Закрыть(Надо удалить клсаа d-none)
+    ul.modal-size-product__list.modal-size-product__list--other.d-none
+      each item, i in stepSizeBracelet
+        li.modal-size-product__item=`${i + 1}. ` + item
+    // ВНИМАНИЕ: Разный контент в зависимости от выбранного товара, контент на ожерелье и цепь + поялвяется кнопка Закрыть (Надо удалить клсаа d-none)
+    ul.modal-size-product__list.modal-size-product__list--other.d-none
+      each item, i in stepSizeСhain
+        li.modal-size-product__item=`${i + 1}. ` + item
+    .modal-size-product__wrap-btn.d-none
+      button.btn.modal-size-product__btn(data-fancybox-close="" aria-label='Закрыть' type="button") Закрыть

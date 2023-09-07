@@ -67,6 +67,13 @@
     @include ProximaNovaTextRegular20;
     gap: 40px;
   }
+
+  &--other {
+    gap: 12px;
+    @media (min-width: $screen-lg) {
+      gap: 20px;
+    }
+  }
 }
 
 .modal-size-product__text {
@@ -119,4 +126,12 @@
     margin-bottom: 25px;
     padding: 9px 20px;
   }
+}
+
+.modal-size-product__wrap-btn {
+  margin: 43px 15px 0;
+}
+
+.modal-size-product__btn {
+  width: 100%;
 }

@@ -1,5 +1,5 @@
 .basket {
-  padding-bottom: 80px;
+  padding-bottom: 180px;
 
   &--nothing {
     display: flex;
@@ -72,13 +72,18 @@
 }
 
 .basket__title {
+  @include ProximaNovaTextBold19;
   margin-bottom: 20px;
 
   @media (min-width: $screen-lg) {
+    @include MontserratRegular34;
+    font-weight: 700;
     margin-bottom: 43px;
   }
 
   @media (min-width: $screen-xl) {
+    @include ProximaNovaTextRegular36;
+    font-weight: 700;
     margin-bottom: 80px;
   }
 }
