@@ -74,6 +74,22 @@ $border-radius: 15px !default;
     }
   }
 
+  &--danger-light {
+    background-color: $bg-pink;
+    border: 1px solid $bg-pink;
+    color: $tp-black;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
   &--success {
     background-color: $other-green;
     border: 1px solid darken($other-green, 10%);
@@ -88,5 +104,33 @@ $border-radius: 15px !default;
         text-decoration: none;
       }
     }
+  }
+
+  &--info {
+    background-color: $bg-gray-1;
+    border: 1px solid $bg-gray-1;
+    color: $tp-black;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.alert--info {
+  &::before {
+    content: attr(data-size-total);
+  }
+}
+
+.alert--danger-light {
+  &::before {
+    content: attr(data-size-warning);
   }
 }

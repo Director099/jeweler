@@ -39,12 +39,81 @@ telMask.forEach((item) => {
   });
 })
 
-const dataAge = document.querySelectorAll('[data-age]');
 
-dataAge.forEach((item) => {
+const numberOnly = document.querySelectorAll('[data-number-only]');
+numberOnly.forEach((item) => {
   IMask(item, {
-    mask: '00'
+    mask: item.dataset.numberOnly ?? '00'
   });
+})
+
+class ResultSizeRings {
+  constructor({input, text}) {
+    this._inputSize = document.querySelector(input);
+    this._sizeAlert = document.querySelector(text);
+    this._MATH_NUMBER_RIGNG = 3.14;
+    this._rangeSize = {
+      MIN: 30,
+      MAX: 80
+    }
+    this._classesAlert = {
+      info: 'alert--info',
+      danger: 'alert--danger-light'
+    }
+
+    this._init();
+  }
+
+  resetMessages() {
+    this._sizeAlert.classList.remove(this._classesAlert.info);
+    this._sizeAlert.classList.remove(this._classesAlert.danger);
+  }
+
+  hideMessages() {
+    this._sizeAlert.classList.add('d-none');
+  }
+
+  showMessages() {
+    this._sizeAlert.classList.remove('d-none');
+  }
+
+  successSize() {
+    this.showMessages();
+    this._sizeAlert.classList.add(this._classesAlert.info);
+  }
+
+  errorSize() {
+    this.showMessages();
+    this._sizeAlert.classList.add(this._classesAlert.danger);
+  }
+
+  _events() {
+    this._inputSize.addEventListener('input', (e) => {
+      const value = Number(e.target.value);
+      const formulaRings = value / this._MATH_NUMBER_RIGNG;
+      const fractionalNumber = !!Math.round(formulaRings % 1) ? 0 : 5;
+      this.resetMessages();
+
+      if (!value) {
+        this.hideMessages();
+      } else if (value > this._rangeSize.MIN && value < this._rangeSize.MAX) {
+        this.successSize();
+        this._sizeAlert.textContent = !!fractionalNumber ?  Math.round(formulaRings) +`.${fractionalNumber}` : Math.round(formulaRings);
+      } else {
+        this.errorSize();
+        this._sizeAlert.textContent = ''
+      }
+    })
+  }
+
+  _init() {
+    this._events()
+  }
+}
+
+new ResultSizeRings({
+  input: '[data-size-input]',
+  text: '[data-size-alert]'
 })
 
 const form = document.querySelectorAll("[data-form]");
@@ -70,7 +139,6 @@ const clipboard = document.querySelectorAll('[data-copy-code]');
 clipboard?.forEach(item =>
   item?.addEventListener('click', () => {
     const inputCopy = item.querySelector('input');
-    console.log(inputCopy, 'inputCopy')
     inputCopy.select();
     document.execCommand("copy");
     inputCopy.value;

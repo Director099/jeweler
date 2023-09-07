@@ -1,9 +1,12 @@
+mixin link-size-product
+  a.line-link(data-fancybox="" href="#modal-size-product") Как определить размер?
+
 mixin size-product
   .size-product
     section.size-product__row
       h2.size-product__title Размер, мм
       p.size-product__info.d-none.d-lg-inline-block
-        a.line-link Как определить размер?
+        +link-size-product
       span.size-product__danger Выберите размер
     ul.size-product__grid.grid-tpl-lg-9.grid-tpl-xl-8
       - for (let i = 15; i <= 22; i++)
@@ -12,6 +15,6 @@ mixin size-product
         li.size-product__item
           button.size-product__btn-size= i + '.5'
     p.size-product__info.d-lg-none
-      a.line-link Как определить размер?
+      +link-size-product
     .size-product__btn-wrap
       button.btn.btn--dark.size-product__btn Добавить в корзину

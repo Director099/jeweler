@@ -20,7 +20,7 @@ mixin header-title({btnCloseMobileLeft, title})
       use(href="img/symbols.svg#icon-close")
   h4.modal__title!= title
 
-mixin modal({id, title, mods, classHeader, mainHeader=false, btnCloseMobileLeft=false})
+mixin modal({id, title, mods, classHeader, mainHeader=false, headerBlock=true, btnCloseMobileLeft=false})
 
   //- Принимает:
   //-   id      {string} - идентификатор
@@ -45,13 +45,14 @@ mixin modal({id, title, mods, classHeader, mainHeader=false, btnCloseMobileLeft=
 
   .modal(id=id, class=allMods, tabindex='-1', role='dialog')&attributes(attributes)
     .modal__dialog(role='document')
-      header.modal__header(class=classHeader)
-        if mainHeader
-          +main-header()
-        else
-          +header-title({
-            btnCloseMobileLeft,
-            title
-          })
+      if headerBlock
+        header.modal__header(class=classHeader)
+          if mainHeader
+            +main-header()
+          else
+            +header-title({
+              btnCloseMobileLeft,
+              title
+            })
       .modal__content
         block

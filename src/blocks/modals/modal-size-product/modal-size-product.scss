@@ -1,0 +1,122 @@
+.modal-size-product {
+  padding: 20px;
+  top: inherit;
+
+  .modal__content {
+    padding: 0;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 40px;
+
+    .modal__dialog {
+      width: 420px;
+    }
+  }
+}
+
+.modal-size-product__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 35px;
+  }
+}
+
+.modal-size-product__title {
+  @include ProximaNovaTextBold19;
+  margin: 0;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular36;
+    font-weight: 700;
+  }
+}
+
+.modal-size-product__close {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  color: $icons-grey;
+  width: 18px;
+  cursor: pointer;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: $screen-lg) {
+    color: $black;
+    width: 24px;
+  }
+}
+
+.modal-size-product__list {
+  @include ul-reset;
+  @include ProximaNovaTextRegular16;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular20;
+    gap: 40px;
+  }
+}
+
+.modal-size-product__text {
+  margin: 0;
+}
+
+.modal-size-product__item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  @media (min-width: $screen-lg) {
+    gap: 41px;
+  }
+}
+
+.modal-size-product__icon {
+  width: 22px;
+  flex-shrink: 0;
+
+  @media (min-width: $screen-lg) {
+    width: 44px;
+  }
+}
+
+.modal-size-product__input {
+  @include ProximaNovaTextRegular10;
+  width: 100%;
+  display: block;
+  text-align: center;
+  border-radius: 4px;
+  padding: 1px;
+  border: 1px solid $border-black;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular16;
+    width: 40px;
+    padding: 2.5px;
+  }
+}
+
+.modal-size-product__alert {
+  @include ProximaNovaTextRegular16;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  padding: 5px 20px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular16;
+    margin-bottom: 25px;
+    padding: 9px 20px;
+  }
+}

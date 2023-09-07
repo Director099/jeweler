@@ -1,0 +1,27 @@
+-
+  const stepSizeProduct = [
+    'Обмотайте палец ниткой, шнурком или лентой из бумаги.',
+    'Измерьте длину линейкой',
+    'Введите результат в миллиметрах',
+  ]
+
+mixin modal-size-product()
+  +modal({
+    id: 'modal-size-product',
+    headerBlock: false
+  }).modal-size-product
+    .modal-size-product__header
+      h3.modal-size-product__title Как узнать размер
+      button.modal-size-product__close(data-fancybox-close="" aria-label='Закрыть' type="button")
+        svg(width="24" height="24")
+          use(href="img/symbols.svg#icon-close")
+    +alert.d-none.modal-size-product__alert(data-size-alert="" data-size-total="Размер кольца " data-size-warning="К сожалению, размеров, соответствующих тому значению, не найдено") 11
+    ul.modal-size-product__list
+      each item, i in stepSizeProduct
+        li.modal-size-product__item
+          .modal-size-product__icon
+            if i !== stepSizeProduct.length - 1
+              img(src=`img/modal-icon/size-product-${i + 1}.svg` alt='Как узнать размер')
+            else
+              input.modal-size-product__input(type="text" data-number-only="00" data-size-input="")
+          p.modal-size-product__text= item
