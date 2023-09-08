@@ -1,0 +1,89 @@
+.modal-review {
+  padding: 40px 16px;
+
+  .modal__content {
+    padding: 0;
+  }
+
+  .modal__dialog {
+    @media (min-width: $screen-lg) {
+      width: 740px;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 50px 60px;
+  }
+}
+
+.modal-review__header {
+  position: relative;
+  margin-bottom: 30px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.modal-review__xs-ident-close {
+  @media (max-width: $screen-lg - 1) {
+    top: -20px;
+    right: 0;
+  }
+}
+
+.modal-review__title {
+  @include ProximaNovaTextRegular22;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  text-align: center;
+  padding: 0 40px;
+
+  @media (min-width: $screen-lg) {
+    @include MontserratRegular26;
+  }
+}
+
+.modal-review__group {
+  margin-bottom: 30px;
+}
+
+.modal-review__stars {
+  margin-bottom: 20px;
+}
+
+.modal-review__fields {
+  margin-bottom: 10px;
+
+  textarea.field-text__input {
+    @include ProximaNovaTextRegular13;
+    min-height: 156px;
+    padding: 20px 16px;
+
+    @media (min-width: $screen-lg) {
+      @include ProximaNovaTextRegular20;
+      padding: 25px;
+      min-height: 230px;
+    }
+  }
+}
+
+.modal-review__text {
+  @include ProximaNovaTextRegular16;
+  margin: 0;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular20;
+  }
+}
+
+.modal-review__btn {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (min-width: $screen-lg) {
+    max-width: 350px;
+  }
+}

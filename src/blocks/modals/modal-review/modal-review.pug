@@ -1,0 +1,25 @@
+mixin modal-review()
+  +modal({
+    id: 'modal-review',
+    headerBlock: false
+  }).modal-review
+    header.modal-review__header
+      button.modal-review__xs-ident-close.modal__close(data-fancybox-close="" aria-label='Закрыть' type="button")
+        svg(width="24" height="24")
+          use(href="img/symbols.svg#icon-close")
+      h4.modal-review__title Оставьте ваш отзыв
+    +form.modal-review__form(action=pages["404"].href method="POST" data-form)
+      .modal-review__group
+        +choose-stars.modal-review__stars
+        .modal-review__fields
+          +field-text({
+            isTextarea: true,
+            attrs: {
+              required: true,
+              type: 'text',
+              placeholder: 'Что вам понравилось в нашей компании',
+              'data-pristine-required-message': " ",
+            }
+          }).field-text--std
+        p.modal-review__text Отзыв будет опубликован после успешного прохождения модерации.
+      button.btn.btn--dark.modal-review__btn(disabled, data-form-btn) Сохранить

@@ -126,7 +126,7 @@ const serve = (cb) => {
     open: true,
     cors: true,
     // startPath: 'index.html',
-    tunnel: true
+    tunnel: false
   });
 
   gulp.watch(`${dirs.source}/img/*/*.{png,jpg,gif,webp,svg,cur,ico}`, series(images)).on('change', server.reload);
