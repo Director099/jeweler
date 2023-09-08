@@ -5,8 +5,15 @@
     padding: 40px 80px;
   }
 
+  &--reg {
+    .modal__dialog {
+      height: auto;
+    }
+  }
+
   .modal__content {
     padding: 0;
+    //TODO: Скролл на регистрации
     height: 100%;
   }
 
