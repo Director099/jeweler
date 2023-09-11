@@ -1,0 +1,31 @@
+mixin modal-add()
+  +modal({
+    id: 'modal-add',
+    headerBlock: false
+  }).modal-add
+    header.modal-add__header
+      button.modal-add__header-close.modal__close(data-fancybox-close="" aria-label='Закрыть' type="button")
+        svg(width="24" height="24")
+          use(href="img/symbols.svg#icon-close")
+      h4.modal__title.modal-add__title Товар добавлен в корзину
+    .modal-add__product
+      .modal-add__img
+        img(src="img/content/prev-1.jpg", alt="Кольцо золотое 585 пробы")
+      section.modal-add__info
+        h4.modal-add__product-title Кольцо золотое 585 пробы
+        .modal-add__info-row
+          +price({
+            text: '60 000',
+            oldPrice: true,
+            svgWidth: 12,
+            svgHeight: 14,
+          }).modal-add__price-small
+          +price({
+            text: '30 000',
+            svgWidth: 17,
+            svgHeight: 19,
+          }).modal-add__price
+        p.modal-add__text-size 16 размер
+    footer.modal-add__footer
+      button.btn.modal-add__footer-btn(data-fancybox-close="" aria-label='Закрыть' type="button") Продолжить покупки
+      a.btn.btn--dark.modal-add__footer-btn(href=pages.basketFilling.href) Перейти в корзину
