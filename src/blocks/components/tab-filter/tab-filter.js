@@ -1,7 +1,7 @@
 export class TabFilter {
   constructor(elem) {
     this._ALL = 'all';
-    this._elTabs = document.querySelector(elem);
+    this._elTabs = elem;
 
     if (!window.matchMedia(this._elTabs?.dataset?.destroy).matches) {
       if (this._elTabs) {
@@ -52,4 +52,5 @@ export class TabFilter {
   };
 }
 
-new TabFilter('[data-tab-filter]');
+const tabsFilter = document.querySelectorAll('[data-tab-filter]');
+tabsFilter?.forEach(item => new TabFilter(item));

@@ -22,4 +22,14 @@ mixin modal-review()
             }
           }).field-text--std
         p.modal-review__text Отзыв будет опубликован после успешного прохождения модерации.
-      button.btn.btn--dark.modal-review__btn(disabled, data-form-btn) Сохранить
+      button.btn.btn--dark.modal-review__btn(disabled, data-form-btn type="button" data-fancybox-src="#modal-review-complete") Сохранить
+
+  +modal({
+    id: 'modal-review-complete',
+    headerBlock: false
+  }).modal-review.modal-review--complite
+    header.modal-review__header
+      button.modal-review__xs-ident-close.modal__close(data-fancybox-close="" aria-label='Закрыть' type="button")
+        svg(width="24" height="24")
+          use(href="img/symbols.svg#icon-close")
+      h4.modal-review__title Ваш отзыв успешно отправлен

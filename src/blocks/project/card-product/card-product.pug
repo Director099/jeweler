@@ -22,7 +22,7 @@ mixin card-product({title, textLinkSize, status, src})
         a.card-product__sizes(href="#")= textLinkSize
           svg.basket-delivery__icon(width="20" height="20")
             use(href="img/symbols.svg#icon-edit")
-        span.card-product__status.card-product__status--success= status
+        +status-product(status).card-product__status
       .card-product__group.card-product__group--btns
         button.card-product__btn-icon.card-product__btn-icon--belete
           svg(width="22", height="22")

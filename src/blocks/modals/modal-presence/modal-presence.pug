@@ -1,0 +1,65 @@
+-
+  const listAvailability = [
+    {
+      textAddress: 'г. Уфа, ул. Рубежная 174',
+      price: '15 400'
+    },
+    {
+      textAddress: 'г. Уфа, ул. Рубежная 174',
+      price: '15 400'
+    },
+    {
+      textAddress: 'г. Уфа, ул. Рубежная 174',
+      price: '15 400'
+    },
+    {
+      textAddress: 'г. Уфа, ул. Рубежная 174',
+      price: '15 400'
+    },
+    {
+      textAddress: 'г. Уфа, ул. Рубежная 174',
+      price: '15 400'
+    },
+  ]
+
+mixin modal-presence()
+  +modal({
+    id: 'modal-presence',
+    headerBlock: false
+  }).modal-presence
+    button.modal-presence__close(data-fancybox-close="" aria-label='Закрыть' type="button")
+      svg(width="24" height="24")
+        use(href="img/symbols.svg#icon-close")
+    +tab-filter({
+      list: [
+        {
+          text: 'Наличие в магазинах',
+          filter: 'presence-shop',
+          active: true
+        },
+        {
+          text: 'Заказать в магазин',
+          filter: 'order-shop'
+        }
+      ],
+      listClass: 'modal-presence__tab-filter'
+    })
+      ul.modal-presence__list
+        li.modal-presence__item(data-filter="presence-shop")
+          ul.modal-presence__availability-list
+            each item in listAvailability
+              li.modal-presence__availability-item
+                +availability({
+                  textAddress: item.textAddress,
+                  price: item.price,
+                  orderShop: false,
+                })
+        li.modal-presence__item(data-filter="order-shop")
+          ul.modal-presence__availability-list
+            each item in listAvailability
+              li.modal-presence__availability-item
+                +availability({
+                  textAddress: item.textAddress,
+                  price: item.price,
+                  orderShop: true,
+                })

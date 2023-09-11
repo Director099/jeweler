@@ -1,0 +1,36 @@
+mixin availability({textAddress, price, orderShop})
+  .availability
+    .availability__row
+      .availability__row-content
+        .availability__col.availability__col--address
+          p= textAddress
+          p Пн-Вс 10:00-22:00
+          a(href="tel:88005504448") 8 800 550 44 48
+        .availability__col.availability__col--date
+          if orderShop
+            .availability__info
+              span.availability__info-label Под заказ:
+              p 25 марта
+            .availability__info
+              span.availability__info-label Стоимость:
+              +price({
+                text: price,
+                svgWidth: 12,
+                svgHeight: 13,
+              })
+            .availability__info
+              span.availability__info-label Доставка:
+              +price({
+                text: "300",
+                svgWidth: 12,
+                svgHeight: 13,
+              })
+          else
+            +price({
+              text: price,
+              svgWidth: 12,
+              svgHeight: 13,
+            })
+            +status-product('В наличии').availability__status
+      .availability__col-btn
+        a.btn.btn--dark.availability__btn(href="#") Заберу отсюда

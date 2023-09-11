@@ -1,6 +1,17 @@
 .modal-review {
   padding: 40px 16px;
 
+  &--complite {
+    .modal-review__header {
+      position: static;
+      margin: 0;
+    }
+
+    .modal__content {
+      justify-content: center;
+    }
+  }
+
   .modal__content {
     padding: 0;
   }

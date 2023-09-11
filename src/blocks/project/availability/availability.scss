@@ -1,0 +1,66 @@
+.availability__row {
+  @include ProximaNovaTextRegular16;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 19px;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular20;
+    flex-direction: row;
+    gap: 25px;
+  }
+}
+
+.availability__row-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @media (min-width: $screen-lg) {
+    flex-direction: row;
+    gap: 100px;
+    flex-grow: 1;
+  }
+}
+
+.availability__col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  @media (min-width: $screen-lg) {
+    gap: 14px;
+  }
+}
+
+.availability__col-btn {
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: $screen-lg) {
+    text-align: left;
+    width: auto;
+  }
+}
+
+.availability__btn {
+  max-width: 220px;
+  width: 100%;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular25;
+    padding: 11px 32px;
+    width: 260px;
+    max-width: inherit;
+  }
+}

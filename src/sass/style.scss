@@ -29,6 +29,7 @@
 @import "../blocks/components/badge/badge";
 @import "../blocks/components/pagination/pagination";
 @import "../blocks/components/range/range";
+@import "../blocks/components/status-product/status-product";
 @import "../blocks/components/dropdown/dropdown";
 @import "../blocks/components/accordion/accordion";
 @import "../blocks/components/main-title-montserrat/main-title-montserrat";
@@ -84,6 +85,7 @@
 @import "../blocks/project/vacancies/vacancies";
 @import "../blocks/project/main-slider/main-slider";
 @import "../blocks/project/promo-list/promo-list";
+@import "../blocks/project/availability/availability";
 @import "../blocks/project/category-list-prev/category-list-prev";
 @import "../blocks/project/wedding-list/wedding-list";
 @import "../blocks/project/blog-place/blog-place";
@@ -130,6 +132,7 @@
 @import "../blocks/modals/modal-entry/modal-entry";
 @import "../blocks/modals/modal-size-product/modal-size-product";
 @import "../blocks/modals/modal-review/modal-review";
+@import "../blocks/modals/modal-presence/modal-presence";
 
 .text-content {
   @include ProximaNovaTextRegular16();
