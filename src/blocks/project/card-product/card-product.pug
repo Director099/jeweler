@@ -19,7 +19,7 @@ mixin card-product({title, textLinkSize, status, src})
           icon: 1
         })
       .card-product__group.card-product__group--info
-        a.card-product__sizes(href="#")= textLinkSize
+        a.card-product__sizes(href="#modal-edit-size" data-fancybox="")= textLinkSize
           svg.basket-delivery__icon(width="20" height="20")
             use(href="img/symbols.svg#icon-edit")
         +status-product(status).card-product__status

@@ -1,0 +1,56 @@
+.modal-edit-size {
+  padding: 20px;
+  top: inherit;
+
+  .modal__content {
+    padding: 0;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 50px 40px;
+
+    .modal__dialog {
+      width: 420px;
+    }
+  }
+}
+
+.modal-edit-size__header {
+  position: relative;
+  margin-bottom: 30px;
+  @media (min-width: $screen-lg) {
+    margin-bottom: 45px;
+  }
+}
+
+.modal-edit-size__header-close {
+  right: 0;
+}
+
+.modal-edit-size__title {
+  @include ProximaNovaTextBold19();
+  margin: 0;
+
+  @media (min-width: $screen-lg) {
+    @include MontserratRegular34();
+    font-weight: 700;
+  }
+}
+
+.modal-edit-size__grid {
+  max-width: 224px;
+  width: 100%;
+  gap: 16px;
+  margin: 0 auto 41px;
+
+  @media (min-width: $screen-lg) {
+    padding: 0 20px;
+    max-width: inherit;
+    gap: 20px 26px;
+  }
+}
+
+.modal-add__footer-btn {
+  max-width: 350px;
+  margin: 0 auto;
+}

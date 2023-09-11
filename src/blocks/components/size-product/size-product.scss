@@ -1,33 +1,3 @@
-.size-product__btn-size {
-  @include ProximaNovaTextRegular13();
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-  width: 32px;
-  height: 32px;
-  border: 1px solid $border-black;
-  border-radius: 10px;
-  cursor: pointer;
-
-  &.active {
-    background: $black;
-    color: $white;
-  }
-
-  @media (min-width: $screen-lg) {
-    @include ProximaNovaTextRegular20();
-    width: 55px;
-    height: 44px;
-    padding: 2px;
-  }
-
-  @media (min-width: $screen-xl) {
-    @include ProximaNovaTextRegular20();
-    padding: 2px;
-  }
-}
-
 .size-product__btn-wrap {
   margin: 0 25px;
 

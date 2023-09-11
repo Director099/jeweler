@@ -1,0 +1,15 @@
+mixin modal-edit-size()
+  +modal({
+    id: 'modal-edit-size',
+    headerBlock: false
+  }).modal-edit-size
+    header.modal-edit-size__header
+      button.modal-edit-size__header-close.modal__close(data-fancybox-close="" aria-label='Закрыть' type="button")
+        svg(width="24" height="24")
+          use(href="img/symbols.svg#icon-close")
+      h4.modal-edit-size__title Размер
+    .modal-edit-size__grid.grid-tpl-5
+      - for (let i = 15; i <= 21; i++)
+        +btn-size(i)(class=i === 15 && 'active')
+        +btn-size(i + '.5')
+    button.btn.btn--dark.modal-add__footer-btn(data-fancybox-close="" aria-label='Закрыть' type="button") Сохранить

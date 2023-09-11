@@ -21,6 +21,7 @@
 @import "../blocks/components/navigation-changer/navigation-changer";
 @import "../blocks/components/line-link/line-link";
 @import "../blocks/components/btn/btn";
+@import "../blocks/components/btn-size/btn-size";
 @import "../blocks/components/choose-stars/choose-stars";
 @import "../blocks/components/tag-filter/tag-filter";
 @import "../blocks/components/breadcrumbs/breadcrumbs";
@@ -134,6 +135,7 @@
 @import "../blocks/modals/modal-review/modal-review";
 @import "../blocks/modals/modal-presence/modal-presence";
 @import "../blocks/modals/modal-add/modal-add";
+@import "../blocks/modals/modal-edit-size/modal-edit-size";
 
 .text-content {
   @include ProximaNovaTextRegular16();
