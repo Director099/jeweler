@@ -16,6 +16,11 @@
     @media (min-width: $screen-lg) {
       @include ProximaNovaTextRegular32();
       gap: 54px;
+    }
+  }
+
+  .tab-filter__header {
+    @media (min-width: $screen-lg) {
       margin-bottom: 40px;
     }
   }

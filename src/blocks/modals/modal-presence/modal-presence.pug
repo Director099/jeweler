@@ -42,7 +42,8 @@ mixin modal-presence()
           filter: 'order-shop'
         }
       ],
-      listClass: 'modal-presence__tab-filter'
+      textButton: 'Наличие в магазинах',
+      listClass: 'tab-filter__header--dropdown modal-presence__tab-filter'
     })
       ul.modal-presence__list
         li.modal-presence__item(data-filter="presence-shop")

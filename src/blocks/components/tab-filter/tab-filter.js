@@ -7,6 +7,7 @@ export class TabFilter {
       if (this._elTabs) {
         this._elButtons = this._elTabs.querySelectorAll('[data-btn-filter]');
         this._elPanes = this._elTabs.querySelectorAll('[data-filter]');
+        this._dropTextFilter = this._elTabs.querySelector('[data-filter-drop-text]');
         this._init();
       }
     }
@@ -40,10 +41,16 @@ export class TabFilter {
   _events() {
     this._elButtons.forEach((e) => {
       e.addEventListener('click', (currentElem) => {
+        const parentTabs = currentElem.target.closest('.' + this._elTabs.className);
+        const dropTextFilter = parentTabs?.querySelector('[data-filter-drop-text]');
+        if(dropTextFilter) dropTextFilter.textContent = currentElem.target.textContent;
+
         this.tabBtnElemActive(currentElem);
         this.tabFilterPanel(currentElem);
       })
     });
+
+    this._dropTextFilter?.addEventListener('click', () => this._dropTextFilter.classList.toggle('active'))
   };
 
   _init() {
