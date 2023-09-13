@@ -176,3 +176,13 @@ shopLink?.forEach(item =>
   item.addEventListener('click', (e) => shopCurrent.classList.add('active'))
 )
 shopClose.addEventListener('click', () => shopCurrent.classList.remove('active'))
+
+const closeContentDelivery = document.querySelector('[data-close-content-delivery]');
+const contentDelivery = document.querySelector('[data-content-delivery]');
+
+closeContentDelivery.addEventListener('click', (e) => {
+  closeContentDelivery.classList.toggle('active');
+  closeContentDelivery.classList.contains("active") ?
+    contentDelivery.setAttribute("hidden", "") :
+    contentDelivery.removeAttribute("hidden");
+})
