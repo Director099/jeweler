@@ -1,0 +1,27 @@
+mixin shop-current
+  .shop-current&attributes(attributes)
+    header.shop-current__header
+      +link-icon({
+        icon: 'icon-arrow-3',
+        widthIcon: 22,
+        heightIcon: 22,
+      }).shop-current__back(data-close-shop-current="")
+      h2.shop-current__header-title(data-lg-text="К списку магазинов") Самовывоз
+      +link-icon({
+        icon: 'icon-close',
+        widthIcon: 24,
+        heightIcon: 24,
+      }).shop-current__close(data-fancybox-close="")
+    .shop-current__body
+      section.shop-current__group
+        h3.shop-current__title ТЦ МЕГА
+        p.shop-current__address Республика Башкортостан, г. Уфа, ул. Рубежная, д. №174
+      section.shop-current__group
+        h4.shop-current__date Привезем 14 апреля
+        .shop-current__row
+          .shop-current__img
+            img(src="img/content/prev-1.jpg", alt="Золотое кольцо с бриллиантами")
+          .shop-current__content
+            p Золотое кольцо с бриллиантами
+            p 16 размер, 1 шт.
+    button.btn.btn--dark.shop-current__btn(data-fancybox-close="") Доставить в этот магазин

@@ -154,7 +154,7 @@ clipboard?.forEach(item =>
   })
 )
 
-//ВХОД И РЕГИСМТРАЦИЯ
+// Вспомогательная функция открытия и закрытия
 const btnLink = document.querySelectorAll('[data-fancybox-src]');
 btnLink?.forEach(item =>
   item.addEventListener('click', (e) => {
@@ -167,38 +167,12 @@ btnLink?.forEach(item =>
   })
 )
 
-//TODO: Если время будет
-// const dataFormFilter = document.querySelector('[data-form-filter]');
-// const dataResetFormFilter = document.querySelector('[data-reset-form]');
-// const dataFormInput = dataFormFilter.querySelectorAll('input');
-// const dataFormContainer = document.querySelector('[data-container]');
-// const dataFormTpl = ({text, inputId}) => {
-//   return `
-//     <button class="tag-filter" type="button" data-label="${inputId}">
-//       ${text}
-//       <svg width="24" height="24">
-//         <use href="img/symbols.svg#icon-close"></use>
-//       </svg>
-//     </button>
-//   `
-// }
-//
-// dataResetFormFilter.addEventListener('click', () => dataFormFilter.reset());
-//
-// dataFormInput.forEach((item) => {
-//   item.addEventListener('change', (e) => {
-//     const elemInput = e.target;
-//     const textCheckbox = elemInput.closest('label').textContent;
-//
-//
-//     if(elemInput.checked) {
-//       dataFormContainer.insertAdjacentHTML(
-//       "afterbegin",
-//         dataFormTpl({
-//           text: textCheckbox,
-//           inputId: 'asd'
-//         })
-//       )
-//     }
-//   })
-// })
+
+const shopLink = document.querySelectorAll('[data-shop]');
+const shopCurrent = document.querySelector('[data-shop-current]');
+const shopClose = document.querySelector('[data-close-shop-current]');
+
+shopLink?.forEach(item =>
+  item.addEventListener('click', (e) => shopCurrent.classList.add('active'))
+)
+shopClose.addEventListener('click', () => shopCurrent.classList.remove('active'))

@@ -95,6 +95,8 @@
 @import "../blocks/project/wedding-offer/wedding-offer";
 @import "../blocks/project/category-card/category-card";
 @import "../blocks/project/faq/faq";
+@import "../blocks/project/shop-address/shop-address";
+@import "../blocks/project/shop-current/shop-current";
 @import "../blocks/project/total-amount/total-amount";
 @import "../blocks/project/product-gallery/product-gallery";
 @import "../blocks/project/banner/banner";
@@ -136,6 +138,7 @@
 @import "../blocks/modals/modal-presence/modal-presence";
 @import "../blocks/modals/modal-add/modal-add";
 @import "../blocks/modals/modal-edit-size/modal-edit-size";
+@import "../blocks/modals/modal-address-delivery/modal-address-delivery";
 
 .text-content {
   @include ProximaNovaTextRegular16();

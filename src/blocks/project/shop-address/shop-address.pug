@@ -1,0 +1,8 @@
+mixin shop-address({title, address})
+  section.shop-address&attributes(attributes)
+    h3.shop-address__title=title
+    p=address
+    p Пн-Вс 10:00-22:00
+    p=numberPhone.text
+    .shop-address__btns
+      span.badge.badge--success.shop-address__badge Доставим 12 апреля

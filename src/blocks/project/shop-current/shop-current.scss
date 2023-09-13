@@ -1,0 +1,130 @@
+.shop-current {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20px;
+  background-color: $white;
+  transform: translateX(100%);
+  transition: $time;
+
+  &.active {
+    transform: translateX(0%);
+  }
+}
+
+.shop-current__body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 30px;
+  flex-grow: 1;
+}
+
+.shop-current__title {
+  @include ProximaNovaTextRegular16;
+  margin: 0;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular22;
+  }
+}
+
+.shop-current__group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 350px;
+}
+
+.shop-current__address {
+  @include ProximaNovaTextRegular16;
+  margin: 0;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular20;
+  }
+}
+
+.shop-current__date {
+  @include ProximaNovaTextBold19;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular22;
+    font-weight: 700;
+  }
+}
+
+.shop-current__content {
+  @include ProximaNovaTextRegular13;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  p {
+    margin: 0;
+  }
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular18;
+  }
+}
+
+.shop-current__row {
+  display: flex;
+  gap: 16px;
+}
+
+.shop-current__product {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.shop-current__date {
+  @include ProximaNovaTextBold19;
+  margin: 0;
+
+  @media (min-width: $screen-lg) {
+    @include ProximaNovaTextRegular22;
+    font-weight: 700;
+  }
+}
+
+.shop-current__img {
+  max-width: 40px;
+
+  @media (min-width: $screen-lg) {
+    max-width: 50px;
+  }
+}
+
+.shop-current__header-title {
+  @include ProximaNovaTextRegular22;
+  margin: 0;
+}
+
+.shop-current__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 0 30px;
+}
+
+.shop-current__close {
+  cursor: pointer;
+
+  .link-icon__svg {
+    fill: $icons-grey;
+  }
+}
+
+.shop-current__back {
+  cursor: pointer;
+}
