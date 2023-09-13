@@ -1,0 +1,20 @@
+extends pug/layout.pug
+
+block var
+  //-Хедер
+  - const innerPage = true;
+  - const iconBack = pages.index.href;
+  - const catalogTitle = pages.pageShop.text;
+  //- - const headerBurger = false;
+
+  - const pageCurrent = pages.pageShop.href;
+
+block meta
+  title= pages.pageShop.text
+
+block content
+  +main-content({
+    standartTpl: false
+  }).stack.stack--main-gap.overflow
+
+
