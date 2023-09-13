@@ -13,8 +13,9 @@ block meta
   title= pages.pageShop.text
 
 block content
-  +main-content({
-    standartTpl: false
-  }).stack.stack--main-gap.overflow
-
+  +main-content({})
+    +shops({
+      badge: false,
+      tabFilter: false
+    })
 

@@ -165,7 +165,7 @@ btnLink?.forEach(item =>
   })
 )
 
-//TODO передалать если будет время
+//TODO передалать если будет время и вынести в компанент shops
 const shopLink = document.querySelectorAll('[data-shop]');
 const shopCurrent = document.querySelector('[data-shop-current]');
 const shopCurrentClose = document.querySelector('[data-close-shop-current]');

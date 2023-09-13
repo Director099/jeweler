@@ -1,0 +1,51 @@
+mixin shop-filter()
+  button.shops__close.d-none.d-lg-block(data-fancybox-close="" aria-label='Закрыть' type="button")
+    svg(width="24" height="24")
+      use(href="img/symbols.svg#icon-close")
+  +shop-current(data-shop-current="")
+  +tab-filter({
+    list: [
+      {
+        text: 'Магазины',
+        filter: 'shops',
+        active: true
+      },
+      {
+        text: 'Пункты выдачи',
+        filter: 'pickup-points'
+      }
+    ],
+    listClass: 'shops__header-filter'
+  }).shops__tab-filter
+    block
+
+mixin list-shops({badge})
+  ul.shops__list&attributes(attributes)
+    each item in addressList
+      li.shops__item
+        +shop-address({
+          title: item.title,
+          address: item.address,
+          badge: badge
+        })
+
+mixin shops({badge=true, tabFilter=true})
+  .shops&attributes(attributes)
+    .shops__btn-toggle.d-lg-none
+      button.shops__selected(type="button" data-show-delivery="map")
+        svg(width="20" height="26")
+          use(href=`img/symbols.svg#icon-point`)
+      button.shops__selected.active(type="button" data-show-delivery="content")
+        svg(width="22" height="20")
+          use(href=`img/symbols.svg#icon-list`)
+    .shops__map.d-none.d-lg-block(data-delivery="map")
+      iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A01fd59d5622493900f4c548c7d3f6064f7cc32ab7f12247796f4e975d87d8d29&amp;source=constructor" width="100%" height="865" )
+      button.shops__close-content.d-none.d-lg-block(type="button" data-toggle-delivery="content")
+    .shops__content(data-delivery="content")
+      if tabFilter
+        +shop-filter()
+          - for (let i = 0; i <= 1; i++)
+            - const currentsTabFilter = !!i ? 'shops' : 'pickup-points';
+            +list-shops({badge})(data-filter=currentsTabFilter)
+      else
+        +list-shops({badge})
