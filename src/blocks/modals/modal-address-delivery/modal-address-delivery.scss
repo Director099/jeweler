@@ -65,7 +65,7 @@
 
 .modal-address-delivery__map {
   position: relative;
-  display: none;
+  //display: none;
   height: 100%;
   flex-grow: 1;
 
@@ -169,5 +169,40 @@
     .tab-filter__list {
       justify-content: flex-start;
     }
+  }
+}
+
+.modal-address-delivery__btn-toggle {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  z-index: 2;
+}
+
+.modal-address-delivery__selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  border-radius: 10px;
+  border: 1px solid rgba($border-gray, 0.5);
+
+  background-color: $white;
+  color: $tp-black;
+
+  svg {
+    fill: transparent;
+  }
+
+  &.active {
+    background-color: $bg-black;
+    color: $white;
   }
 }

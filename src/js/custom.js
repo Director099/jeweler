@@ -31,7 +31,6 @@ anchors?.forEach((item) =>
 )
 
 const telMask = document.querySelectorAll('[type="tel"]');
-
 telMask.forEach((item) => {
   IMask(item, {
     mask: '{+7} (000) 000 00 00',
@@ -126,7 +125,6 @@ btnEye?.forEach(item =>
 )
 
 const form = document.querySelectorAll("[data-form]");
-
 form.forEach((itemForm) => {
   const pristine = new Pristine(itemForm, {
     classTo: 'field-text',
@@ -167,22 +165,37 @@ btnLink?.forEach(item =>
   })
 )
 
-
+//TODO передалать если будет время
 const shopLink = document.querySelectorAll('[data-shop]');
 const shopCurrent = document.querySelector('[data-shop-current]');
-const shopClose = document.querySelector('[data-close-shop-current]');
+const shopCurrentClose = document.querySelector('[data-close-shop-current]');
 
 shopLink?.forEach(item =>
   item.addEventListener('click', (e) => shopCurrent.classList.add('active'))
 )
-shopClose.addEventListener('click', () => shopCurrent.classList.remove('active'))
+shopCurrentClose.addEventListener('click', () => shopCurrent.classList.remove('active'))
 
-const closeContentDelivery = document.querySelector('[data-close-content-delivery]');
-const contentDelivery = document.querySelector('[data-content-delivery]');
+const contentToggleDelivery = document.querySelector('[data-toggle-delivery]');
+contentToggleDelivery.addEventListener('click', () => {
+  const elemToggleDelivery = document.querySelector(`[data-delivery='${contentToggleDelivery.dataset.toggleDelivery}']`);
+  contentToggleDelivery.classList.toggle('active');
+  contentToggleDelivery.classList.contains("active") ?
+    elemToggleDelivery.setAttribute("hidden", "") :
+    elemToggleDelivery.removeAttribute("hidden");
+})
 
-closeContentDelivery.addEventListener('click', (e) => {
-  closeContentDelivery.classList.toggle('active');
-  closeContentDelivery.classList.contains("active") ?
-    contentDelivery.setAttribute("hidden", "") :
-    contentDelivery.removeAttribute("hidden");
+const btnShowDelivery = document.querySelectorAll("[data-show-delivery]");
+const parentBlocks = document.querySelectorAll('[data-delivery]');
+btnShowDelivery.forEach(item => {
+  item.addEventListener('click', () => {
+    btnShowDelivery.forEach(btn => btn.classList.remove('active'));
+    item.classList.add('active');
+    const current = item.dataset.showDelivery;
+
+    parentBlocks.forEach(elem => {
+      const elemClass = elem.classList;
+      elemClass.remove('d-none');
+      current === elem.dataset.delivery ? elemClass.remove('d-none') : elemClass.add('d-none');
+    })
+  })
 })

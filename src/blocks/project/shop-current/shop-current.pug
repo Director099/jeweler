@@ -6,7 +6,9 @@ mixin shop-current
         widthIcon: 18,
         heightIcon: 18,
       }).shop-current__back(data-close-shop-current="")
-      h2.shop-current__header-title(data-lg-text="К списку магазинов") Самовывоз
+      h2.shop-current__header-title
+        span.d-lg-none Самовывоз
+        span.d-none.d-lg-block К списку магазинов
       +link-icon({
         icon: 'icon-close',
         widthIcon: 18,

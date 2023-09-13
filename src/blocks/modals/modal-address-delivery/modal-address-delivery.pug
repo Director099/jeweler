@@ -10,10 +10,17 @@ mixin modal-address-delivery()
         heightIcon: 18,
       })(data-fancybox-close="")
     .modal-address-delivery__row
-      .modal-address-delivery__map
+      .modal-address-delivery__btn-toggle.d-lg-none
+        button.modal-address-delivery__selected(type="button" data-show-delivery="map")
+          svg(width="20" height="26")
+            use(href=`img/symbols.svg#icon-point`)
+        button.modal-address-delivery__selected.active(type="button" data-show-delivery="content")
+          svg(width="22" height="20")
+            use(href=`img/symbols.svg#icon-list`)
+      .modal-address-delivery__map.d-none.d-lg-block(data-delivery="map")
         iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A01fd59d5622493900f4c548c7d3f6064f7cc32ab7f12247796f4e975d87d8d29&amp;source=constructor" width="100%" height="865" )
-        button.modal-address-delivery__close-content.d-none.d-lg-block(type="button" data-close-content-delivery="")
-      .modal-address-delivery__content(data-content-delivery="")
+        button.modal-address-delivery__close-content.d-none.d-lg-block(type="button" data-toggle-delivery="content")
+      .modal-address-delivery__content(data-delivery="content")
         button.modal-address-delivery__close.d-none.d-lg-block(data-fancybox-close="" aria-label='Закрыть' type="button")
           svg(width="24" height="24")
             use(href="img/symbols.svg#icon-close")
