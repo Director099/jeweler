@@ -22,19 +22,7 @@
     gap: 14px;
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 24px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='26' viewBox='0 0 14 26' fill='none'%3E%3Cpath d='M1 1L13 13L1 25' stroke='%23070707' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  }
+
 }
 
 .shop-address__title {
@@ -47,11 +35,41 @@
 
 .shop-address__badge {
   display: inline-block;
+  flex-grow: 1;
   border-radius: 10px;
-  padding: 8px 21px;
+  padding: 8px;
 
   @media (min-width: $screen-lg) {
     padding: 9px 28px;
     border-radius: 10px;
+  }
+}
+
+.shop-address__btns {
+  @media (max-width: $screen-lg - 1) {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+  }
+}
+
+.shop-address__btn-more {
+  @include ProximaNovaTextRegular13;
+  padding: 5px;
+  flex-grow: 1;
+
+  @media (min-width: $screen-lg) {
+    position: absolute;
+    right: 0;
+    top: 0%;
+    border: none;
+    padding: 0;
+    transform: rotate(-180deg);
+    height: 100%;
+    width: 24px;
+
+    svg {
+      fill: transparent;
+    }
   }
 }

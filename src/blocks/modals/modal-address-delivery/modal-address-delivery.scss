@@ -1,5 +1,16 @@
 .modal-address-delivery {
+  overflow-x: hidden;
+
+  .modal__content {
+    position: static;
+  }
+
+  .modal__header {
+    display: flex;
+  }
+
   @media (min-width: $screen-lg) {
+    overflow-x: inherit;
     width: 100%;
     padding: 10px;
     background-color: transparent;
@@ -92,13 +103,13 @@
 }
 
 .modal-address-delivery__content {
-  position: relative;
   @media (min-width: $screen-lg) {
+    position: relative;
     max-width: 589px;
     width: 100%;
     padding: 47px 39px;
     max-height: 871px;
-    overflow: hidden;
+
   }
 }
 
@@ -132,8 +143,20 @@
   @include ProximaNovaTextRegular16;
   margin-bottom: 10px;
 
+  .tab-filter__list {
+    justify-content: center;
+  }
+
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular26;
     margin-bottom: 20px;
+
+    .tab-filter__list {
+      justify-content: flex-start;
+    }
   }
+}
+
+.modal-address-delivery__header {
+
 }

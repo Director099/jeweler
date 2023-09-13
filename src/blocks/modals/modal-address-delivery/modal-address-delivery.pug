@@ -3,12 +3,18 @@ mixin modal-address-delivery()
     id: 'modal-address-delivery',
     headerBlock: false
   }).modal-address-delivery
+    .modal__header.d-lg-none
+      +link-icon({
+        icon: 'icon-arrow-3',
+        widthIcon: 18,
+        heightIcon: 18,
+      })(data-fancybox-close="")
     .modal-address-delivery__row
       .modal-address-delivery__map
         iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A01fd59d5622493900f4c548c7d3f6064f7cc32ab7f12247796f4e975d87d8d29&amp;source=constructor" width="100%" height="865" )
         button.modal-address-delivery__close-content(type="button" data-close-content-delivery="")
       .modal-address-delivery__content(data-content-delivery="")
-        button.modal-address-delivery__close(data-fancybox-close="" aria-label='Закрыть' type="button")
+        button.modal-address-delivery__close.d-none.d-lg-block(data-fancybox-close="" aria-label='Закрыть' type="button")
           svg(width="24" height="24")
             use(href="img/symbols.svg#icon-close")
         +shop-current(data-shop-current="")
@@ -35,4 +41,4 @@ mixin modal-address-delivery()
                     +shop-address({
                       title: item.title,
                       address: item.address
-                    })(data-shop="")
+                    })
