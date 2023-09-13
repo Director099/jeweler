@@ -1,8 +1,10 @@
 .modal-address-delivery {
-  overflow-x: hidden;
+  overflow: hidden;
 
   .modal__content {
     position: static;
+    padding: 0;
+    height: 100%;
   }
 
   .modal__header {
@@ -55,6 +57,7 @@
 }
 
 .modal-address-delivery__row {
+  height: 100%;
   @media (min-width: $screen-lg) {
     display: flex;
   }
@@ -63,6 +66,7 @@
 .modal-address-delivery__map {
   position: relative;
   display: none;
+  height: 100%;
   flex-grow: 1;
 
   @media (min-width: $screen-lg) {
@@ -72,6 +76,11 @@
 
   iframe {
     border: none;
+    height: 100%;
+
+    @media (min-width: $screen-lg) {
+      min-height: 877px;
+    }
   }
 }
 
@@ -103,13 +112,18 @@
 }
 
 .modal-address-delivery__content {
+  padding: 96px 20px 40px;
+  overflow: auto;
+  height: 100%;
+
   @media (min-width: $screen-lg) {
     position: relative;
     max-width: 589px;
     width: 100%;
     padding: 47px 39px;
     max-height: 871px;
-
+    overflow: inherit;
+    height: auto;
   }
 }
 
@@ -150,13 +164,10 @@
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular26;
     margin-bottom: 20px;
+    padding-right: 40px;
 
     .tab-filter__list {
       justify-content: flex-start;
     }
   }
-}
-
-.modal-address-delivery__header {
-
 }

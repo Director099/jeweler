@@ -8,7 +8,7 @@
 
   display: flex;
   flex-direction: column;
-  padding: 50px 20px;
+  padding: 96px 20px 40px;
   background-color: $white;
   transform: translateX(100%);
   transition: $time;
@@ -16,14 +16,23 @@
   &.active {
     transform: translateX(0%);
   }
+
+  @media (min-width: $screen-lg) {
+    position: absolute;
+    padding: 50px 20px;
+  }
 }
 
 .shop-current__body {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  padding: 0 30px;
+  gap: 30px;
   flex-grow: 1;
+
+  @media (min-width: $screen-lg) {
+    padding: 0 30px;
+    gap: 40px;
+  }
 }
 
 .shop-current__title {
@@ -39,7 +48,10 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 350px;
+
+  @media (min-width: $screen-lg) {
+    max-width: 350px;
+  }
 }
 
 .shop-current__address {
@@ -104,27 +116,56 @@
   }
 }
 
+.shop-current__header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 14px 20px;
+  min-height: 56px;
+  background-color: $primary-white;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.14);
+  z-index: 9;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: $screen-lg) {
+    position: static;
+    box-shadow: none;
+    min-height: inherit;
+    margin-bottom: 40px;
+    padding: 0 30px;
+    background-color: transparent;
+  }
+}
+
 .shop-current__header-title {
   @include ProximaNovaTextRegular22;
   margin: 0;
 }
 
-.shop-current__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-  padding: 0 30px;
-}
-
 .shop-current__close {
   cursor: pointer;
 
-  .link-icon__svg {
+  svg {
     fill: $icons-grey;
+
+    @media (min-width: $screen-lg) {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 
 .shop-current__back {
   cursor: pointer;
+
+  @media (min-width: $screen-lg) {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
