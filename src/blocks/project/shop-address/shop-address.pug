@@ -1,11 +1,12 @@
-mixin shop-address({title, address})
+mixin shop-address({title, address, badge=true})
   section.shop-address&attributes(attributes)
     h3.shop-address__title=title
     p=address
     p Пн-Вс 10:00-22:00
     a(href=numberPhone.href)=numberPhone.text
     .shop-address__btns
-      span.badge.badge--success.shop-address__badge Доставим 12 апреля
+      if badge
+        span.badge.badge--success.shop-address__badge Доставим 12 апреля
       button.btn.shop-address__btn-more(type="button" data-shop="")
         span.d-lg-none Подробнее
         svg.d-none.d-lg-block(width="24" height="24")
