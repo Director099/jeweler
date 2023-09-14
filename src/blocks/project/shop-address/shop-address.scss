@@ -1,4 +1,4 @@
-.shop-address {
+.shop-address__content {
   @include ProximaNovaTextRegular16;
   position: relative;
   display: flex;
@@ -57,6 +57,10 @@
   cursor: pointer;
 
   @media (min-width: $screen-lg) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     position: absolute;
     right: 0;
     top: 0%;

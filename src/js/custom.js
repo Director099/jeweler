@@ -166,15 +166,33 @@ btnLink?.forEach(item =>
 )
 
 //TODO передалать если будет время и вынести в компанент shops
-const shopLink = document.querySelectorAll('[data-shop]');
-const shopCurrent = document.querySelector('[data-shop-current]');
-const shopCurrentClose = document.querySelector('[data-close-shop-current]');
+const shopLink = document.querySelectorAll('[data-shop-link]');
+const shopCurrentClose = document.querySelectorAll('[data-close-shop-current]');
+const toggleShop = (item) => {
+  const parentShop = item.closest('[data-shop]');
+  const currentShop = parentShop?.querySelector("[data-shop-current]");
+
+  if (window.matchMedia("(max-width: 1079px)").matches) {
+    Fancybox.show([{
+      src: item.dataset.shopLink,
+      dragToClose: false,
+      defaultType: 'inline'
+    }]);
+  } else {
+    currentShop.classList.toggle('active');
+  }
+}
 
 shopLink?.forEach(item =>
-  item.addEventListener('click', (e) => shopCurrent.classList.add('active'))
+  item.addEventListener('click', () => toggleShop(item))
 )
-shopCurrentClose.addEventListener('click', () => shopCurrent.classList.remove('active'))
 
+shopCurrentClose?.forEach(item =>
+  item.addEventListener('click', () => toggleShop(item))
+)
+
+
+//TODO передалать если будет время и вынести в компанент shops
 const contentToggleDelivery = document.querySelector('[data-toggle-delivery]');
 contentToggleDelivery.addEventListener('click', () => {
   const elemToggleDelivery = document.querySelector(`[data-delivery='${contentToggleDelivery.dataset.toggleDelivery}']`);

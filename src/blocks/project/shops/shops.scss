@@ -2,6 +2,8 @@
   height: 100%;
   @media (min-width: $screen-lg) {
     display: flex;
+    border-radius: 15px;
+    overflow: hidden;
   }
 }
 
@@ -50,7 +52,6 @@
 
 .shops__map {
   position: relative;
-  //display: none;
   height: 100%;
   flex-grow: 1;
 
@@ -58,16 +59,16 @@
     min-width: 646px;
     display: block;
   }
+}
 
-  iframe {
-    display: block;
-    border: none;
-    width: 100%;
-    height: 100%;
+.shops__map-elem {
+  display: block;
+  border: none;
+  width: 100%;
+  height: 100%;
 
-    @media (min-width: $screen-lg) {
-      min-height: 871px;
-    }
+  @media (min-width: $screen-lg) {
+    min-height: 871px;
   }
 }
 
@@ -169,5 +170,35 @@
 .shops__tab-filter {
   @media (min-width: $screen-lg) {
     height: 100%;
+  }
+}
+
+.shops--pages {
+  .shops__item {
+    border-color: $primary-pink-1;
+  }
+
+  @media (max-width: $screen-lg - 1) {
+    .shops__content {
+      padding: 40px 0 0;
+    }
+
+    .shops__btn-toggle {
+      bottom: 100px;
+    }
+
+    .shop-address__btn-more {
+      @include ProximaNovaTextRegular18;
+      padding: 8px;
+      max-width: 170px;
+    }
+
+    .shops__map {
+      margin: 0 -20px -62px;
+    }
+
+    .shops__map-elem {
+      min-height: calc(100dvh - 112px);
+    }
   }
 }

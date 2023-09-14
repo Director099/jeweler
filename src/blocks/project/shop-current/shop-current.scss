@@ -5,21 +5,25 @@
   left: 0;
   right: 0;
   z-index: 9;
-
-  display: flex;
-  flex-direction: column;
   padding: 96px 20px 40px;
   background-color: $white;
-  transform: translateX(100%);
   transition: $time;
+  display: none;
 
-  &.active {
-    transform: translateX(0%);
+  &.fancybox__content {
+    display: flex;
   }
 
   @media (min-width: $screen-lg) {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
     padding: 50px 20px;
+
+    &.active {
+      transform: translateX(0%);
+    }
   }
 }
 
@@ -132,7 +136,7 @@
   align-items: center;
 
   @media (min-width: $screen-lg) {
-    position: static;
+    position: relative;
     box-shadow: none;
     min-height: inherit;
     margin-bottom: 40px;
@@ -143,7 +147,15 @@
 
 .shop-current__header-title {
   @include ProximaNovaTextRegular22;
-  margin: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 40px;
 }
 
 .shop-current__close {

@@ -1,23 +1,29 @@
-mixin shop-current
+mixin shop-current({title, address, titleMobile="Самовывоз", btnCLoseModal=true})
   .shop-current&attributes(attributes)
-    header.shop-current__header
+    .shop-current__header.d-none.d-lg-flex
       +link-icon({
         icon: 'icon-arrow-3',
         widthIcon: 18,
         heightIcon: 18,
       }).shop-current__back(data-close-shop-current="")
-      h2.shop-current__header-title
-        span.d-lg-none Самовывоз
-        span.d-none.d-lg-block К списку магазинов
+      h2.shop-current__header-title К списку магазинов
+      if btnCLoseModal
+        +link-icon({
+          icon: 'icon-close',
+          widthIcon: 18,
+          heightIcon: 18,
+        }).shop-current__close(data-fancybox-close="")
+    .shop-current__header.d-lg-none
       +link-icon({
-        icon: 'icon-close',
+        icon: 'icon-arrow-3',
         widthIcon: 18,
         heightIcon: 18,
-      }).shop-current__close(data-fancybox-close="")
+      }).shop-current__back(data-fancybox-close="")
+      h2.shop-current__header-title= titleMobile
     .shop-current__body
       section.shop-current__group
-        h3.shop-current__title ТЦ МЕГА
-        p.shop-current__address Республика Башкортостан, г. Уфа, ул. Рубежная, д. №174
+        h3.shop-current__title= title
+        p.shop-current__address= address
       section.shop-current__group
         h4.shop-current__date Привезем 14 апреля
         .shop-current__row
