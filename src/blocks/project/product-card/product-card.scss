@@ -12,7 +12,7 @@
 
   @media (min-width: $screen-xl) {
     display: grid;
-    grid-template-columns: 900px 1fr;
+    grid-template-columns: minmax(auto,900px) 1fr;
     gap: 60px;
   }
 }

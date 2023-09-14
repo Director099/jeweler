@@ -5,6 +5,12 @@
   }
 }
 
+.category-list-prev__link {
+  @media (min-width: $screen-lg) {
+    min-height: 300px;
+  }
+}
+
 .category-list-prev__link .promo__content {
   position: absolute;
   top: 50%;

@@ -56,7 +56,8 @@ $grid-gutter-width:           30px !default;
   }
 
   @media (min-width: $screen-xl) {
-    width: $container-xl;
+    width: 100%;
+    max-width: $container-xxl;
 
     @if ($xl-grid-gutter != $lg-grid-gutter) {
       padding-left: math.div($xl-grid-gutter, 2);
@@ -64,14 +65,14 @@ $grid-gutter-width:           30px !default;
     }
   }
 
-  @media (min-width: $screen-xxl) {
-    width: $container-xxl;
-
-    @if ($xxl-grid-gutter != $xl-grid-gutter) {
-      padding-left: math.div($xxl-grid-gutter, 2);
-      padding-right: math.div($xxl-grid-gutter, 2);
-    }
-  }
+  //@media (min-width: $screen-xxl) {
+  //  width: $container-xxl;
+  //
+  //  @if ($xxl-grid-gutter != $xl-grid-gutter) {
+  //    padding-left: math.div($xxl-grid-gutter, 2);
+  //    padding-right: math.div($xxl-grid-gutter, 2);
+  //  }
+  //}
 }
 
 

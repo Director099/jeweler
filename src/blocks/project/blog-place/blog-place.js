@@ -11,7 +11,7 @@ new Swiper("[data-slider-place]", {
       freeMode: true,
       spaceBetween: 30,
     },
-    1720: {
+    1430: {
       freeMode: false,
       slidesPerView: 2,
       spaceBetween: 20,

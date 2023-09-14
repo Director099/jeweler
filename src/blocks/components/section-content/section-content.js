@@ -11,7 +11,7 @@ new Swiper("[data-product-slider]", {
     1020: {
       spaceBetween: 30,
     },
-    1720: {
+    1430: {
       freeMode: false,
       slidesPerView: 5,
       spaceBetween: 0,

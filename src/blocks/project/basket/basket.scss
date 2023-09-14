@@ -41,7 +41,7 @@
   }
 
   @media (min-width: $screen-xl) {
-    grid-template-columns: 1040px 1fr;
+    grid-template-columns: minmax(auto, 1040px) 1fr;
     gap: 70px;
   }
 }

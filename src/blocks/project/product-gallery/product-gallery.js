@@ -13,7 +13,7 @@ new Swiper('[data-gallery-top]', {
   slidesPerView: 'auto',
 
   breakpoints: {
-    1720: {
+    1430: {
       effect: "fade",
     }
   },

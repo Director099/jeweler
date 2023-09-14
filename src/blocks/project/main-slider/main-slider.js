@@ -9,3 +9,4 @@ new Swiper("[data-main-slider]", {
     prevEl: ".swiper-button-prev",
   },
 });
+
