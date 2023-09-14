@@ -1,15 +1,30 @@
-mixin shop-address({title, address, badge=true, idx})
+mixin shop-address({title, time, address, phone, badge=true, idx, btnArrow=true, wp=false, tg=false, debitCard, serviceProduct})
   .shop-address&attributes(attributes)
     section.shop-address__content
       h3.shop-address__title=title
-      p=address
-      p Пн-Вс 10:00-22:00
-      a(href=numberPhone.href)=numberPhone.text
-      .shop-address__btns
-        if badge
-          span.badge.badge--success.shop-address__badge Доставим 12 апреля
-        button.btn.shop-address__btn-more(data-shop-link=`#${idx}`)
-          span.d-lg-none Подробнее
-          svg.d-none.d-lg-block(width="24" height="24")
-            use(href=`img/symbols.svg#icon-arrow-2`)
+      if address
+        p=address
+      if time
+        p=time
+      if phone
+        a(href=numberPhone.href)=numberPhone.text
+        if wp
+          a(href="#" target="_blank") WhatsApp
+        if tg
+          a(href="https://t.me/uvelircenterofficial" target="_blank") Telegram
+      if debitCard
+        each item in debitCard
+          p=item
+      if serviceProduct
+        each item in serviceProduct
+          p=item
+
+      if btnArrow
+        .shop-address__btns
+          if badge
+            span.badge.badge--success.shop-address__badge Доставим 12 апреля
+          button.btn.shop-address__btn-more(data-shop-link=`#${idx}`)
+            span.d-lg-none Подробнее
+            svg.d-none.d-lg-block(width="24" height="24")
+              use(href=`img/symbols.svg#icon-arrow-2`)
     block

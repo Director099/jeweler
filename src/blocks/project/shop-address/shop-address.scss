@@ -25,6 +25,8 @@
 .shop-address__title {
   @include ProximaNovaTextRegular16;
   margin: 0;
+  color: $black;
+
   @media (min-width: $screen-lg) {
     @include ProximaNovaTextRegular22;
   }

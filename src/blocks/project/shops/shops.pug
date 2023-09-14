@@ -18,7 +18,7 @@ mixin shop-filter()
   }).shops__tab-filter
     block
 
-mixin list-shops({badge, tabIdx, titleMobile, btnCLoseModal})
+mixin list-shops({badge, tabIdx, titleMobile, btnCLoseModal, selectProduct})
   - const idName = (i) => `modal${!!tabIdx ? "-" + tabIdx : ''}-${i}`;
   ul.shops__list&attributes(attributes)
     each item, i in addressList
@@ -26,6 +26,8 @@ mixin list-shops({badge, tabIdx, titleMobile, btnCLoseModal})
         +shop-address({
           title: item.title,
           address: item.address,
+          phone: true,
+          time: 'Пн-Вс 10:00-22:00',
           badge: badge,
           idx: idName(i)
         })(data-shop="")
@@ -33,7 +35,8 @@ mixin list-shops({badge, tabIdx, titleMobile, btnCLoseModal})
             title: item.title,
             address: item.address,
             btnCLoseModal,
-            titleMobile
+            titleMobile,
+            selectProduct
           })(data-shop-current="" id=idName(i))
 
 mixin shops({badge=true, titleMobile, tabFilter=true})
@@ -58,5 +61,5 @@ mixin shops({badge=true, titleMobile, tabFilter=true})
               tabIdx: currentsTabFilter,
             })(data-filter=currentsTabFilter)
       else
-        +list-shops({badge, btnCLoseModal: false, titleMobile: 'Подробнее'})
+        +list-shops({badge, btnCLoseModal: false, titleMobile: 'Подробнее', selectProduct: false})
 
