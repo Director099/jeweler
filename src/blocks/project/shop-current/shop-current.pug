@@ -20,16 +20,17 @@ mixin shop-current({title, address, titleMobile="Самовывоз", btnCLoseMo
         heightIcon: 18,
       }).shop-current__back(data-fancybox-close="")
       h2.shop-current__header-title= titleMobile
-    .shop-current__body
-      section.shop-current__group
-        h3.shop-current__title= title
-        p.shop-current__address= address
-      section.shop-current__group
-        h4.shop-current__date Привезем 14 апреля
-        .shop-current__row
-          .shop-current__img
-            img(src="img/content/prev-1.jpg", alt="Золотое кольцо с бриллиантами")
-          .shop-current__content
-            p Золотое кольцо с бриллиантами
-            p 16 размер, 1 шт.
-    button.btn.btn--dark.shop-current__btn(data-fancybox-close="") Доставить в этот магазин
+    .shop-current__select-product
+      .shop-current__body
+        section.shop-current__group
+          h3.shop-current__title= title
+          p.shop-current__address= address
+        section.shop-current__group
+          h4.shop-current__date Привезем 14 апреля
+          .shop-current__row
+            .shop-current__img
+              img(src="img/content/prev-1.jpg", alt="Золотое кольцо с бриллиантами")
+            .shop-current__content
+              p Золотое кольцо с бриллиантами
+              p 16 размер, 1 шт.
+      button.btn.btn--dark.shop-current__btn(data-fancybox-close="") Доставить в этот магазин
