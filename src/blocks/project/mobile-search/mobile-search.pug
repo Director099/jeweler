@@ -1,0 +1,16 @@
+mixin mobile-search
+  .mobile-search.d-lg-none&attributes(attributes)
+    +link-icon({
+      icon: "icon-search",
+    })(data-toggle-search="").page-header__btn-icon-search
+    +form.mobile-search__form.d-none(action="#")
+      +field-text({
+        mods: '',
+        val: '',
+        attrs: {
+          placeholder: 'Поиск по каталогу'
+        }
+      }).mobile-search__field
+        span.mobile-search__close(data-toggle-search="")
+          svg.link-icon__svg(width="18" height="18")
+            use(href="img/symbols.svg#icon-arrow-3")

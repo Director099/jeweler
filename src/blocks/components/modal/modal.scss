@@ -155,6 +155,7 @@ $z-index-modal:               100 !default;
 }
 
 .modal__header-main {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;

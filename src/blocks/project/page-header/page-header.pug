@@ -38,9 +38,7 @@ mixin linkBack({iconBack=false})
       heightIcon: 18,
     })(href=iconBack).d-lg-none
   else
-    +link-icon({
-      icon: "icon-search",
-    })(href="#").page-header__btn-icon-search.d-lg-none
+    +mobile-search()
 
 mixin catalogSearch({catalogSearch=false, catalogTitle=false, headerLogo=false})
   +logo(pages.index.href)(class=(catalogSearch || catalogTitle || headerLogo) && 'd-none d-lg-block')

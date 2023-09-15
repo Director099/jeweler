@@ -1,0 +1,33 @@
+.mobile-search {
+
+}
+
+.mobile-search__form {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -5px;
+  bottom: 0;
+  z-index: 3;
+}
+
+.mobile-search__field {
+  input {
+    @include ProximaNovaTextRegular12;
+    padding: 9px 20px 9px 40px;
+    border-radius: 10px;
+  }
+}
+
+.mobile-search__close {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 35px;
+  z-index: 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

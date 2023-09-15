@@ -170,8 +170,14 @@
 }
 
 .page-header__btn-icon-search {
+  display: block;
   width: 18px;
   height: 18px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .page-header__title {

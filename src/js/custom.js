@@ -124,6 +124,14 @@ btnEye?.forEach(item =>
   })
 )
 
+const toggleSearch = document.querySelectorAll('[data-toggle-search]');
+toggleSearch?.forEach(item =>
+  item?.addEventListener('click', () => {
+    const parent = item.closest('.mobile-search');
+    parent.querySelector('form').classList.toggle('d-none')
+  })
+)
+
 const form = document.querySelectorAll("[data-form]");
 form.forEach((itemForm) => {
   const pristine = new Pristine(itemForm, {

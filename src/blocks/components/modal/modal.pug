@@ -8,11 +8,7 @@ mixin main-header()
         use(href="img/symbols.svg#icon-close")
     +logo(pages.index.href).modal__header-main-logo
       img(src='img/content/logo.svg', alt='Logo')
-    +link-icon({
-      icon: "icon-search",
-      widthIcon: 18,
-      heightIcon: 18
-    })(href="#")
+    +mobile-search()
 
 mixin header-title({btnCloseMobileLeft, title})
   button.modal__close(data-fancybox-close="" aria-label='Закрыть' type="button" class=btnCloseMobileLeft && 'modal__close--xs-left')
