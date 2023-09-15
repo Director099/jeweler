@@ -173,32 +173,6 @@ btnLink?.forEach(item =>
   })
 )
 
-//TODO передалать если будет время и вынести в компанент shops
-const shopLink = document.querySelectorAll('[data-shop-link]');
-const shopCurrentClose = document.querySelectorAll('[data-close-shop-current]');
-const toggleShop = (item) => {
-  const parentShop = item.closest('[data-shop]');
-  const currentShop = parentShop?.querySelector("[data-shop-current]");
-
-  if (window.matchMedia("(max-width: 1079px)").matches) {
-    Fancybox.show([{
-      src: item.dataset.shopLink,
-      dragToClose: false,
-      defaultType: 'inline'
-    }]);
-  } else {
-    currentShop.classList.toggle('active');
-  }
-}
-
-shopLink?.forEach(item =>
-  item.addEventListener('click', () => toggleShop(item))
-)
-
-shopCurrentClose?.forEach(item =>
-  item.addEventListener('click', () => toggleShop(item))
-)
-
 const autoCompleteJS = new autoComplete({
   selector: "[data-autocomplite]",
   data: {
@@ -227,6 +201,32 @@ const autoCompleteJS = new autoComplete({
   }
 })
 
+
+//TODO передалать если будет время и вынести в компанент shops
+const shopLink = document.querySelectorAll('[data-shop-link]');
+const shopCurrentClose = document.querySelectorAll('[data-close-shop-current]');
+const toggleShop = (item) => {
+  const parentShop = item.closest('[data-shop]');
+  const currentShop = parentShop?.querySelector("[data-shop-current]");
+
+  if (window.matchMedia("(max-width: 1079px)").matches) {
+    Fancybox.show([{
+      src: item.dataset.shopLink,
+      dragToClose: false,
+      defaultType: 'inline'
+    }]);
+  } else {
+    currentShop.classList.toggle('active');
+  }
+}
+
+shopLink?.forEach(item =>
+  item.addEventListener('click', () => toggleShop(item))
+)
+
+shopCurrentClose?.forEach(item =>
+  item.addEventListener('click', () => toggleShop(item))
+)
 
 //TODO передалать если будет время и вынести в компанент shops
 const contentToggleDelivery = document.querySelector('[data-toggle-delivery]');
