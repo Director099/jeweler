@@ -1,3 +1,11 @@
+.collection {
+  @media (min-width: $screen-xl) {
+    max-width: 1460px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 .collection__grid-gap {
   grid-gap: 15px;
 
@@ -5,8 +13,12 @@
   overflow: hidden;
 
   @media (min-width: $screen-lg) {
-    grid-gap: 40px;
+    grid-gap: 45px 24px;
     border-radius: 20px;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 16px 60px;
   }
 }
 
@@ -25,7 +37,13 @@
 }
 
 .collection__content {
-  @media (max-width: $screen-md - 1) {
-    height: 200px;
+  height: 200px;
+
+  @media (min-width: $screen-lg) {
+    height: 622px;
+  }
+
+  @media (min-width: $screen-xl) {
+    height: 500px;
   }
 }

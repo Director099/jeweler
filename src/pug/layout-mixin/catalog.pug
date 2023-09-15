@@ -10,7 +10,7 @@ mixin catalog({catalogFilter=true, pageSubCatalogCurrentTitle, pageSubCatalogCur
       .page-catalog__grid
         +catalog-menu(pageSubCatalogCurrentHref)
         main.page-catalog__content.stack.stack--main-gap
-          h1.catalog-title.d-lg-none= pageSubCatalogCurrentTitle
+          //- h1.catalog-title.d-lg-none= pageSubCatalogCurrentTitle
           block
           if(catalogFilter)
             +category-filter({

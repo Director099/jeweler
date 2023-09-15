@@ -43,9 +43,8 @@ mixin linkBack({iconBack=false})
     })(href="#").page-header__btn-icon-search.d-lg-none
 
 mixin catalogSearch({catalogSearch=false, catalogTitle=false, headerLogo=true})
-  if headerLogo
-    +logo(pages.index.href)(class=(catalogSearch || catalogTitle) && 'd-none d-lg-block')
-      img(src='img/content/logo.svg', alt='Logo')
+  +logo(pages.index.href)(class=(catalogSearch || catalogTitle || headerLogo) && 'd-none d-lg-block')
+    img(src='img/content/logo.svg', alt='Logo')
   if catalogSearch
     +form.form--search.page-header__search.d-lg-none(action="#")
       +field-text({
@@ -58,7 +57,7 @@ mixin catalogSearch({catalogSearch=false, catalogTitle=false, headerLogo=true})
   if catalogTitle
     h2.page-header__title.d-lg-none= catalogTitle
 
-mixin page-header({innerPage=false, iconBack=false, catalogSearch=false, headerBurger=true})
+mixin page-header({innerPage=false, iconBack=false, catalogSearch=false, headerBurger=true, headerLogo})
   header.page-header&attributes(attributes)
     .container
       .page-header__top-wrap(class=innerPage && 'page-header__top-wrap--internal')

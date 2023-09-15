@@ -48,8 +48,10 @@
 
   &.active {
     background-color: $white;
+    border-left: 2px solid $primary-pink-1;
     @media (min-width: $screen-lg) {
       background-color: $bg-gray-1;
+      border: none;
     }
   }
 
