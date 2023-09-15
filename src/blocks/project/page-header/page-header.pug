@@ -42,7 +42,7 @@ mixin linkBack({iconBack=false})
       icon: "icon-search",
     })(href="#").page-header__btn-icon-search.d-lg-none
 
-mixin catalogSearch({catalogSearch=false, catalogTitle=false, headerLogo=true})
+mixin catalogSearch({catalogSearch=false, catalogTitle=false, headerLogo=false})
   +logo(pages.index.href)(class=(catalogSearch || catalogTitle || headerLogo) && 'd-none d-lg-block')
     img(src='img/content/logo.svg', alt='Logo')
   if catalogSearch
