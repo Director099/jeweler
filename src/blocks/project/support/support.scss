@@ -25,6 +25,11 @@
 
 .support__group {
   text-align: center;
+
+  @media (min-width: $screen-lg) {
+    max-width: 581px;
+    margin: 0 auto;
+  }
 }
 
 .support__socials {
