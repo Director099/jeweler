@@ -199,6 +199,34 @@ shopCurrentClose?.forEach(item =>
   item.addEventListener('click', () => toggleShop(item))
 )
 
+const autoCompleteJS = new autoComplete({
+  selector: "[data-autocomplite]",
+  data: {
+    src: [
+      "Все украшения",
+      "Обручальные кольца",
+      "Колье",
+      "Пирсинг",
+      "Булавка","Брошь",
+      "Крестик",
+      "Запонки",
+      "Зажимы",
+      "Столовое серебро",
+      "Подарочная упаковка",
+      "Чистящее средство",
+    ],
+    cache: true,
+  },
+  events: {
+    input: {
+      selection: (event) => {
+        const selection = event.detail.selection.value;
+        autoCompleteJS.input.value = selection;
+      }
+    }
+  }
+})
+
 
 //TODO передалать если будет время и вынести в компанент shops
 const contentToggleDelivery = document.querySelector('[data-toggle-delivery]');

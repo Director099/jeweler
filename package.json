@@ -50,6 +50,7 @@
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
     "@fancyapps/ui": "^5.0.22",
+    "@tarekraafat/autocomplete.js": "^10.2.7",
     "choices.js": "^10.2.0",
     "imask": "^7.1.3",
     "nouislider": "^15.7.1",

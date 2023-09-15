@@ -79,6 +79,9 @@ mixin page-header({innerPage=false, iconBack=false, catalogSearch=false, headerB
           +field-text({
             mods: '',
             val: '',
+            attrs: {
+              "data-autocomplite": "",
+            }
           })
           button.btn.btn--pink.form__search-btn Поиск
         ul.page-header__buttons-list
