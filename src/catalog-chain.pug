@@ -53,7 +53,7 @@ block content
     pageSubCatalogCurrentTitle: pages.catalogChain.text,
     pageSubCatalogCurrentHref: pages.catalogChain.href,
   })
-    .promo-list
+    .promo-list.d-none.d-lg-block
       .promo-list__grid.grid-tpl-1.grid-tpl-xl-2
         - for(let i = 0; i < 2; i++)
           +promo({
@@ -62,6 +62,13 @@ block content
             srcset: true,
             hasContent: false,
           })(href="#")
+    .promo-list.d-lg-none
+      +promo({
+        src: `img/content/catalog-actions/action-chain-1`,
+        title: "sad",
+        srcset: true,
+        hasContent: false,
+      })(href="#")
     +category-list({
       classNameGrid: 'grid-tpl-2 grid-tpl-lg-4',
       list: categoryChainlist,
