@@ -8,7 +8,8 @@
     {
       icon: 'icon-basket',
       text: pages.basketFilling.text,
-      href: pages.basketFilling.href
+      href: pages.basketFilling.href,
+      count: true,
     },
     {
       icon: 'icon-profile',
@@ -91,4 +92,5 @@ mixin page-header({innerPage=false, iconBack=false, catalogSearch=false, headerB
                 icon: item.icon,
                 text: item.text,
                 iconTop: true,
+                count: item.count,
               })(href=item.href).page-header__link-icon

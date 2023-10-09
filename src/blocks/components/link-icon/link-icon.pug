@@ -1,7 +1,10 @@
-mixin link-icon({icon, text, iconTop = false, widthIcon=24, heightIcon=24})
+mixin link-icon({icon, text, iconTop = false, count=false, widthIcon=24, heightIcon=24})
   - const classNameIconTop = iconTop && 'link-icon--top';
   a.link-icon(class=classNameIconTop)&attributes(attributes)
-    svg.link-icon__svg(width=widthIcon height=heightIcon)
-      use(href=`img/symbols.svg#${icon}`)
+    .link-icon__icon
+      if count
+        +count.link-icon__count
+      svg.link-icon__svg(width=widthIcon height=heightIcon)
+        use(href=`img/symbols.svg#${icon}`)
     if(text)
       span.link-icon__text= text

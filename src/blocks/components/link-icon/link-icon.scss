@@ -17,8 +17,18 @@
   }
 }
 
+.link-icon__icon {
+  position: relative;
+}
+
 .link-icon__svg {
   fill: transparent;
   width: auto;
   height: auto;
+}
+
+.link-icon__count {
+  position: absolute;
+  right: -11px;
+  top: -11px;
 }
